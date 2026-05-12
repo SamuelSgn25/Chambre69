@@ -12,9 +12,8 @@ const BRANDS_FOLDERS = [
 ];
 
 async function main() {
-  console.log('Starting dynamic seeding...');
+  console.log('Starting dynamic seeding with collections support...');
   
-  // Clean DB
   await prisma.productVariant.deleteMany();
   await prisma.product.deleteMany();
   await prisma.brand.deleteMany();
@@ -26,99 +25,101 @@ async function main() {
 
   for (const brandName of BRANDS_FOLDERS) {
     console.log(`Processing brand: ${brandName}`);
-    
     const brand = await prisma.brand.create({
       data: {
         name: brandName,
-        image_url: `http://localhost:5000/images/${brandName}/brand.jpg`, // Placeholder
+        image_url: `http://localhost:5000/images/${brandName}/brand.jpg`,
         description: `Collection haut de gamme de ${brandName}`
       }
     });
 
     const brandPath = path.join(ROOT_PATH, brandName);
-    if (!fs.existsSync(brandPath)) {
-      console.warn(`Path not found: ${brandPath}`);
-      continue;
-    }
+    if (!fs.existsSync(brandPath)) continue;
 
-    // Scan subdirectories
     const subdirs = fs.readdirSync(brandPath, { withFileTypes: true });
     for (const subdir of subdirs) {
       if (subdir.isDirectory()) {
         const subcategoryName = subdir.name;
-        const subdirPath = path.join(brandPath, subcategoryName);
+        const subcategoryPath = path.join(brandPath, subcategoryName);
         
-        // Scan images in subcategory
-        const files = scanImages(subdirPath);
-        for (const file of files) {
-          const relativePath = path.relative(ROOT_PATH, file).replace(/\\/g, '/');
-          const fileName = path.basename(file, path.extname(file));
-          
-          // Use a hash of the relative path to ensure unique slugs
-          const hash = crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6);
-          const uniqueSlug = `${brandName.toLowerCase().replace(/\s+/g, '-')}-${subcategoryName.toLowerCase().replace(/\s+/g, '-')}-${fileName.toLowerCase().replace(/\s+/g, '-')}-${hash}`;
-          
-          try {
-            await prisma.product.create({
-              data: {
-                name: fileName,
-                slug: uniqueSlug,
-                brand_id: brand.id,
-                subcategory: subcategoryName,
-                category_id: defaultCategory.id,
-                image_url: `http://localhost:5000/images/${relativePath}`,
-                variants: {
-                  create: [{ color: 'Standard', sizes: ['S', 'M', 'L'] }]
-                }
-              }
-            });
-          } catch (err) {
-            console.error(`Failed to create product for ${relativePath}:`, err);
+        // Scan for collections within subcategory
+        const items = fs.readdirSync(subcategoryPath, { withFileTypes: true });
+        for (const item of items) {
+          if (item.isDirectory()) {
+            const collectionName = item.name;
+            const collectionPath = path.join(subcategoryPath, collectionName);
+            
+            const images = scanImages(collectionPath);
+            for (const img of images) {
+              await createProduct(img, brand.id, defaultCategory.id, subcategoryName, collectionName);
+            }
+          } else if (item.isFile() && isImage(item.name)) {
+            await createProduct(path.join(subcategoryPath, item.name), brand.id, defaultCategory.id, subcategoryName);
           }
         }
       } else if (subdir.isFile() && isImage(subdir.name)) {
-        // Image directly in brand folder
-        const relativePath = path.relative(ROOT_PATH, path.join(brandPath, subdir.name)).replace(/\\/g, '/');
-        const fileName = path.basename(subdir.name, path.extname(subdir.name));
-        const hash = crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6);
-        const uniqueSlug = `${brandName.toLowerCase().replace(/\s+/g, '-')}-${fileName.toLowerCase().replace(/\s+/g, '-')}-${hash}`;
-
-        try {
-          await prisma.product.create({
-            data: {
-              name: fileName,
-              slug: uniqueSlug,
-              brand_id: brand.id,
-              category_id: defaultCategory.id,
-              image_url: `http://localhost:5000/images/${relativePath}`,
-              variants: {
-                create: [{ color: 'Standard', sizes: ['S', 'M', 'L'] }]
-              }
-            }
-          });
-        } catch (err) {
-          console.error(`Failed to create product for ${relativePath}:`, err);
-        }
+        await createProduct(path.join(brandPath, subdir.name), brand.id, defaultCategory.id);
       }
     }
   }
 
   // Handle Special Sections
   const specialSections = ['Quelques accessoires', 'Senteurs', 'Tenues Spéciales'];
-  for (const section of specialSections) {
-    await prisma.brand.create({
-      data: {
-        name: section,
-        description: `Collection ${section}`
-      }
+  for (const sectionName of specialSections) {
+    const brand = await prisma.brand.create({
+      data: { name: sectionName, description: `Collection ${sectionName}` }
     });
+    
+    const sectionPath = path.join(ROOT_PATH, sectionName);
+    if (fs.existsSync(sectionPath)) {
+      const images = scanImages(sectionPath);
+      for (const img of images) {
+        await createProduct(img, brand.id, defaultCategory.id);
+      }
+    }
   }
 
-  console.log('Dynamic seed completed successfully');
+  console.log('Seed completed successfully');
+}
+
+async function createProduct(filePath: string, brandId: string, categoryId: string, subcategory?: string, collection?: string) {
+  const relativePath = path.relative(ROOT_PATH, filePath).replace(/\\/g, '/');
+  const fileName = path.basename(filePath, path.extname(filePath));
+  const hash = crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6);
+  
+  // Clean up collection name if it contains keywords
+  let cleanedCollection = collection;
+  if (collection && collection.toLowerCase().includes('collection')) {
+    cleanedCollection = collection.replace(/collection/i, '').trim();
+    // Capitalize first letter
+    cleanedCollection = cleanedCollection.charAt(0).toUpperCase() + cleanedCollection.slice(1);
+  }
+
+  const slug = `${path.basename(path.dirname(path.dirname(filePath))).toLowerCase()}-${subcategory?.toLowerCase() || 'default'}-${collection?.toLowerCase() || 'none'}-${fileName.toLowerCase()}-${hash}`.replace(/\s+/g, '-');
+
+  try {
+    await prisma.product.create({
+      data: {
+        name: fileName,
+        slug: slug,
+        brand_id: brandId,
+        subcategory: subcategory,
+        collection: cleanedCollection,
+        category_id: categoryId,
+        image_url: `http://localhost:5000/images/${relativePath}`,
+        variants: {
+          create: [{ color: 'Standard', sizes: ['S', 'M', 'L'] }]
+        }
+      }
+    });
+  } catch (e) {
+    // console.error(`Error creating product for ${relativePath}:`, e);
+  }
 }
 
 function scanImages(dir: string): string[] {
   let results: string[] = [];
+  if (!fs.existsSync(dir)) return results;
   const list = fs.readdirSync(dir);
   list.forEach((file) => {
     const filePath = path.join(dir, file);
