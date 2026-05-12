@@ -123,5 +123,3 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
     </header>
   );
 };
-  );
-};
