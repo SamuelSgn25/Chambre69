@@ -1,90 +1,62 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
-import path from 'path';
 import { PrismaClient } from '@prisma/client';
+import path from 'path';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
-const app = express();
 const prisma = new PrismaClient();
-const port = process.env.PORT || 5000;
+const app = express();
+const PORT = process.env.PORT || 5000;
+const JWT_SECRET = process.env.JWT_SECRET || 'chambre69_secret_key_luxury';
 
 app.use(cors());
 app.use(express.json());
 
-// Serve static images from the repository folders
-app.use('/images', express.static(path.join(__dirname, '../../..')));
+// Servir les images statiques depuis la racine du dépôt
+const ROOT_PATH = path.join(__dirname, '../../..');
+app.use('/images', express.static(ROOT_PATH));
 
-// Routes
-app.get('/api/brands', async (req, res) => {
+// --- ROUTES AUTHENTIFICATION ---
+
+app.post('/api/auth/register', async (req, res) => {
+  const { email, password, name } = req.body;
   try {
-    const brands = await prisma.brand.findMany({
-      include: {
-        products: {
-          include: { variants: true }
-        }
-      },
-      orderBy: { name: 'asc' }
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) return res.status(400).json({ error: 'Cet email est déjà utilisé.' });
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await prisma.user.create({
+      data: { email, password: hashedPassword, name }
     });
-    res.json(brands);
+
+    const token = jwt.sign({ userId: user.id, role: user.role }, JWT_SECRET, { expiresIn: '24h' });
+    res.json({ token, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch brands' });
+    res.status(500).json({ error: 'Erreur lors de l\'inscription.' });
   }
 });
 
-app.get('/api/categories', async (req, res) => {
+app.post('/api/auth/login', async (req, res) => {
+  const { email, password } = req.body;
   try {
-    const categories = await prisma.category.findMany({
-      orderBy: { name: 'asc' }
-    });
-    res.json(categories);
+    const user = await prisma.user.findUnique({ where: { email } });
+    if (!user) return res.status(400).json({ error: 'Utilisateur non trouvé.' });
+
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) return res.status(400).json({ error: 'Mot de passe incorrect.' });
+
+    const token = jwt.sign({ userId: user.id, role: user.role }, JWT_SECRET, { expiresIn: '24h' });
+    res.json({ token, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch categories' });
+    res.status(500).json({ error: 'Erreur lors de la connexion.' });
   }
 });
 
-app.get('/api/products', async (req, res) => {
-  try {
-    const { category_id, brand_id, subcategory, featured } = req.query;
-    const where: any = {};
-    
-    if (category_id) where.category_id = category_id as string;
-    if (brand_id) where.brand_id = brand_id as string;
-    if (subcategory) where.subcategory = subcategory as string;
-    if (featured === 'true') where.is_featured = true;
-
-    const products = await prisma.product.findMany({
-      where,
-      include: {
-        variants: true,
-        brand: true
-      },
-      orderBy: { created_at: 'desc' }
-    });
-    res.json(products);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch products' });
-  }
-});
-
-app.get('/api/products/:slug', async (req, res) => {
-  try {
-    const { slug } = req.params;
-    const product = await prisma.product.findUnique({
-      where: { slug },
-      include: {
-        variants: true,
-        category: true,
-        brand: true
-      }
-    });
-    if (!product) return res.status(404).json({ error: 'Product not found' });
-    res.json(product);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch product' });
-  }
-});
+// --- ROUTES BOUTIQUE ---
 
 app.get('/api/shop-data', async (req, res) => {
   try {
@@ -96,21 +68,31 @@ app.get('/api/shop-data', async (req, res) => {
       },
       orderBy: { name: 'asc' }
     });
-
-    const categories = await prisma.category.findMany({
-      orderBy: { name: 'asc' }
-    });
-
-    res.json({
-      brands,
-      categories
-    });
+    res.json({ brands });
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching shop data:', error);
     res.status(500).json({ error: 'Failed to fetch shop data' });
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.get('/api/products/:slug', async (req, res) => {
+  const { slug } = req.params;
+  try {
+    const product = await prisma.product.findUnique({
+      where: { slug },
+      include: { 
+        variants: true,
+        brand: true,
+        category: true
+      }
+    });
+    if (!product) return res.status(404).json({ error: 'Product not found' });
+    res.json(product);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch product' });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
