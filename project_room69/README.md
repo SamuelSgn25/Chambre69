@@ -58,12 +58,25 @@ project_room69/
 2. Installez les dépendances : `npm install`
 3. Lancez l'application : `npm run dev`
 
+## 🔄 Peuplement Dynamique de la Base de Données
+
+Le script de "seed" (`backend/prisma/seed.ts`) a été conçu pour parcourir automatiquement les dossiers d'images à la racine du dépôt :
+- **Marques concernées** : Curvy Kate, Dita Von Teese, Elomi, Empreinte, Fantaisie, Freya, Louisa Bracq, Wacoal, Ysabel Mora.
+- **Fonctionnement** : Il scanne chaque dossier et sous-dossier (ex: "Soutien-gorge", "Slips") et crée automatiquement un produit en base de données pour chaque image trouvée.
+- **Mise à jour** : Pour rafraîchir la liste des produits après avoir ajouté des images, relancez simplement `npm run prisma:seed` dans le dossier `backend`.
+
+## 🤖 CI/CD (GitHub Actions)
+
+Un workflow GitHub Actions est configuré dans `.github/workflows/main.yml` pour :
+- Vérifier la validité du build (Frontend & Backend) à chaque push.
+- S'assurer que le client Prisma est correctement généré.
+
 ## ✨ Fonctionnalités
 - **Navigation fluide** : SPA avec transitions animées.
-- **Boutique complète** : Affichage par catégories, filtres et recherche.
+- **Boutique complète** : Affichage par marques avec filtrage par sous-catégories.
+- **Scan automatique** : Toutes les images déposées dans les dossiers racines sont automatiquement intégrées à la boutique via le script de seed.
 - **Panier dynamique** : Ajout/suppression d'articles en temps réel.
-- **Design Premium** : Interface sombre et dorée pour une expérience luxueuse.
-- **Backend robuste** : API REST avec TypeScript et PostgreSQL.
+- **Backend robuste** : API REST avec TypeScript, PostgreSQL et Prisma.
 
 ---
 Développé avec ❤️ pour Chambre 69.
