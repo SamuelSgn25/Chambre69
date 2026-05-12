@@ -1,4 +1,4 @@
-import { Search, User, ShoppingBag, MessageCircle } from 'lucide-react';
+import { Search, User, ShoppingBag, MessageCircle, Eye, EyeOff } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 interface HeaderProps {
@@ -28,7 +28,7 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 bg-black shadow-2xl z-50 border-b border-[#C9A96E]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Première ligne : recherche | logo | icônes */}
         <div className="flex items-center justify-between h-24">
@@ -39,11 +39,11 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
                 type="text"
                 name="search"
                 placeholder="Rechercher..."
-                className="w-full border-b border-gray-200 py-2 pr-8 text-gray-800 placeholder-gray-400 bg-transparent focus:outline-none focus:border-[#C9A96E] transition-colors text-sm"
+                className="w-full border-b border-[#C9A96E]/30 py-2 pr-8 text-white placeholder-gray-500 bg-transparent focus:outline-none focus:border-[#C9A96E] transition-colors text-sm"
               />
               <button
                 type="submit"
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#C9A96E] transition-colors"
+                className="absolute right-0 top-1/2 -translate-y-1/2 text-[#C9A96E] hover:text-white transition-colors"
                 aria-label="Rechercher"
               >
                 <Search className="h-4 w-4" />
@@ -58,8 +58,21 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
               className="focus:outline-none cursor-pointer group"
               aria-label="Accueil"
             >
-              <h1 className="text-2xl font-serif font-bold text-gray-900 group-hover:text-[#C9A96E] transition-colors">CHAMBRE 69</h1>
-              <p className="text-[8px] tracking-[0.4em] text-gray-400 uppercase -mt-1">Paris • Lingerie</p>
+              <img
+                src="src/assets/logo-chambre69.png"
+                alt="Chambre 69"
+                className="max-w-[200px] md:max-w-[260px] mx-auto h-auto transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    const h1 = document.createElement('h1');
+                    h1.className = "text-2xl font-serif font-bold text-white group-hover:text-[#C9A96E]";
+                    h1.innerText = "CHAMBRE 69";
+                    parent.appendChild(h1);
+                  }
+                }}
+              />
             </button>
           </div>
 
@@ -68,17 +81,17 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
             {user ? (
               <div className="flex items-center gap-4">
                 <div className="flex flex-col items-end">
-                  <span className="text-[10px] font-bold text-gray-900 uppercase tracking-widest">{user.name || 'Mon Compte'}</span>
-                  <button onClick={onLogout} className="text-[8px] text-gray-400 hover:text-red-500 uppercase tracking-widest">Déconnexion</button>
+                  <span className="text-[10px] font-bold text-white uppercase tracking-widest">{user.name || 'Mon Compte'}</span>
+                  <button onClick={onLogout} className="text-[8px] text-[#C9A96E] hover:text-red-500 uppercase tracking-widest">Déconnexion</button>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-white/5 border border-[#C9A96E]/20 flex items-center justify-center">
                   <User className="h-4 w-4 text-[#C9A96E]" />
                 </div>
               </div>
             ) : (
               <button
                 onClick={() => onNavigate('login')}
-                className="flex flex-col items-center text-gray-400 hover:text-[#C9A96E] transition-colors"
+                className="flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
               >
                 <User className="h-5 w-5" />
                 <span className="text-[8px] font-bold uppercase tracking-widest mt-1">Connexion</span>
@@ -87,15 +100,23 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
 
             <button
               onClick={() => onNavigate('cart')}
-              className="relative flex flex-col items-center text-gray-400 hover:text-[#C9A96E] transition-colors"
+              className="relative flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
             >
               <ShoppingBag className="h-5 w-5" />
               <span className="text-[8px] font-bold uppercase tracking-widest mt-1">Panier</span>
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-black text-white text-[8px] rounded-full h-4 w-4 flex items-center justify-center font-bold">
+                <span className="absolute -top-1 -right-1 bg-[#C9A96E] text-black text-[8px] rounded-full h-4 w-4 flex items-center justify-center font-bold">
                   {totalItems}
                 </span>
               )}
+            </button>
+
+            <button
+              onClick={handleWhatsApp}
+              className="flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
+            >
+              <MessageCircle className="h-5 w-5" />
+              <span className="text-[8px] font-bold uppercase tracking-widest mt-1">WhatsApp</span>
             </button>
           </div>
         </div>
@@ -108,8 +129,8 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
               onClick={() => onNavigate(page)}
               className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative pb-1 ${
                 currentPage === page
-                  ? 'text-black'
-                  : 'text-gray-400 hover:text-[#C9A96E]'
+                  ? 'text-white'
+                  : 'text-[#C9A96E] hover:text-white'
               }`}
             >
               {page === 'home' ? 'Accueil' : page === 'shop' ? 'Boutique' : page === 'about' ? 'À propos' : 'Contact'}
