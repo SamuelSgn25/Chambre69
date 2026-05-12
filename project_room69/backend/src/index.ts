@@ -14,10 +14,25 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static images from the repository folders
-// Assumes images are in the parent directory of project_room69
 app.use('/images', express.static(path.join(__dirname, '../../..')));
 
 // Routes
+app.get('/api/brands', async (req, res) => {
+  try {
+    const brands = await prisma.brand.findMany({
+      include: {
+        products: {
+          include: { variants: true }
+        }
+      },
+      orderBy: { name: 'asc' }
+    });
+    res.json(brands);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch brands' });
+  }
+});
+
 app.get('/api/categories', async (req, res) => {
   try {
     const categories = await prisma.category.findMany({
@@ -31,16 +46,19 @@ app.get('/api/categories', async (req, res) => {
 
 app.get('/api/products', async (req, res) => {
   try {
-    const { category_id, featured } = req.query;
+    const { category_id, brand_id, subcategory, featured } = req.query;
     const where: any = {};
     
     if (category_id) where.category_id = category_id as string;
+    if (brand_id) where.brand_id = brand_id as string;
+    if (subcategory) where.subcategory = subcategory as string;
     if (featured === 'true') where.is_featured = true;
 
     const products = await prisma.product.findMany({
       where,
       include: {
-        variants: true
+        variants: true,
+        brand: true
       },
       orderBy: { created_at: 'desc' }
     });
@@ -57,7 +75,8 @@ app.get('/api/products/:slug', async (req, res) => {
       where: { slug },
       include: {
         variants: true,
-        category: true
+        category: true,
+        brand: true
       }
     });
     if (!product) return res.status(404).json({ error: 'Product not found' });
@@ -69,29 +88,22 @@ app.get('/api/products/:slug', async (req, res) => {
 
 app.get('/api/shop-data', async (req, res) => {
   try {
+    const brands = await prisma.brand.findMany({
+      include: {
+        products: {
+          include: { variants: true }
+        }
+      },
+      orderBy: { name: 'asc' }
+    });
+
     const categories = await prisma.category.findMany({
       orderBy: { name: 'asc' }
     });
-    
-    const products = await prisma.product.findMany({
-      include: {
-        variants: true
-      }
-    });
-
-    const productsByCategory: Record<string, any[]> = {};
-    categories.forEach(cat => {
-      productsByCategory[cat.id] = products
-        .filter(p => p.category_id === cat.id)
-        .map(p => ({
-          ...p,
-          variant: p.variants[0] // Just take the first variant for the shop display
-        }));
-    });
 
     res.json({
-      categories,
-      productsByCategory
+      brands,
+      categories
     });
   } catch (error) {
     console.error(error);
