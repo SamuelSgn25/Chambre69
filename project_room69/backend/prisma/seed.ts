@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 
 const prisma = new PrismaClient();
 
@@ -53,12 +54,41 @@ async function main() {
           const relativePath = path.relative(ROOT_PATH, file).replace(/\\/g, '/');
           const fileName = path.basename(file, path.extname(file));
           
+          // Use a hash of the relative path to ensure unique slugs
+          const hash = crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6);
+          const uniqueSlug = `${brandName.toLowerCase().replace(/\s+/g, '-')}-${subcategoryName.toLowerCase().replace(/\s+/g, '-')}-${fileName.toLowerCase().replace(/\s+/g, '-')}-${hash}`;
+          
+          try {
+            await prisma.product.create({
+              data: {
+                name: fileName,
+                slug: uniqueSlug,
+                brand_id: brand.id,
+                subcategory: subcategoryName,
+                category_id: defaultCategory.id,
+                image_url: `http://localhost:5000/images/${relativePath}`,
+                variants: {
+                  create: [{ color: 'Standard', sizes: ['S', 'M', 'L'] }]
+                }
+              }
+            });
+          } catch (err) {
+            console.error(`Failed to create product for ${relativePath}:`, err);
+          }
+        }
+      } else if (subdir.isFile() && isImage(subdir.name)) {
+        // Image directly in brand folder
+        const relativePath = path.relative(ROOT_PATH, path.join(brandPath, subdir.name)).replace(/\\/g, '/');
+        const fileName = path.basename(subdir.name, path.extname(subdir.name));
+        const hash = crypto.createHash('md5').update(relativePath).digest('hex').substring(0, 6);
+        const uniqueSlug = `${brandName.toLowerCase().replace(/\s+/g, '-')}-${fileName.toLowerCase().replace(/\s+/g, '-')}-${hash}`;
+
+        try {
           await prisma.product.create({
             data: {
               name: fileName,
-              slug: `${brandName.toLowerCase().replace(/\s+/g, '-')}-${subcategoryName.toLowerCase().replace(/\s+/g, '-')}-${fileName.toLowerCase().replace(/\s+/g, '-')}`,
+              slug: uniqueSlug,
               brand_id: brand.id,
-              subcategory: subcategoryName,
               category_id: defaultCategory.id,
               image_url: `http://localhost:5000/images/${relativePath}`,
               variants: {
@@ -66,24 +96,9 @@ async function main() {
               }
             }
           });
+        } catch (err) {
+          console.error(`Failed to create product for ${relativePath}:`, err);
         }
-      } else if (subdir.isFile() && isImage(subdir.name)) {
-        // Image directly in brand folder
-        const relativePath = path.relative(ROOT_PATH, path.join(brandPath, subdir.name)).replace(/\\/g, '/');
-        const fileName = path.basename(subdir.name, path.extname(subdir.name));
-
-        await prisma.product.create({
-          data: {
-            name: fileName,
-            slug: `${brandName.toLowerCase().replace(/\s+/g, '-')}-${fileName.toLowerCase().replace(/\s+/g, '-')}`,
-            brand_id: brand.id,
-            category_id: defaultCategory.id,
-            image_url: `http://localhost:5000/images/${relativePath}`,
-            variants: {
-              create: [{ color: 'Standard', sizes: ['S', 'M', 'L'] }]
-            }
-          }
-        });
       }
     }
   }
