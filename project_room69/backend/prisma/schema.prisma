@@ -7,6 +7,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Brand {
+  id          String    @id @default(uuid())
+  name        String    @unique
+  description String?
+  image_url   String?
+  products    Product[]
+}
+
 model Category {
   id          String    @id @default(uuid())
   name        String
@@ -21,6 +29,9 @@ model Product {
   id                String           @id @default(uuid())
   category          Category         @relation(fields: [category_id], references: [id])
   category_id       String
+  brand             Brand?           @relation(fields: [brand_id], references: [id])
+  brand_id          String?
+  subcategory       String?
   name              String
   slug              String           @unique
   description       String?
