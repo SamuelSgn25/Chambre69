@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -8,12 +9,11 @@ import { ProductPage } from './pages/ProductPage';
 import { CartPage } from './pages/CartPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
-
 import { AuthPage } from './pages/AuthPage';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [pageData, setPageData] = useState<any>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
   const [user, setUser] = useState<any>(() => {
     const saved = localStorage.getItem('user');
     return saved ? JSON.parse(saved) : null;
@@ -21,8 +21,11 @@ function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
 
   const handleNavigate = (page: string, data?: any) => {
-    setCurrentPage(page);
-    setPageData(data || null);
+    if (page === 'product') {
+      navigate(`/product/${data.slug}`);
+    } else {
+      navigate(`/${page === 'home' ? '' : page}`);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -38,37 +41,29 @@ function App() {
     setToken(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
-    handleNavigate('home');
-  };
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage onNavigate={handleNavigate} />;
-      case 'shop':
-        return <ShopPage onNavigate={handleNavigate} />;
-      case 'product':
-        return <ProductPage slug={pageData?.slug} onNavigate={handleNavigate} />;
-      case 'cart':
-        return <CartPage onNavigate={handleNavigate} />;
-      case 'about':
-        return <AboutPage />;
-      case 'contact':
-        return <ContactPage />;
-      case 'login':
-      case 'register':
-        return <AuthPage onAuthSuccess={handleAuthSuccess} onNavigate={handleNavigate} />;
-      default:
-        return <HomePage onNavigate={handleNavigate} />;
-    }
+    navigate('/');
   };
 
   return (
     <CartProvider>
-      <div className="min-h-screen flex flex-col">
-        <Header onNavigate={handleNavigate} currentPage={currentPage} user={user} onLogout={handleLogout} />
+      <div className="min-h-screen flex flex-col bg-white">
+        <Header 
+          onNavigate={handleNavigate} 
+          currentPage={location.pathname.substring(1) || 'home'} 
+          user={user} 
+          onLogout={handleLogout} 
+        />
         <main className="flex-1">
-          {renderPage()}
+          <Routes>
+            <Route path="/" element={<HomePage onNavigate={handleNavigate} />} />
+            <Route path="/shop" element={<ShopPage onNavigate={handleNavigate} />} />
+            <Route path="/product/:slug" element={<ProductPage onNavigate={handleNavigate} />} />
+            <Route path="/cart" element={<CartPage onNavigate={handleNavigate} />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/login" element={<AuthPage onAuthSuccess={handleAuthSuccess} onNavigate={handleNavigate} />} />
+            <Route path="/register" element={<AuthPage onAuthSuccess={handleAuthSuccess} onNavigate={handleNavigate} />} />
+          </Routes>
         </main>
         <Footer onNavigate={handleNavigate} />
       </div>
