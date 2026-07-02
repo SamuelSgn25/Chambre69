@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { API_URL } from '../config';
 
 interface Product {
   id: string;
   category_id: string;
   name: string;
   slug: string;
-  description: string;
-  care_instructions: string;
+  description?: string;
+  care_instructions?: string;
   image_url: string;
   is_featured: boolean;
   created_at: string;
+  variants: ProductVariant[];
 }
 
 interface ProductVariant {
@@ -23,15 +26,34 @@ interface ProductVariant {
 }
 
 interface ProductPageProps {
-  slug: string;
   onNavigate: (page: string) => void;
 }
 
-export const ProductPage = ({ slug, onNavigate }: ProductPageProps) => {
+export const ProductPage = ({ onNavigate }: ProductPageProps) => {
+  const { slug } = useParams<{ slug: string }>();
   const [product, setProduct] = useState<Product | null>(null);
   const [variant, setVariant] = useState<ProductVariant | null>(null);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const { addToCart } = useCart();
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      if (!slug) return;
+      try {
+        const response = await fetch(`${API_URL}/products/${slug}`);
+        if (!response.ok) throw new Error('Product not found');
+        const data = await response.json();
+        setProduct(data);
+        if (data.variants && data.variants.length > 0) {
+          setVariant(data.variants[0]);
+          setSelectedSize(data.variants[0].sizes[0] || '');
+        }
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      }
+    };
+    fetchProduct();
+  }, [slug]);
 
   const handleAddToCart = () => {
     if (product && variant && selectedSize) {
@@ -106,14 +128,14 @@ export const ProductPage = ({ slug, onNavigate }: ProductPageProps) => {
             <div className="mb-6">
               <h3 className="text-sm font-medium text-gray-900 mb-2">Description</h3>
               <p className="text-gray-700 leading-relaxed">
-                {product.description}
+                {product.description || 'Description du produit bientôt disponible.'}
               </p>
             </div>
 
             <div className="mb-8">
               <h3 className="text-sm font-medium text-gray-900 mb-2">Entretien</h3>
               <p className="text-gray-700 text-sm leading-relaxed">
-                {product.care_instructions}
+                {product.care_instructions || 'Informations d’entretien non disponibles.'}
               </p>
             </div>
 
