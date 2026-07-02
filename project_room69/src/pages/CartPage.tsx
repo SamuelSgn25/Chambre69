@@ -3,12 +3,19 @@ import { MessageCircle, Trash2, Minus, Plus } from 'lucide-react';
 
 interface CartPageProps {
   onNavigate: (page: string) => void;
+  user: any;
 }
 
-export const CartPage = ({ onNavigate }: CartPageProps) => {
+export const CartPage = ({ onNavigate, user }: CartPageProps) => {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
+  const isLoggedIn = Boolean(user);
 
   const handleWhatsAppCheckout = () => {
+    if (!isLoggedIn) {
+      onNavigate('login');
+      return;
+    }
+
     let message = 'Bonjour, je souhaite commander les articles suivants :\n\n';
 
     cart.forEach((item, index) => {
@@ -114,10 +121,10 @@ export const CartPage = ({ onNavigate }: CartPageProps) => {
 
           <button
             onClick={handleWhatsAppCheckout}
-            className="w-full bg-[#25D366] text-white px-8 py-4 text-sm tracking-wide hover:bg-[#20BD5A] transition-colors inline-flex items-center justify-center gap-2"
+            className={`w-full px-8 py-4 text-sm tracking-wide inline-flex items-center justify-center gap-2 transition-colors ${isLoggedIn ? 'bg-[#25D366] text-white hover:bg-[#20BD5A]' : 'bg-[#111111] text-white hover:bg-[#333333]'}`}
           >
             <MessageCircle className="h-5 w-5" />
-            Commander tout via WhatsApp
+            {isLoggedIn ? 'Commander tout via WhatsApp' : 'Connectez-vous pour commander'}
           </button>
 
           <button
