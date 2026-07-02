@@ -20,14 +20,14 @@ jobs:
         cache: 'npm'
 
     - name: Install Frontend Dependencies
-      run: npm install
+      run: npm ci
 
     - name: Build Frontend
       run: npm run build
 
     - name: Install Backend Dependencies
       working-directory: ./backend
-      run: npm install
+      run: npm ci
 
     - name: Build Backend
       working-directory: ./backend
@@ -36,3 +36,7 @@ jobs:
     - name: Prisma Generate
       working-directory: ./backend
       run: npx prisma generate
+
+    - name: Validate Backend Seed Script
+      working-directory: ./backend
+      run: node --version && npx ts-node prisma/seed.ts --help
