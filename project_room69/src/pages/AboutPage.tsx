@@ -78,7 +78,7 @@ export const AboutPage = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="Chambre69\project_room69\src\assets\img_btq.jpeg"
+                    src="../assets/img_btq.jpeg"
                     alt="Boutique Chambre 69"
                     className="rounded-2xl shadow-2xl w-full object-cover"
                   />
