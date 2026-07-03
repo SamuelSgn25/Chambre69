@@ -44,7 +44,7 @@ const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { 
   
   const handleWhatsApp = () => {
     const message = encodeURIComponent(`Bonjour Chambre 69, je souhaite commander l'article : ${product.name} (Marque: ${product.brand_id || ''})`);
-    window.open(`https://wa.me/22900000000?text=${message}`, '_blank');
+    window.open(`https://wa.me/221787040505?text=${message}`, '_blank');
   };
 
   return (
@@ -54,16 +54,16 @@ const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { 
           <X className="w-5 h-5" />
         </button>
         
-        <div className="md:w-3/5 h-80 md:h-auto overflow-hidden bg-[#FAFAFA] relative">
-          <img src={product.image_url} alt={product.name} className="w-full h-full object-contain p-12 transition-transform duration-[3s] hover:scale-110" />
+        <div className="w-full md:w-3/5 h-64 sm:h-80 md:h-auto overflow-hidden bg-[#FAFAFA] relative">
+          <img src={product.image_url} alt={product.name} className="w-full h-full object-contain p-6 sm:p-12 transition-transform duration-[3s] hover:scale-110" />
           <div className="absolute top-12 left-12">
             <span className="text-[10px] font-black text-[#C9A96E] uppercase tracking-[0.5em]">{product.collection || 'Exclusivité'}</span>
           </div>
         </div>
         
-        <div className="md:w-2/5 p-12 md:p-16 overflow-y-auto bg-white flex flex-col">
+          <div className="w-full md:w-2/5 p-6 sm:p-12 md:p-16 overflow-y-auto bg-white flex flex-col">
           <div className="mb-auto">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-8 leading-tight tracking-tighter">{product.name}</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-8 leading-tight tracking-tighter">{product.name}</h2>
             
             <div className="space-y-12 mb-12">
               <div className="group">
@@ -82,7 +82,7 @@ const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { 
                   </h4>
                   <div className="flex flex-wrap gap-3">
                     {variant.sizes.map(s => (
-                      <span key={s} className="min-w-[40px] text-center text-[11px] font-bold text-gray-900 border border-gray-100 px-4 py-2 rounded-xl bg-gray-50/50">
+                      <span key={s} className="min-w-[36px] sm:min-w-[40px] text-center text-[11px] font-bold text-gray-900 border border-gray-100 px-3 sm:px-4 py-2 rounded-xl bg-gray-50/50">
                         {s}
                       </span>
                     ))}
@@ -104,13 +104,13 @@ const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { 
           <div className="flex flex-col gap-4 mt-8">
             <button
               onClick={() => { onAddToCart(product, variant as ProductVariant); onClose(); }}
-              className="w-full bg-gray-900 text-white text-[11px] font-black uppercase tracking-[0.3em] py-6 rounded-2xl hover:bg-[#C9A96E] transition-all shadow-2xl"
+              className="w-full bg-gray-900 text-white text-[11px] font-black uppercase tracking-[0.3em] py-4 sm:py-6 rounded-2xl hover:bg-[#C9A96E] transition-all shadow-2xl"
             >
               Ajouter au Panier
             </button>
             <button
               onClick={handleWhatsApp}
-              className="w-full bg-white border border-gray-100 text-gray-900 text-[11px] font-black uppercase tracking-[0.3em] py-6 rounded-2xl hover:border-[#25D366] hover:text-[#25D366] transition-all flex items-center justify-center gap-3"
+              className="w-full bg-white border border-gray-100 text-gray-900 text-[11px] font-black uppercase tracking-[0.3em] py-4 sm:py-6 rounded-2xl hover:border-[#25D366] hover:text-[#25D366] transition-all flex items-center justify-center gap-3"
             >
               <MessageCircle className="w-5 h-5" />
               Commander sur WhatsApp
@@ -223,7 +223,7 @@ export const ShopPage = ({ onNavigate }: ShopPageProps) => {
           {/* Titre principal */}
           <div className="text-center mb-32 group">
             <p className="text-[10px] font-black text-[#C9A96E] uppercase tracking-[0.6em] mb-6 animate-in fade-in slide-in-from-bottom-2">Maison de Lingerie</p>
-            <h1 className="text-6xl md:text-9xl font-bold font-serif text-gray-900 mb-10 tracking-tighter leading-none transition-colors duration-1000 hover:text-[#C9A96E] cursor-default">
+            <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold font-serif text-gray-900 mb-10 tracking-tighter leading-none transition-colors duration-1000 hover:text-[#C9A96E] cursor-default">
               CHAMBRE 69
             </h1>
             <div className="w-32 h-1 bg-black mx-auto mb-10 transition-all duration-700 group-hover:w-64 group-hover:bg-[#C9A96E] rounded-full"></div>
@@ -241,7 +241,7 @@ export const ShopPage = ({ onNavigate }: ShopPageProps) => {
                   onClick={() => scrollToBrand(brand.id)}
                   className="group cursor-pointer flex flex-col items-center gap-8"
                 >
-                  <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
+                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
                     <img
                       src={brand.image_url || 'https://via.placeholder.com/150'}
                       alt={brand.name}
@@ -353,7 +353,7 @@ export const ShopPage = ({ onNavigate }: ShopPageProps) => {
                     <div className="relative">
                       <div
                         ref={(el) => { scrollContainerRefs.current[scrollKey] = el; }}
-                        className="flex overflow-x-auto gap-16 pb-16 px-4 hide-scrollbar"
+                        className="flex overflow-x-auto gap-8 sm:gap-16 pb-16 px-2 sm:px-4 hide-scrollbar"
                         style={{ scrollSnapType: 'x mandatory' }}
                       >
                         {finalProducts.map((item, idx) => {
@@ -362,16 +362,15 @@ export const ShopPage = ({ onNavigate }: ShopPageProps) => {
                           return (
                             <div
                               key={item.id}
-                              className={`flex-shrink-0 transition-all duration-1000 ease-in-out scroll-snap-align-center ${
+                              className={`flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] transition-all duration-1000 ease-in-out scroll-snap-align-center ${
                                 isActive ? 'scale-100' : 'scale-95'
                               }`}
-                              style={{ width: '340px' }}
                             >
                               <div
                                 className={`relative overflow-hidden rounded-[3rem] group cursor-pointer shadow-2xl ${
                                   isEven ? 'bg-gray-50' : 'bg-white/5'
                                 }`}
-                                style={{ height: '520px' }}
+                                className={`relative overflow-hidden rounded-[3rem] group cursor-pointer shadow-2xl ${isEven ? 'bg-gray-50' : 'bg-white/5'} h-[420px] sm:h-[480px] md:h-[520px]`}
                               >
                                 <img
                                   src={item.image_url}
@@ -382,20 +381,20 @@ export const ShopPage = ({ onNavigate }: ShopPageProps) => {
                                 <div className="absolute inset-0 bg-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col items-center justify-center gap-5 backdrop-blur-[2px] bg-black/5">
                                   <button
                                     onClick={(e) => { e.stopPropagation(); handleAddToCart(item, variant); }}
-                                    className="bg-[#C9A96E] text-white text-[11px] font-black uppercase tracking-[0.3em] px-10 py-5 rounded-2xl hover:bg-black transition-all shadow-2xl transform translate-y-6 group-hover:translate-y-0 duration-700"
+                                    className="bg-[#C9A96E] text-white text-[11px] font-black uppercase tracking-[0.3em] px-6 sm:px-10 py-3 sm:py-5 rounded-2xl hover:bg-black transition-all shadow-2xl transform translate-y-6 group-hover:translate-y-0 duration-700"
                                   >
                                     Panier
                                   </button>
                                   <button
                                     onClick={(e) => { e.stopPropagation(); setSelectedProduct(item); }}
-                                    className="bg-white text-black text-[11px] font-black uppercase tracking-[0.3em] px-10 py-5 rounded-2xl hover:bg-[#C9A96E] hover:text-white transition-all shadow-2xl transform translate-y-6 group-hover:translate-y-0 duration-1000"
+                                    className="bg-white text-black text-[11px] font-black uppercase tracking-[0.3em] px-6 sm:px-10 py-3 sm:py-5 rounded-2xl hover:bg-[#C9A96E] hover:text-white transition-all shadow-2xl transform translate-y-6 group-hover:translate-y-0 duration-1000"
                                   >
                                     Détails
                                   </button>
                                 </div>
                               </div>
-                              <div className={`mt-12 text-center transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}>
-                                <h5 className={`text-3xl font-serif font-bold mb-4 ${isEven ? 'text-gray-900' : 'text-white'}`}>{item.name}</h5>
+                              <div className={`mt-8 sm:mt-12 text-center transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}>
+                                <h5 className={`text-2xl sm:text-3xl font-serif font-bold mb-4 ${isEven ? 'text-gray-900' : 'text-white'}`}>{item.name}</h5>
                                 <p className="text-[10px] text-[#C9A96E] font-black uppercase tracking-[0.5em]">{selectedCol || 'Collection Exclusive'}</p>
                               </div>
                             </div>

@@ -13,7 +13,7 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
   const totalItems = getTotalItems();
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/22900000000', '_blank');
+    window.open('https://wa.me/221787040505', '_blank');
   };
 
   const handleSearch = (e: React.FormEvent) => {

@@ -335,7 +335,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
           <div className="w-1/2 bg-black border-2 border-[#C9A96E] rounded-2xl shadow-2xl flex items-start justify-center p-8">
             <div className="text-center max-w-lg mx-auto pt-12 md:pt-16 breathe">
               <h1 className="font-bold text-5xl md:text-7xl tracking-tight text-[#C9A96E] mb-6 leading-tight">
-                Révélez votre<br />pouvoir de séduction
+                Découvrez l'univers de<br />Chambre69
               </h1>
               <p className="text-lg md:text-xl text-[#C9A96E]/80 mb-8 font-light">
                 Découvrez notre collection de lingerie haut de gamme, conçue pour sublimer votre beauté naturelle

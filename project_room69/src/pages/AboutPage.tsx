@@ -78,7 +78,7 @@ export const AboutPage = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="https://chambre69.sn/wp-content/uploads/2024/12/IMG-20241209-WA0022-e1733824149147-294x300.jpg"
+                    src="\\wsl.localhost\Ubuntu\home\samuelsgn\Chambre69\project_room69\src\assets\img_btq.jpeg"
                     alt="Boutique Chambre 69"
                     className="rounded-2xl shadow-2xl w-full object-cover"
                   />

@@ -63,7 +63,7 @@ export const ProductPage = ({ onNavigate }: ProductPageProps) => {
 
   const handleWhatsAppOrder = () => {
     const message = `Bonjour, je suis intéressé par ce produit :\n\n${product?.name}\nCouleur: ${variant?.color}\nTaille: ${selectedSize}`;
-    window.open(`https://wa.me/33123456789?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/221787040505?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   if (!product || !variant) {
