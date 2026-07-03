@@ -25,34 +25,50 @@ Ce guide décrit la procédure complète pour déployer le projet avec :
 ### Variables d’environnement Neon
 - `DATABASE_URL`: URL de connexion PostgreSQL Neon
 
-Exemple :
-```env
-DATABASE_URL="postgresql://user:password@ep-example-12345.us-east-1.aws.neon.tech:5432/neondb?sslmode=require"
-```
-
 ---
 
-## 3. Préparer le backend
+## 5. Déployer sur Vercel (frontend + backend)
 
-1. Ouvrez le dossier `project_room69/backend`.
-2. Installez les dépendances :
-```bash
-npm install
-```
-3. Assurez-vous que le fichier `backend/package.json` contient :
-   - `express`, `cors`, `dotenv`, `@prisma/client`, `mammoth`
-4. Vérifiez que le fichier `backend/prisma/schema.prisma` utilise `env("DATABASE_URL")`.
+Le dépôt a maintenant un dossier `backend` à la racine et `project_room69` contient uniquement le frontend. Deux approches possibles :
 
-### Initialiser la base de données Prisma
+Option A — Projets Vercel séparés (recommandé, simple)
+- Créez un projet Vercel pour le frontend en pointant le `Root Directory` sur `project_room69`.
+  - Build Command: `npm install && npm run build`
+  - Output Directory: `dist`
+  - Définissez `VITE_API_URL` comme l'URL publique de votre backend (ex. Render, autre Vercel).
 
-1. Créez la migration locale :
-```bash
-npx prisma migrate dev --name init
+- Créez un projet Vercel distinct pour le backend en pointant le `Root Directory` sur `backend`.
+  - Build Command: `npm install && npm run build`
+  - Start / Runtime: configurez pour Node (ou laissez Vercel détecter une API Serverless selon votre code).
+  - Variables d'environnement : `DATABASE_URL`, `JWT_SECRET`, etc.
+
+- Option B — Monorepo (un seul projet Vercel avec `vercel.json` au repo root)
+- Le fichier `vercel.json` est placé à la racine du dépôt et décrit les deux services `frontend` et `backend`.
+- Configuration active :
+  - service `frontend` : root `project_room69`, framework `vite`
+  - service `backend` : root `backend`, framework `node`
+  - rewrite : `/api/*` → `backend`
+
+- Avantages : Vercel gère les deux services et proxy `/api` vers le backend automatiquement.
+
+Variables d’environnement Vercel communes
+- `DATABASE_URL` : URL PostgreSQL (Neon)
+- `JWT_SECRET` : clé JWT
+- `VITE_API_URL` : URL publique de l'API (si frontend et backend sont sur des projets séparés)
+
+Exemples :
+```env
+# si backend sur Render ou projet séparé
+VITE_API_URL="https://backend-chambre69.onrender.com/api"
+
+# si monorepo et proxy Vercel (Option B), vous pouvez laisser VITE_API_URL="/api"
+VITE_API_URL="/api"
 ```
-2. Générer le client Prisma :
-```bash
-npx prisma generate
-```
+
+Notes
+- Si vous choisissez l'Option B (monorepo), assurez-vous que `vercel.json` est lisible depuis la racine du dépôt et que Vercel a accès à `backend` (ne déployez pas uniquement le sous-dossier `project_room69`).
+- Si vous gardez l'Option A (projets séparés), mettez à jour `VITE_API_URL` dans les variables d'environnement Vercel du projet frontend.
+
 3. Exécuter le seed pour importer les produits depuis le dossier racine :
 ```bash
 npm run prisma:seed

@@ -1,0 +1,29 @@
+{
+  "services": {
+    "frontend": {
+      "root": "project_room69",
+      "framework": "vite"
+    },
+    "backend": {
+      "root": "backend",
+      "framework": "node"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "backend",
+        "path": "/api/$1"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    }
+  ]
+}
