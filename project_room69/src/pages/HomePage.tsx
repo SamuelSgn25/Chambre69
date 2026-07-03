@@ -416,7 +416,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
                   <img src="https://cdn.shopify.com/s/files/1/0870/4150/7665/files/BLOG_1.png?v=1763115011" alt="Pièce sensuelle 2" className="w-full h-64 object-cover" />
                 </div>
                 <div className="flex-1 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <img src="https://dorina.fr/cdn/shop/files/3_ORIGINS_FXBR0046LA176-BK0001_FXBF0080LA176-BK0001_FXBS0021LA176-BK0001_CP-31A.jpg?v=1754697757&width=1000" alt="Pièce sensuelle 3" className="w-full h-64 object-cover" />
+                  <img src="https://iris-lingerie.com/cdn/shop/files/fanny_ok2-min.jpg?v=1742942692" alt="Pièce sensuelle 3" className="w-full h-64 object-cover" />
                 </div>
               </div>
             </div>
