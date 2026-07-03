@@ -69,6 +69,38 @@ Notes
 - Si vous choisissez l'Option B (monorepo), assurez-vous que `vercel.json` est lisible depuis la racine du dépôt et que Vercel a accès à `backend` (ne déployez pas uniquement le sous-dossier `project_room69`).
 - Si vous gardez l'Option A (projets séparés), mettez à jour `VITE_API_URL` dans les variables d'environnement Vercel du projet frontend.
 
+### Réimporter le dépôt à la racine sur Vercel (monorepo)
+
+Si vous avez importé `project_room69` comme `Root Directory`, Vercel refusera toute configuration qui tente d'accéder au parent (ex. `../backend`). Pour déployer correctement en monorepo depuis la racine :
+
+1. Nouveau projet (import depuis GitHub)
+  - Allez sur Vercel → `New Project` → `Import Git Repository` → sélectionnez `Chambre69`.
+  - Dans la configuration du projet, laissez `Root Directory` vide (racine `/`). Ne sélectionnez pas `project_room69`.
+  - Vérifiez que `/vercel.json` existe à la racine du repo (il doit décrire `frontend` et `backend`).
+  - Définissez les variables d'environnement (`DATABASE_URL`, `JWT_SECRET`, etc.).
+  - Déployez.
+
+2. Projet existant (changer Root Directory)
+  - Ouvrez le projet sur Vercel → `Settings` → `General` → `Root Directory` : changez-le pour la racine (`/`). Si la modification est bloquée, supprimez le projet et réimportez en sélectionnant la racine.
+
+3. Commandes Vercel CLI utiles (exécutez-les depuis la racine du repo)
+
+```bash
+# Se connecter
+vercel login
+
+# Déployer en production depuis la racine
+vercel --prod
+
+# Ajouter une variable d'environnement en production
+vercel env add DATABASE_URL production
+
+# Lister les variables d'environnement
+vercel env ls
+```
+
+Remarque : après import à la racine, Vercel lit `/vercel.json` (sans `..`) et crée les services `frontend` et `backend`. La réécriture `/api/*` sera appliquée côté Vercel vers le service `backend`.
+
 3. Exécuter le seed pour importer les produits depuis le dossier racine :
 ```bash
 npm run prisma:seed
