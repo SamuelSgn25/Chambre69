@@ -5,10 +5,24 @@ import path from 'path';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import fs from 'fs';
+import mammoth from 'mammoth';
+import crypto from 'crypto';
 
 dotenv.config();
 
-const prisma = new PrismaClient();
+// Initialize Prisma only when DATABASE_URL is provided
+let prisma: any = undefined;
+try {
+  if (process.env.DATABASE_URL) {
+    prisma = new PrismaClient();
+  } else {
+    console.warn('DATABASE_URL not set — Prisma will not be initialized. Filesystem fallback endpoints are available.');
+  }
+} catch (e) {
+  console.warn('Prisma initialization failed, continuing without DB:', String(e));
+  prisma = undefined;
+}
 const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'chambre69_secret_key_luxury';
@@ -19,6 +33,95 @@ app.use(express.json());
 // Servir les images statiques depuis la racine du dépôt
 const ROOT_PATH = path.join(__dirname, '../../..');
 app.use('/images', express.static(ROOT_PATH));
+
+// --- Filesystem helper endpoint (fallback when DB is not configured) ---
+function isImage(filename: string) {
+  const ext = path.extname(filename).toLowerCase();
+  return ['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext);
+}
+
+async function findFirstDocxRecursively(dir: string): Promise<string | undefined> {
+  if (!fs.existsSync(dir)) return undefined;
+  const items = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of items) {
+    if (item.isFile()) {
+      const ext = path.extname(item.name).toLowerCase();
+      if (ext === '.docx' && !item.name.startsWith('~$')) return path.join(dir, item.name);
+    }
+  }
+  for (const item of items) {
+    if (item.isDirectory()) {
+      const found = await findFirstDocxRecursively(path.join(dir, item.name));
+      if (found) return found;
+    }
+  }
+  return undefined;
+}
+
+async function extractDocxText(docxPath: string): Promise<string | undefined> {
+  try {
+    const result = await mammoth.extractRawText({ path: docxPath });
+    return result.value.trim().replace(/\s+/g, ' ') || undefined;
+  } catch (err) {
+    return undefined;
+  }
+}
+
+const EXCLUDED_FOLDERS = ['.git', 'project_room69', 'node_modules', 'backend', '.gemini', 'artifacts', '.vscode'];
+
+function cryptoRandom(len = 6) {
+  return crypto.randomBytes(Math.max(1, Math.ceil(len/2))).toString('hex').substring(0, len);
+}
+
+app.get('/api/shop-data-fs', async (req, res) => {
+  try {
+    const rootItems = fs.readdirSync(ROOT_PATH, { withFileTypes: true });
+    const brands: any[] = [];
+    for (const item of rootItems) {
+      if (!item.isDirectory()) continue;
+      if (item.name.startsWith('.') || EXCLUDED_FOLDERS.includes(item.name.trim())) continue;
+      const brandName = item.name.trim();
+      const brandPath = path.join(ROOT_PATH, item.name);
+      const brandDoc = await findFirstDocxRecursively(brandPath);
+      const brandDescription = brandDoc ? await extractDocxText(brandDoc) : `Maison ${brandName}`;
+
+      const products: any[] = [];
+      const walk = (dir: string) => {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const e of entries) {
+          const full = path.join(dir, e.name);
+          if (e.isDirectory()) walk(full);
+          else if (e.isFile() && isImage(e.name)) {
+            const rel = path.relative(ROOT_PATH, full).split(path.sep).map(encodeURIComponent).join('/');
+            products.push({
+              id: `p-${cryptoRandom(6)}`,
+              name: path.basename(e.name, path.extname(e.name)),
+              slug: `p-${cryptoRandom(6)}`,
+              description: undefined,
+              care_instructions: undefined,
+              image_url: `http://localhost:${PORT}/images/${rel}`,
+              variants: [{ id: `v-${cryptoRandom(6)}`, color: 'Standard', sizes: ['S','M','L'], product_id: '' }]
+            });
+          }
+        }
+      };
+      walk(brandPath);
+
+      const brandObj = {
+        id: brandName,
+        name: brandName,
+        description: brandDescription,
+        image_url: products.length > 0 ? products[0].image_url : undefined,
+        products
+      };
+      brands.push(brandObj);
+    }
+    res.json({ brands });
+  } catch (error) {
+    console.error('Error building shop-data-fs:', error);
+    res.status(500).json({ error: 'Failed to build shop data from filesystem' });
+  }
+});
 
 // --- ROUTES AUTHENTIFICATION ---
 

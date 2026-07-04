@@ -137,8 +137,23 @@ export const ShopPage = ({}: ShopPageProps) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${API_URL}/shop-data`);
-        const data = await response.json();
+        // Try primary API then filesystem fallback
+        const candidates = [`${API_URL}/shop-data`, `${API_URL.replace(/:\\d+/, ':5001')}/shop-data-fs`, `${API_URL}/shop-data-fs`];
+        let data: any = null;
+        for (const url of candidates) {
+          try {
+            const res = await fetch(url);
+            if (!res.ok) continue;
+            data = await res.json();
+            if (data && data.brands && data.brands.length > 0) break;
+          } catch (err) {
+            continue;
+          }
+        }
+        if (!data || !data.brands) {
+          setBrands([]);
+          return;
+        }
         const cleanBrands = data.brands.filter((b: Brand) => 
           !['backend', 'project_room69', 'node_modules', 'project', '.git', '.vscode'].includes(b.name.toLowerCase())
         );
