@@ -1,5 +1,6 @@
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
-import { Heart, Feather, Shield, Sparkles, Users, Target } from 'lucide-react';
+import { Heart, Feather, Shield, Sparkles, Target } from 'lucide-react';
+import boutiqueImage from '../assets/img_btq.jpeg';
 
 export const AboutPage = () => {
   return (
@@ -78,7 +79,7 @@ export const AboutPage = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="../assets/img_btq.jpeg"
+                    src={boutiqueImage}
                     alt="Boutique Chambre 69"
                     className="rounded-2xl shadow-2xl w-full object-cover"
                   />

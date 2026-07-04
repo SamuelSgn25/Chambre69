@@ -42,6 +42,15 @@ async function main() {
       await scanAndCreateProducts(brandPath, brand.id, defaultCategory.id);
 
       // Representative Image for the Brand Bubble
+      const brandDescriptionFile = await findFirstDocxRecursively(brandPath);
+      const brandDescription = brandDescriptionFile ? await extractDocxText(brandDescriptionFile) : undefined;
+      if (brandDescription) {
+        await prisma.brand.update({
+          where: { id: brand.id },
+          data: { description: brandDescription }
+        });
+      }
+
       const firstProduct = await prisma.product.findFirst({
         where: { brand_id: brand.id },
         select: { image_url: true }
@@ -82,6 +91,39 @@ async function scanAndCreateProducts(dir: string, brandId: string, categoryId: s
   }
 }
 
+async function findNearestDescriptionFile(directory: string): Promise<string | undefined> {
+  if (!fs.existsSync(directory)) return undefined;
+  const items = fs.readdirSync(directory, { withFileTypes: true });
+  const docxFile = items.find((item) => item.isFile() && isDescriptionFile(item.name));
+  if (docxFile) {
+    return path.join(directory, docxFile.name);
+  }
+
+  const parentDirectory = path.dirname(directory);
+  if (parentDirectory !== directory && parentDirectory.startsWith(ROOT_PATH)) {
+    return findNearestDescriptionFile(parentDirectory);
+  }
+
+  return undefined;
+}
+
+async function findFirstDocxRecursively(dir: string): Promise<string | undefined> {
+  if (!fs.existsSync(dir)) return undefined;
+  const items = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of items) {
+    if (item.isFile() && isDescriptionFile(item.name)) {
+      return path.join(dir, item.name);
+    }
+  }
+  for (const item of items) {
+    if (item.isDirectory()) {
+      const found = await findFirstDocxRecursively(path.join(dir, item.name));
+      if (found) return found;
+    }
+  }
+  return undefined;
+}
+
 async function createProduct(filePath: string, brandId: string, categoryId: string, subcategory?: string, collection?: string) {
   const relativePath = path.relative(ROOT_PATH, filePath).replace(/\\/g, '/');
   const fileName = path.basename(filePath, path.extname(filePath));
@@ -90,7 +132,7 @@ async function createProduct(filePath: string, brandId: string, categoryId: stri
   const productDir = path.dirname(filePath);
   let descriptionText = descriptionCache.get(productDir);
   if (descriptionText === undefined) {
-    const docxPath = findDescriptionFile(productDir);
+    const docxPath = await findNearestDescriptionFile(productDir);
     descriptionText = docxPath ? await extractDocxText(docxPath) : undefined;
     descriptionCache.set(productDir, descriptionText);
   }
@@ -144,6 +186,11 @@ async function extractDocxText(docxPath: string): Promise<string | undefined> {
     console.warn(`  [WARN] Impossible de parser ${docxPath}:`, error);
     return undefined;
   }
+}
+
+function isDescriptionFile(filename: string): boolean {
+  const ext = path.extname(filename).toLowerCase();
+  return ext === '.docx' && !filename.startsWith('~$');
 }
 
 function findDescriptionFile(directory: string): string | undefined {

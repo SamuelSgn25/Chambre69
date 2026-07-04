@@ -5,8 +5,8 @@ interface Product {
   category_id: string;
   name: string;
   slug: string;
-  description: string;
-  care_instructions: string;
+  description?: string;
+  care_instructions?: string;
   image_url: string;
   is_featured: boolean;
   created_at: string;

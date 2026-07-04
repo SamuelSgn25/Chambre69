@@ -1,5 +1,6 @@
 import { Instagram, Mail, MessageCircle } from 'lucide-react';
 import { RevealOnScroll } from './Animations';
+import logoPreview from '../assets/LOGO-removebg-preview.png';
 
 const TikTokIcon = () => (
   <svg
@@ -31,7 +32,7 @@ export const Footer = ({ onNavigate }: FooterProps) => {
             <div className="text-center md:text-left">
               <div className="inline-block breathe">
                 <img
-                  src="src/assets/LOGO-removebg-preview.png"
+                  src={logoPreview}
                   alt="Chambre 69"
                   className="h-30 w-auto mx-auto md:mx-0"
                 />

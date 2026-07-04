@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { Header } from './components/Header';
@@ -18,7 +18,6 @@ function App() {
     const saved = localStorage.getItem('user');
     return saved ? JSON.parse(saved) : null;
   });
-  const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
 
   const handleNavigate = (page: string, data?: any) => {
     if (page === 'product') {
@@ -31,14 +30,12 @@ function App() {
 
   const handleAuthSuccess = (userData: any, userToken: string) => {
     setUser(userData);
-    setToken(userToken);
     localStorage.setItem('user', JSON.stringify(userData));
     localStorage.setItem('token', userToken);
   };
 
   const handleLogout = () => {
     setUser(null);
-    setToken(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     navigate('/');

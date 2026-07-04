@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useCart } from '../context/CartContext';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
 import { API_URL } from '../config';
-import { X, ShoppingBag, MessageCircle, ChevronRight, Info, Ruler, Sparkles } from 'lucide-react';
+import { X, MessageCircle, Info, Ruler, Sparkles } from 'lucide-react';
 
 interface Product {
   id: string;
@@ -122,7 +122,7 @@ const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { 
   );
 };
 
-export const ShopPage = ({ onNavigate }: ShopPageProps) => {
+export const ShopPage = ({}: ShopPageProps) => {
   const [brands, setBrands] = useState<Brand[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedSubcategories, setSelectedSubcategories] = useState<Record<string, string>>({});
@@ -287,11 +287,16 @@ export const ShopPage = ({ onNavigate }: ShopPageProps) => {
                 >
                   {/* Header de Marque */}
                   <div className="text-center mb-24 px-4">
-                    <h2 className={`text-6xl md:text-8xl font-serif font-bold mb-16 tracking-tighter transition-colors duration-1000 ${
+                    <h2 className={`text-6xl md:text-8xl font-serif font-bold mb-8 tracking-tighter transition-colors duration-1000 ${
                       isEven ? 'text-gray-900 hover:text-[#C9A96E]' : 'text-white hover:text-[#C9A96E]'
                     }`}>
                       {brand.name}
                     </h2>
+                    <div className={`max-w-4xl mx-auto mb-12 ${isEven ? 'text-gray-600' : 'text-gray-300'}`}>
+                      <p className="text-base sm:text-lg leading-relaxed">
+                        {brand.description || 'Découvrez une collection raffinée de pièces qui célèbrent la féminité, le confort et l’élégance à chaque silhouette.'}
+                      </p>
+                    </div>
                     
                     {/* Sélecteur de Sous-catégories */}
                     {subcategories.length > 0 && (
@@ -367,14 +372,12 @@ export const ShopPage = ({ onNavigate }: ShopPageProps) => {
                               }`}
                             >
                               <div
-                                className={`relative overflow-hidden rounded-[3rem] group cursor-pointer shadow-2xl ${
-                                  isEven ? 'bg-gray-50' : 'bg-white/5'
-                                }`}
                                 className={`relative overflow-hidden rounded-[3rem] group cursor-pointer shadow-2xl ${isEven ? 'bg-gray-50' : 'bg-white/5'} h-[420px] sm:h-[480px] md:h-[520px]`}
                               >
                                 <img
                                   src={item.image_url}
                                   alt={item.name}
+                                  loading="lazy"
                                   className="w-full h-full object-cover transition-all duration-[2s] group-hover:scale-110"
                                 />
                                 

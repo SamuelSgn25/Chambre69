@@ -1,5 +1,6 @@
-import { Search, User, ShoppingBag, MessageCircle, Eye, EyeOff } from 'lucide-react';
+import { Search, User, ShoppingBag, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import logo from '../assets/logo-chambre69.png';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
@@ -59,7 +60,7 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
               aria-label="Accueil"
             >
               <img
-                src="src/assets/logo-chambre69.png"
+                src={logo}
                 alt="Chambre 69"
                 className="max-w-[200px] md:max-w-[260px] mx-auto h-auto transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
