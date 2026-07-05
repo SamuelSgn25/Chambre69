@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useCart } from '../context/CartContext';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
 import { API_URL } from '../config';
-import { X, MessageCircle, Info, Ruler, Sparkles } from 'lucide-react';
+import { X, MessageCircle, Info, Ruler, Sparkles, ChevronRight, LayoutGrid } from 'lucide-react';
+import shopData from '../data/shop-data.json';
 
 interface Product {
   id: string;
@@ -137,9 +138,11 @@ export const ShopPage = ({}: ShopPageProps) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         // Try primary API then filesystem fallback
-        const candidates = [`${API_URL}/shop-data`, `${API_URL.replace(/:\\d+/, ':5001')}/shop-data-fs`, `${API_URL}/shop-data-fs`];
+        const candidates = [`${API_URL}/shop-data`, `${API_URL.replace(/:\d+/, ':5001')}/shop-data-fs`, `${API_URL}/shop-data-fs`];
         let data: any = null;
+        
         for (const url of candidates) {
           try {
             const res = await fetch(url);
@@ -150,16 +153,26 @@ export const ShopPage = ({}: ShopPageProps) => {
             continue;
           }
         }
+
+        // Use local shopData if API fails or is empty
+        if (!data || !data.brands || data.brands.length === 0) {
+          console.log('Using local shop data fallback');
+          data = shopData;
+        }
+
         if (!data || !data.brands) {
           setBrands([]);
           return;
         }
+
         const cleanBrands = data.brands.filter((b: Brand) => 
-          !['backend', 'project_room69', 'node_modules', 'project', '.git', '.vscode'].includes(b.name.toLowerCase())
+          !['backend', 'project_room69', 'node_modules', 'project', '.git', '.vscode', 'scripts'].includes(b.name.toLowerCase())
         );
         setBrands(cleanBrands);
       } catch (error) {
         console.error('Error fetching shop data:', error);
+        // Final fallback
+        setBrands(shopData.brands as Brand[]);
       } finally {
         setLoading(false);
       }
