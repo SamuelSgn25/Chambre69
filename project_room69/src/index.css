@@ -103,9 +103,15 @@
   animation: gentlePulse 4s ease-in-out infinite;
 }
 
-@keyframes gentlePulse {
-  0% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
-  100% { opacity: 0.9; transform: scale(1); }
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
-.breathe { animation: gentlePulse 4s ease-in-out infinite; }
+
+.animate-progress {
+  animation: progress 3s linear forwards;
+}
