@@ -324,25 +324,27 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <FadeInOnLoad>
-        <section className="relative min-h-screen flex items-stretch overflow-hidden gap-6 md:gap-8 p-6 md:p-8">
-          <div className="w-1/2 rounded-2xl shadow-2xl overflow-hidden">
+        <section className="relative min-h-[calc(100vh-6rem)] lg:min-h-screen flex flex-col lg:flex-row items-stretch overflow-hidden gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 pt-32 lg:pt-8">
+          <div className="w-full lg:w-1/2 h-[45vh] sm:h-[55vh] lg:h-auto rounded-3xl shadow-2xl overflow-hidden relative group">
             <img
               src="https://i0.wp.com/www.youreleganceshop.com/wp-content/uploads/2025/01/ensemble-lingerie-5-pieces-sexy.png?fit=1136%2C1512&ssl=1"
               alt="Lingerie élégante"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent lg:hidden" />
           </div>
-          <div className="w-1/2 bg-black border-2 border-[#C9A96E] rounded-2xl shadow-2xl flex items-start justify-center p-8">
-            <div className="text-center max-w-lg mx-auto pt-12 md:pt-16 breathe">
-              <h1 className="font-bold text-5xl md:text-7xl tracking-tight text-[#C9A96E] mb-6 leading-tight">
+          <div className="w-full lg:w-1/2 bg-black border border-[#C9A96E]/30 lg:border-2 lg:border-[#C9A96E] rounded-3xl shadow-2xl flex items-center justify-center p-6 sm:p-10 lg:p-12 transition-all duration-500 hover:border-[#C9A96E]">
+            <div className="text-center max-w-lg mx-auto breathe">
+              <span className="text-[10px] font-black text-[#C9A96E] uppercase tracking-[0.5em] mb-4 block">Maison de Lingerie</span>
+              <h1 className="font-serif font-bold text-3xl sm:text-5xl lg:text-7xl tracking-tight text-[#C9A96E] mb-6 leading-tight">
                 Découvrez l'univers de<br />Chambre69
               </h1>
-              <p className="text-lg md:text-xl text-[#C9A96E]/80 mb-8 font-light">
+              <p className="text-sm sm:text-base lg:text-lg text-[#C9A96E]/80 mb-8 font-light leading-relaxed">
                 Découvrez notre collection de lingerie haut de gamme, conçue pour sublimer votre beauté naturelle
               </p>
               <button
                 onClick={() => onNavigate('shop')}
-                className="bg-[#C9A96E] text-black px-10 py-4 text-sm tracking-wide rounded-full shadow-lg hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 font-medium"
+                className="bg-[#C9A96E] text-black px-8 py-3.5 sm:px-10 sm:py-4 text-xs sm:text-sm tracking-widest rounded-full shadow-lg hover:bg-white hover:text-black transition-all duration-500 transform hover:scale-105 font-bold uppercase"
               >
                 Découvrir la collection
               </button>
