@@ -5037,32 +5037,6 @@
           ]
         },
         {
-          "id": "kimonos-p5",
-          "category_id": "kimonos",
-          "name": "Kimonos Item 6",
-          "slug": "kimonos-item-6",
-          "description": "Découvrez notre collection raffinée de Kimonos.",
-          "image_url": "/products/deec8959d0.jpeg",
-          "subcategory": "Ensemble kimono",
-          "collection": "Rouge bordeaux",
-          "is_featured": false,
-          "created_at": "2026-07-05T00:00:00Z",
-          "variants": [
-            {
-              "id": "v-kimonos-p5",
-              "product_id": "kimonos-p5",
-              "color": "Standard",
-              "sizes": [
-                "S",
-                "M",
-                "L",
-                "XL"
-              ],
-              "created_at": "2026-07-05T00:00:00Z"
-            }
-          ]
-        },
-        {
           "id": "kimonos-p6",
           "category_id": "kimonos",
           "name": "Kimonos Item 7",

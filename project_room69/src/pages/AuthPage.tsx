@@ -25,11 +25,16 @@ export const AuthPage = ({ onAuthSuccess, onNavigate }: AuthPageProps) => {
     const body = isLogin ? { email, password } : { email, password, name };
 
     try {
-      const response = await fetch(`${API_URL}${endpoint}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
+      let response: Response;
+      try {
+        response = await fetch(`${API_URL}${endpoint}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+      } catch {
+        throw new Error('Impossible de joindre le serveur. Veuillez vérifier votre connexion internet ou réessayer plus tard.');
+      }
 
       const data = await response.json();
       if (!response.ok) {
@@ -46,7 +51,7 @@ export const AuthPage = ({ onAuthSuccess, onNavigate }: AuthPageProps) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden px-4 font-sans pt-32 pb-20">
+    <div className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden px-4 font-sans pt-36 sm:pt-40 pb-20">
       {/* Background Decor */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#C9A96E]/10 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-gray-200 rounded-full blur-[120px]"></div>

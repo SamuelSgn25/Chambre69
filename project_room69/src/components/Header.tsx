@@ -30,12 +30,25 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-black shadow-2xl z-50 border-b border-[#C9A96E]/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Première ligne : recherche | logo | icônes */}
-        <div className="flex items-center justify-between h-24">
-          {/* Recherche */}
-          <div className="flex-1 hidden md:block">
-            <form onSubmit={handleSearch} className="relative max-w-xs">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        {/* Première ligne : [search|accueil] | logo | icônes */}
+        <div className="flex items-center h-20 sm:h-24 gap-2">
+
+          {/* Colonne gauche : bouton Accueil (mobile) ou barre de recherche (desktop) */}
+          <div className="flex items-center min-w-0 flex-shrink-0 md:flex-1">
+            {/* Accueil visible uniquement sur mobile */}
+            <button
+              onClick={() => onNavigate('home')}
+              className="md:hidden flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
+              aria-label="Accueil"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              <span className="text-[8px] font-bold uppercase tracking-widest mt-1">Accueil</span>
+            </button>
+            {/* Recherche visible uniquement sur desktop */}
+            <form onSubmit={handleSearch} className="relative max-w-xs hidden md:block w-full">
               <input
                 type="text"
                 name="search"
@@ -52,8 +65,8 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
             </form>
           </div>
 
-          {/* Logo centré */}
-          <div className="flex-1 text-center">
+          {/* Logo centré — flex-1 pour prendre l'espace disponible */}
+          <div className="flex-1 flex justify-center">
             <button
               onClick={() => onNavigate('home')}
               className="focus:outline-none cursor-pointer group"
@@ -62,13 +75,13 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
               <img
                 src={logo}
                 alt="Chambre 69"
-                className="max-w-[200px] md:max-w-[260px] mx-auto h-auto transition-transform duration-500 group-hover:scale-105"
+                className="w-[130px] sm:w-[180px] md:w-[220px] h-auto transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
                   if (parent) {
                     const h1 = document.createElement('h1');
-                    h1.className = "text-2xl font-serif font-bold text-white group-hover:text-[#C9A96E]";
+                    h1.className = "text-xl font-serif font-bold text-white";
                     h1.innerText = "CHAMBRE 69";
                     parent.appendChild(h1);
                   }
@@ -77,15 +90,18 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
             </button>
           </div>
 
-          {/* Icônes à droite */}
-          <div className="flex-1 flex items-center justify-end space-x-6">
+          {/* Icônes à droite — flex-shrink-0 pour ne jamais déborder */}
+          <div className="flex items-center justify-end gap-3 sm:gap-5 flex-shrink-0 md:flex-1">
             {user ? (
-              <div className="flex items-center gap-4">
-                <div className="flex flex-col items-end">
-                  <span className="text-[10px] font-bold text-white uppercase tracking-widest">{user.name || 'Mon Compte'}</span>
-                  <button onClick={onLogout} className="text-[8px] text-[#C9A96E] hover:text-red-500 uppercase tracking-widest">Déconnexion</button>
+              <div className="flex items-center gap-2">
+                <div className="hidden sm:flex flex-col items-end">
+                  <span className="text-[9px] font-bold text-white uppercase tracking-widest truncate max-w-[80px]">{user.name || 'Mon Compte'}</span>
+                  <button onClick={onLogout} className="text-[8px] text-[#C9A96E] hover:text-red-500 uppercase tracking-widest">Déco.</button>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-white/5 border border-[#C9A96E]/20 flex items-center justify-center">
+                <button onClick={onLogout} className="sm:hidden w-8 h-8 rounded-full bg-white/5 border border-[#C9A96E]/20 flex items-center justify-center" aria-label="Déconnexion">
+                  <User className="h-4 w-4 text-[#C9A96E]" />
+                </button>
+                <div className="hidden sm:flex w-8 h-8 rounded-full bg-white/5 border border-[#C9A96E]/20 items-center justify-center">
                   <User className="h-4 w-4 text-[#C9A96E]" />
                 </div>
               </div>
@@ -93,18 +109,20 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
               <button
                 onClick={() => onNavigate('login')}
                 className="flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
+                aria-label="Connexion"
               >
                 <User className="h-5 w-5" />
-                <span className="text-[8px] font-bold uppercase tracking-widest mt-1">Connexion</span>
+                <span className="text-[8px] font-bold uppercase tracking-widest mt-1 hidden sm:block">Connexion</span>
               </button>
             )}
 
             <button
               onClick={() => onNavigate('cart')}
               className="relative flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
+              aria-label="Panier"
             >
               <ShoppingBag className="h-5 w-5" />
-              <span className="text-[8px] font-bold uppercase tracking-widest mt-1">Panier</span>
+              <span className="text-[8px] font-bold uppercase tracking-widest mt-1 hidden sm:block">Panier</span>
               {totalItems > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#C9A96E] text-black text-[8px] rounded-full h-4 w-4 flex items-center justify-center font-bold">
                   {totalItems}
@@ -115,26 +133,47 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
             <button
               onClick={handleWhatsApp}
               className="flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
+              aria-label="WhatsApp"
             >
               <MessageCircle className="h-5 w-5" />
-              <span className="text-[8px] font-bold uppercase tracking-widest mt-1">WhatsApp</span>
+              <span className="text-[8px] font-bold uppercase tracking-widest mt-1 hidden sm:block">WhatsApp</span>
             </button>
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="flex items-center justify-center space-x-12 pb-4">
+        {/* Navigation — masquée sur mobile (Accueil est dans le header row) */}
+        <nav className="hidden md:flex items-center justify-center space-x-12 pb-4">
           {['home', 'shop', 'about', 'contact'].map((page) => (
             <button
               key={page}
               onClick={() => onNavigate(page)}
-              className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative pb-1 ${
+              className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative pb-1 whitespace-nowrap ${
                 currentPage === page
                   ? 'text-white'
                   : 'text-[#C9A96E] hover:text-white'
               }`}
             >
               {page === 'home' ? 'Accueil' : page === 'shop' ? 'Boutique' : page === 'about' ? 'À propos' : 'Contact'}
+              {currentPage === page && (
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C9A96E]"></span>
+              )}
+            </button>
+          ))}
+        </nav>
+
+        {/* Navigation mobile — barre du bas visible uniquement sur mobile */}
+        <nav className="md:hidden flex items-center justify-around pb-3 border-t border-[#C9A96E]/10 pt-2">
+          {['shop', 'about', 'contact'].map((page) => (
+            <button
+              key={page}
+              onClick={() => onNavigate(page)}
+              className={`text-[9px] font-bold uppercase tracking-widest transition-all duration-300 relative pb-1 whitespace-nowrap ${
+                currentPage === page
+                  ? 'text-white'
+                  : 'text-[#C9A96E]'
+              }`}
+            >
+              {page === 'shop' ? 'Boutique' : page === 'about' ? 'À propos' : 'Contact'}
               {currentPage === page && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C9A96E]"></span>
               )}

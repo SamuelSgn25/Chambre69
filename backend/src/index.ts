@@ -159,6 +159,9 @@ app.get('/api/shop-data-fs', async (req, res) => {
 // --- ROUTES AUTHENTIFICATION ---
 
 app.post('/api/auth/register', async (req, res) => {
+  if (!prisma) {
+    return res.status(503).json({ error: 'Le service d\'inscription est temporairement indisponible. Veuillez réessayer plus tard ou contacter le support.' });
+  }
   const { email, password, name } = req.body;
   try {
     const existingUser = await prisma.user.findUnique({ where: { email } });
@@ -177,6 +180,9 @@ app.post('/api/auth/register', async (req, res) => {
 });
 
 app.post('/api/auth/login', async (req, res) => {
+  if (!prisma) {
+    return res.status(503).json({ error: 'Le service de connexion est temporairement indisponible. Veuillez réessayer plus tard ou contacter le support.' });
+  }
   const { email, password } = req.body;
   try {
     const user = await prisma.user.findUnique({ where: { email } });
