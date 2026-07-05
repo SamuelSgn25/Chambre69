@@ -73,6 +73,38 @@ function cryptoRandom(len = 6) {
   return crypto.randomBytes(Math.max(1, Math.ceil(len/2))).toString('hex').substring(0, len);
 }
 
+function cleanToSingleSentence(text: string, defaultName: string): string {
+  if (!text) return `Découvrez notre collection raffinée de ${defaultName}.`;
+  
+  // Normalize newlines and spaces
+  const textNormalized = text.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').trim();
+  
+  // Split on sentences (dot, exclamation or question followed by space or end of string)
+  const sentences = textNormalized.split(/(?<=[.!?])\s+/);
+  
+  for (let s of sentences) {
+    s = s.trim();
+    // Clean up prefix labels
+    s = s.replace(/^(description|descriptif|caractéristiques|composition|soin|entretien|fiche technique)\s*:?\s*/i, '');
+    s = s.replace(/^[-•*\s]+/, '').trim();
+    
+    // Ignore details / lists
+    const lower = s.toLowerCase();
+    if (lower.length < 25) continue;
+    if (lower.startsWith('code produit') || lower.startsWith('référence') || lower.startsWith('ref:') || lower.startsWith('principal :') || lower.startsWith('matière :') || lower.startsWith('composition :')) continue;
+    if (lower.startsWith('lavage') || lower.startsWith('pas de') || lower.startsWith('ne pas') || lower.startsWith('100%')) continue;
+    if (s.includes(':') && s.split(':')[0].length < 15) continue;
+    
+    s = s.charAt(0).toUpperCase() + s.slice(1);
+    if (!['.', '!', '?'].includes(s.charAt(s.length - 1))) {
+      s += '.';
+    }
+    return s;
+  }
+  
+  return `Découvrez notre collection raffinée de ${defaultName}.`;
+}
+
 app.get('/api/shop-data-fs', async (req, res) => {
   try {
     const rootItems = fs.readdirSync(ROOT_PATH, { withFileTypes: true });
@@ -83,7 +115,8 @@ app.get('/api/shop-data-fs', async (req, res) => {
       const brandName = item.name.trim();
       const brandPath = path.join(ROOT_PATH, item.name);
       const brandDoc = await findFirstDocxRecursively(brandPath);
-      const brandDescription = brandDoc ? await extractDocxText(brandDoc) : `Maison ${brandName}`;
+      const brandDescriptionRaw = brandDoc ? await extractDocxText(brandDoc) : undefined;
+      const brandDescription = cleanToSingleSentence(brandDescriptionRaw || '', brandName);
 
       const products: any[] = [];
       const walk = (dir: string) => {

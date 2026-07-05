@@ -43,13 +43,12 @@ async function main() {
 
       // Representative Image for the Brand Bubble
       const brandDescriptionFile = await findFirstDocxRecursively(brandPath);
-      const brandDescription = brandDescriptionFile ? await extractDocxText(brandDescriptionFile) : undefined;
-      if (brandDescription) {
-        await prisma.brand.update({
-          where: { id: brand.id },
-          data: { description: brandDescription }
-        });
-      }
+      const brandDescriptionRaw = brandDescriptionFile ? await extractDocxText(brandDescriptionFile) : undefined;
+      const brandDescription = cleanToSingleSentence(brandDescriptionRaw || '', brandName);
+      await prisma.brand.update({
+        where: { id: brand.id },
+        data: { description: brandDescription }
+      });
 
       const firstProduct = await prisma.product.findFirst({
         where: { brand_id: brand.id },
@@ -166,7 +165,7 @@ async function createProduct(filePath: string, brandId: string, categoryId: stri
         subcategory: cleanSub,
         collection: cleanCol || 'Général',
         category_id: categoryId,
-        description: descriptionText,
+        description: cleanToSingleSentence(descriptionText || '', fileName),
         image_url: imageUrl,
         variants: {
           create: [{ color: 'Standard', sizes: ['S', 'M', 'L'] }]
@@ -205,6 +204,38 @@ function findDescriptionFile(directory: string): string | undefined {
 function isImage(filename: string): boolean {
   const ext = path.extname(filename).toLowerCase();
   return ['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext);
+}
+
+function cleanToSingleSentence(text: string, defaultName: string): string {
+  if (!text) return `Découvrez notre collection raffinée de ${defaultName}.`;
+  
+  // Normalize newlines and spaces
+  const textNormalized = text.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').trim();
+  
+  // Split on sentences (dot, exclamation or question followed by space or end of string)
+  const sentences = textNormalized.split(/(?<=[.!?])\s+/);
+  
+  for (let s of sentences) {
+    s = s.trim();
+    // Clean up prefix labels
+    s = s.replace(/^(description|descriptif|caractéristiques|composition|soin|entretien|fiche technique)\s*:?\s*/i, '');
+    s = s.replace(/^[-•*\s]+/, '').trim();
+    
+    // Ignore details / lists
+    const lower = s.toLowerCase();
+    if (lower.length < 25) continue;
+    if (lower.startsWith('code produit') || lower.startsWith('référence') || lower.startsWith('ref:') || lower.startsWith('principal :') || lower.startsWith('matière :') || lower.startsWith('composition :')) continue;
+    if (lower.startsWith('lavage') || lower.startsWith('pas de') || lower.startsWith('ne pas') || lower.startsWith('100%')) continue;
+    if (s.includes(':') && s.split(':')[0].length < 15) continue;
+    
+    s = s.charAt(0).toUpperCase() + s.slice(1);
+    if (!['.', '!', '?'].includes(s.charAt(s.length - 1))) {
+      s += '.';
+    }
+    return s;
+  }
+  
+  return `Découvrez notre collection raffinée de ${defaultName}.`;
 }
 
 main()
