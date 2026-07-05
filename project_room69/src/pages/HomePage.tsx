@@ -327,7 +327,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
         <section className="relative min-h-[calc(100vh-6rem)] lg:min-h-screen flex flex-col lg:flex-row items-stretch overflow-hidden gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 pt-32 lg:pt-8">
           <div className="w-full lg:w-1/2 h-[45vh] sm:h-[55vh] lg:h-auto rounded-3xl shadow-2xl overflow-hidden relative group">
             <img
-              src="https://i0.wp.com/www.youreleganceshop.com/wp-content/uploads/2025/01/ensemble-lingerie-5-pieces-sexy.png?fit=1136%2C1512&ssl=1"
+              src="/hero_african_lingerie.png"
               alt="Lingerie élégante"
               className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"
             />
