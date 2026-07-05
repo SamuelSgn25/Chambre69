@@ -1,15 +1,13 @@
-import { Search, User, ShoppingBag, MessageCircle } from 'lucide-react';
+import { Search, ShoppingBag, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import logo from '../assets/logo-chambre69.png';
 
 interface HeaderProps {
   onNavigate: (page: string) => void;
   currentPage: string;
-  user: any;
-  onLogout: () => void;
 }
 
-export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps) => {
+export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
   const { getTotalItems } = useCart();
   const totalItems = getTotalItems();
 
@@ -19,13 +17,7 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const query = (form.elements.namedItem('search') as HTMLInputElement).value.trim();
-    if (query) {
-      onNavigate(`shop`);
-    } else {
-      onNavigate('shop');
-    }
+    onNavigate('shop');
   };
 
   return (
@@ -65,7 +57,7 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
             </form>
           </div>
 
-          {/* Logo centré — flex-1 pour prendre l'espace disponible */}
+          {/* Logo centré */}
           <div className="flex-1 flex justify-center">
             <button
               onClick={() => onNavigate('home')}
@@ -90,32 +82,8 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
             </button>
           </div>
 
-          {/* Icônes à droite — flex-shrink-0 pour ne jamais déborder */}
+          {/* Icônes à droite */}
           <div className="flex items-center justify-end gap-3 sm:gap-5 flex-shrink-0 md:flex-1">
-            {user ? (
-              <div className="flex items-center gap-2">
-                <div className="hidden sm:flex flex-col items-end">
-                  <span className="text-[9px] font-bold text-white uppercase tracking-widest truncate max-w-[80px]">{user.name || 'Mon Compte'}</span>
-                  <button onClick={onLogout} className="text-[8px] text-[#C9A96E] hover:text-red-500 uppercase tracking-widest">Déco.</button>
-                </div>
-                <button onClick={onLogout} className="sm:hidden w-8 h-8 rounded-full bg-white/5 border border-[#C9A96E]/20 flex items-center justify-center" aria-label="Déconnexion">
-                  <User className="h-4 w-4 text-[#C9A96E]" />
-                </button>
-                <div className="hidden sm:flex w-8 h-8 rounded-full bg-white/5 border border-[#C9A96E]/20 items-center justify-center">
-                  <User className="h-4 w-4 text-[#C9A96E]" />
-                </div>
-              </div>
-            ) : (
-              <button
-                onClick={() => onNavigate('login')}
-                className="flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
-                aria-label="Connexion"
-              >
-                <User className="h-5 w-5" />
-                <span className="text-[8px] font-bold uppercase tracking-widest mt-1 hidden sm:block">Connexion</span>
-              </button>
-            )}
-
             <button
               onClick={() => onNavigate('cart')}
               className="relative flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
@@ -141,7 +109,7 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
           </div>
         </div>
 
-        {/* Navigation — masquée sur mobile (Accueil est dans le header row) */}
+        {/* Navigation — masquée sur mobile */}
         <nav className="hidden md:flex items-center justify-center space-x-12 pb-4">
           {['home', 'shop', 'about', 'contact'].map((page) => (
             <button
@@ -161,7 +129,7 @@ export const Header = ({ onNavigate, currentPage, user, onLogout }: HeaderProps)
           ))}
         </nav>
 
-        {/* Navigation mobile — barre du bas visible uniquement sur mobile */}
+        {/* Navigation mobile */}
         <nav className="md:hidden flex items-center justify-around pb-3 border-t border-[#C9A96E]/10 pt-2">
           {['shop', 'about', 'contact'].map((page) => (
             <button

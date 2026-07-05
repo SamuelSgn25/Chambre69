@@ -3,19 +3,12 @@ import { MessageCircle, Trash2, Minus, Plus } from 'lucide-react';
 
 interface CartPageProps {
   onNavigate: (page: string) => void;
-  user: any;
 }
 
-export const CartPage = ({ onNavigate, user }: CartPageProps) => {
+export const CartPage = ({ onNavigate }: CartPageProps) => {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
-  const isLoggedIn = Boolean(user);
 
   const handleWhatsAppCheckout = () => {
-    if (!isLoggedIn) {
-      onNavigate('login');
-      return;
-    }
-
     let message = 'Bonjour, je souhaite commander les articles suivants :\n\n';
 
     cart.forEach((item, index) => {
@@ -25,7 +18,7 @@ export const CartPage = ({ onNavigate, user }: CartPageProps) => {
       message += `   Quantité: ${item.quantity}\n\n`;
     });
 
-    window.open(`https://wa.me/33123456789?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/221787040505?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   if (cart.length === 0) {
@@ -36,7 +29,7 @@ export const CartPage = ({ onNavigate, user }: CartPageProps) => {
           <p className="text-gray-600 mb-8">Votre panier est vide</p>
           <button
             onClick={() => onNavigate('shop')}
-            className="bg-[#111111] text-white px-8 py-3 text-sm tracking-wide hover:bg-[#E8B4B8] transition-colors"
+            className="bg-[#111111] text-white px-8 py-3 text-sm tracking-wide hover:bg-[#C9A96E] transition-colors"
           >
             Continuer mes achats
           </button>
@@ -121,10 +114,10 @@ export const CartPage = ({ onNavigate, user }: CartPageProps) => {
 
           <button
             onClick={handleWhatsAppCheckout}
-            className={`w-full px-8 py-4 text-sm tracking-wide inline-flex items-center justify-center gap-2 transition-colors ${isLoggedIn ? 'bg-[#25D366] text-white hover:bg-[#20BD5A]' : 'bg-[#111111] text-white hover:bg-[#333333]'}`}
+            className="w-full px-8 py-4 text-sm tracking-wide inline-flex items-center justify-center gap-2 transition-colors bg-[#25D366] text-white hover:bg-[#20BD5A]"
           >
             <MessageCircle className="h-5 w-5" />
-            {isLoggedIn ? 'Commander tout via WhatsApp' : 'Connectez-vous pour commander'}
+            Commander via WhatsApp
           </button>
 
           <button

@@ -1,5 +1,12 @@
-import { MessageCircle, Instagram, Mail, Clock, MapPin } from 'lucide-react';
+import { MessageCircle, Instagram, Mail, Clock, MapPin, Facebook } from 'lucide-react';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
+
+const TikTokIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    <path d="M15 9a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 export const ContactPage = () => {
   return (
@@ -18,9 +25,9 @@ export const ContactPage = () => {
             </div>
           </div>
 
-          {/* Section des contacts (3 blocs) */}
+          {/* Réseaux sociaux — 5 blocs */}
           <RevealOnScroll delay={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
               {/* WhatsApp */}
               <div className="group bg-black border-2 border-[#C9A96E] rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <div className="w-20 h-20 mx-auto bg-[#25D366] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
@@ -50,12 +57,50 @@ export const ContactPage = () => {
                   Suivez-nous pour découvrir nos nouveautés
                 </p>
                 <a
-                  href="https://www.instagram.com/chambre_69"
+                  href="https://www.instagram.com/chambre_69?igsh=MXdwbzdiM2QwYWhocA=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-2 border border-[#C9A96E] rounded-full text-[#C9A96E] text-sm hover:bg-[#C9A96E] hover:text-black transition-all duration-300"
                 >
                   @chambre_69
+                </a>
+              </div>
+
+              {/* Facebook */}
+              <div className="group bg-black border-2 border-[#C9A96E] rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="w-20 h-20 mx-auto bg-[#1877F2] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                  <Facebook className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-semibold text-[#C9A96E] mb-3">Facebook</h3>
+                <p className="text-gray-300 mb-4 text-sm">
+                  Rejoignez notre communauté sur Facebook
+                </p>
+                <a
+                  href="https://www.facebook.com/share/1JYeqd2NQm/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-2 border border-[#C9A96E] rounded-full text-[#C9A96E] text-sm hover:bg-[#C9A96E] hover:text-black transition-all duration-300"
+                >
+                  Chambre 69
+                </a>
+              </div>
+
+              {/* TikTok */}
+              <div className="group bg-black border-2 border-[#C9A96E] rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                <div className="w-20 h-20 mx-auto bg-gray-900 border border-white/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                  <TikTokIcon />
+                </div>
+                <h3 className="text-2xl font-semibold text-[#C9A96E] mb-3">TikTok</h3>
+                <p className="text-gray-300 mb-4 text-sm">
+                  Retrouvez nos vidéos et inspirations
+                </p>
+                <a
+                  href="https://www.tiktok.com/@chambre__69?_r=1&_t=ZS-97mdadipuh2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-2 border border-[#C9A96E] rounded-full text-[#C9A96E] text-sm hover:bg-[#C9A96E] hover:text-black transition-all duration-300"
+                >
+                  @chambre__69
                 </a>
               </div>
 
@@ -117,7 +162,7 @@ export const ContactPage = () => {
                 </p>
                 <div className="rounded-lg overflow-hidden border border-[#C9A96E]/30 h-48 mb-4">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456!2d-17.444!3d14.6937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDQxJzM3LjMiTiAxN8KwMjYnMjYuNCJX!5e0!3m2!1sfr!2ssn!4v1234567890"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1993.123!2d-17.444!3d14.6937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDQxJzM3LjMiTiAxN8KwMjYnMjYuNCJX!5e0!3m2!1sfr!2ssn!4v1234567890"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -129,7 +174,7 @@ export const ContactPage = () => {
                   ></iframe>
                 </div>
                 <a
-                  href="https://maps.google.com/?q=Dakar+Sénégal"
+                  href="https://maps.app.goo.gl/esHahAj9vbtdqTjV8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-[#C9A96E] hover:underline"

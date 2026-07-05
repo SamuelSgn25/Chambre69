@@ -88,25 +88,6 @@ export const AboutPage = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-12 mt-20 items-center">
-                <div className="order-2 md:order-1">
-                  <img
-                    src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800"
-                    alt="Fondatrice"
-                    className="rounded-2xl shadow-2xl w-full object-cover"
-                  />
-                </div>
-                <div className="order-1 md:order-2">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#C9A96E]">La fondatrice</h2>
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    Derrière Chambre 69 se trouve une entrepreneure passionnée, une femme engagée, intuitive et profondément tournée vers les autres. Une personnalité élégante, attentive et inspirante, guidée par le sens du détail et l’amour du bien-être féminin.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    « Chaque femme mérite de se sentir belle, à l’aise et pleinement elle-même. » Elle propose une expérience, une émotion, une reconnexion à soi.
-                  </p>
-                </div>
-              </div>
             </div>
           </section>
         </RevealOnScroll>
