@@ -121,7 +121,7 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
                   : 'text-[#C9A96E] hover:text-white'
               }`}
             >
-              {page === 'home' ? 'Accueil' : page === 'shop' ? 'Boutique' : page === 'about' ? 'À propos' : 'Contact'}
+              {page === 'home' ? 'Accueil' : page === 'shop' ? 'Visite de la Boutique' : page === 'about' ? 'À propos' : 'Contact'}
               {currentPage === page && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C9A96E]"></span>
               )}
@@ -141,7 +141,7 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
                   : 'text-[#C9A96E]'
               }`}
             >
-              {page === 'shop' ? 'Boutique' : page === 'about' ? 'À propos' : 'Contact'}
+              {page === 'shop' ? 'Visite de la Boutique' : page === 'about' ? 'À propos' : 'Contact'}
               {currentPage === page && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C9A96E]"></span>
               )}

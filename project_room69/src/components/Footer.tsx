@@ -83,7 +83,7 @@ export const Footer = ({ onNavigate }: FooterProps) => {
                   onClick={() => onNavigate('shop')}
                   className="px-4 py-2 text-sm rounded-full border border-[#C9A96E] bg-transparent text-gray-300 hover:bg-[#C9A96E] hover:text-black transition-all duration-300 shadow-md hover:shadow-lg breathe"
                 >
-                  Boutique
+                  Visite de la Boutique
                 </button>
                 <button
                   onClick={() => onNavigate('about')}
@@ -121,7 +121,7 @@ export const Footer = ({ onNavigate }: FooterProps) => {
                   <span>contact@chambre69.com</span>
                 </a>
                 <a
-                  href="https://maps.app.goo.gl/esHahAj9vbtdqTjV8"
+                  href="https://maps.app.goo.gl/esHahAj9vbtdqTjV8?g_st=iw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-[#C9A96E] bg-transparent text-gray-300 hover:bg-[#C9A96E] hover:text-black transition-all duration-300 shadow-md hover:shadow-lg breathe"
