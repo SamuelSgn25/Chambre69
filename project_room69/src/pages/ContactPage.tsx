@@ -3,7 +3,7 @@ import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
 
 const TikTokIcon = () => (
   <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18.944 4.538a6.369 6.369 0 0 1-2.148-.43v4.4c.093.022.188.032.283.032 1.715 0 3.107 1.4 3.107 3.12 0 1.72-1.392 3.117-3.107 3.117-1.716 0-3.108-1.397-3.108-3.117 0-.242.03-.478.083-.7a4.295 4.295 0 0 1 1.33.28 2.325 2.325 0 0 0-1.382-2.19 2.33 2.33 0 0 0-1.077-.24c-1.29 0-2.342 1.048-2.342 2.34 0 1.292 1.052 2.34 2.342 2.34 1.221 0 2.236-.88 2.325-2.01a1.788 1.788 0 0 1-.582-.185c-.484-.2-.904-.537-1.217-.97a4.894 4.894 0 0 0-.547 2.53c0 2.7 2.18 4.89 4.876 4.89 2.696 0 4.876-2.19 4.876-4.89V4.538h-1.321Z" />
+    <path d="M22.38 7.34a4.27 4.27 0 0 1-4.12-.06 8.25 8.25 0 0 1-4.02-2.33v7.01a5.7 5.7 0 1 1-5.7-5.71v.02h1.6v.02a4.1 4.1 0 1 0 4.1 4.1v-5.79a8.33 8.33 0 0 0 7.4 4.36h.72Z" />
   </svg>
 );
 
@@ -86,7 +86,7 @@ export const ContactPage = () => {
 
               {/* TikTok */}
               <div className="group bg-black border-2 border-[#C9A96E] rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="w-20 h-20 mx-auto bg-gray-900 border border-white/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                <div className="w-20 h-20 mx-auto bg-gray-900 border border-white/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg text-white">
                   <TikTokIcon />
                 </div>
                 <h3 className="text-2xl font-semibold text-[#C9A96E] mb-3">TikTok</h3>
