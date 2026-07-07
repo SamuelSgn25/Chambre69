@@ -162,7 +162,7 @@ export const ContactPage = () => {
                 </p>
                 <div className="rounded-lg overflow-hidden border border-[#C9A96E]/30 h-48 mb-4">
                   <iframe
-                    src="https://maps.app.goo.gl/esHahAj9vbtdqTjV8?g_st=iw"
+                    src="https://maps.google.com/maps?q=CHAMBRE+69+-+POINT+E,+Angle+rue+PE23,+Bd+de+St+Louis,+Dakar+13000&z=15&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

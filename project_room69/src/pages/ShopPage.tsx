@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useCart } from '../context/CartContext';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
 import { API_URL } from '../config';
-import { X, MessageCircle, Info, Ruler, Sparkles, ChevronRight, LayoutGrid } from 'lucide-react';
+import { X, MessageCircle, Info, Ruler, Sparkles } from 'lucide-react';
 import shopData from '../data/shop-data.json';
 
 interface Product {
@@ -44,7 +44,8 @@ const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { 
   const variant = product.variants[0] || { color: 'Standard', sizes: ['S', 'M', 'L'] };
   
   const handleWhatsApp = () => {
-    const message = encodeURIComponent(`Bonjour Chambre 69, je souhaite commander l'article : ${product.name} (Marque: ${product.brand_id || ''})`);
+    const productUrl = `${window.location.origin}/product/${product.slug}`;
+    const message = encodeURIComponent(`Bonjour, je suis intéressé par ce produit :\n\n${productUrl}\n\nPouvez-vous me confirmer sa disponibilité ?`);
     window.open(`https://wa.me/221787040505?text=${message}`, '_blank');
   };
 

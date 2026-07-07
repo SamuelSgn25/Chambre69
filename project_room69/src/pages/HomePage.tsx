@@ -547,7 +547,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
               <h2 className="text-3xl md:text-4xl font-bold mb-3 text-[#C9A96E]">Commandez facilement via WhatsApp</h2>
               <p className="text-[#C9A96E]/80 mb-6 text-base md:text-lg">Un service personnalisé et rapide pour toutes vos commandes</p>
               <button
-                onClick={() => window.open('https://wa.me/33123456789?text=Bonjour, je souhaite passer une commande', '_blank')}
+                onClick={() => window.open('https://wa.me/221787040505?text=Bonjour,%20je%20souhaite%20passer%20une%20commande', '_blank')}
                 className="group relative bg-[#25D366] text-white px-8 py-3 text-sm tracking-wide rounded-full shadow-lg hover:bg-[#20BD5A] transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-3 overflow-hidden"
               >
                 <MessageCircle className="h-5 w-5 transition-transform group-hover:scale-110" />

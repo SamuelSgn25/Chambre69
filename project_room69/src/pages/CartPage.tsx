@@ -18,6 +18,8 @@ export const CartPage = ({ onNavigate }: CartPageProps) => {
       message += `   Quantité: ${item.quantity}\n\n`;
     });
 
+    message += 'Pouvez-vous me confirmer leur disponibilité ?';
+
     window.open(`https://wa.me/221787040505?text=${encodeURIComponent(message)}`, '_blank');
   };
 

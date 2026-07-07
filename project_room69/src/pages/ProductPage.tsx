@@ -62,7 +62,8 @@ export const ProductPage = ({ onNavigate }: ProductPageProps) => {
   };
 
   const handleWhatsAppOrder = () => {
-    const message = `Bonjour, je suis intéressé par ce produit :\n\n${product?.name}\nCouleur: ${variant?.color}\nTaille: ${selectedSize}`;
+    const productUrl = `${window.location.origin}/product/${product?.slug}`;
+    const message = `Bonjour, je suis intéressé par ce produit :\n\n${productUrl}\n\nPouvez-vous me confirmer sa disponibilité ?`;
     window.open(`https://wa.me/221787040505?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -81,7 +82,7 @@ export const ProductPage = ({ onNavigate }: ProductPageProps) => {
           onClick={() => onNavigate('shop')}
           className="text-gray-600 hover:text-[#E8B4B8] mb-8 text-sm"
         >
-          ← Retour à la boutique
+          ← Retour à la visite de la Boutique
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-8">
