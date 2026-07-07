@@ -1,11 +1,6 @@
 import { MessageCircle, Instagram, Mail, Clock, MapPin, Facebook } from 'lucide-react';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
-
-const TikTokIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M22.38 7.34a4.27 4.27 0 0 1-4.12-.06 8.25 8.25 0 0 1-4.02-2.33v7.01a5.7 5.7 0 1 1-5.7-5.71v.02h1.6v.02a4.1 4.1 0 1 0 4.1 4.1v-5.79a8.33 8.33 0 0 0 7.4 4.36h.72Z" />
-  </svg>
-);
+import tiktokIcon from '../assets/tiktok-icon.png';
 
 export const ContactPage = () => {
   return (
@@ -86,8 +81,12 @@ export const ContactPage = () => {
 
               {/* TikTok */}
               <div className="group bg-black border-2 border-[#C9A96E] rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="w-20 h-20 mx-auto bg-gray-900 border border-white/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg text-white">
-                  <TikTokIcon />
+                <div className="w-20 h-20 mx-auto bg-gray-900 border border-white/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=kM0cd7be1NC1&format=png&color=000000"
+                    alt="TikTok"
+                    className="w-10 h-10 object-contain"
+                  />
                 </div>
                 <h3 className="text-2xl font-semibold text-[#C9A96E] mb-3">TikTok</h3>
                 <p className="text-gray-300 mb-4 text-sm">

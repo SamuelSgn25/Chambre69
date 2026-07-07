@@ -1,18 +1,7 @@
 import { Instagram, Mail, MessageCircle, Facebook } from 'lucide-react';
 import { RevealOnScroll } from './Animations';
 import logoPreview from '../assets/LOGO-removebg-preview.png';
-
-const TikTokIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M22.38 7.34a4.27 4.27 0 0 1-4.12-.06 8.25 8.25 0 0 1-4.02-2.33v7.01a5.7 5.7 0 1 1-5.7-5.71v.02h1.6v.02a4.1 4.1 0 1 0 4.1 4.1v-5.79a8.33 8.33 0 0 0 7.4 4.36h.72Z" />
-  </svg>
-);
+import tiktokIcon from '../assets/tiktok-icon.png';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -60,7 +49,11 @@ export const Footer = ({ onNavigate }: FooterProps) => {
                   className="text-gray-400 hover:text-white hover:scale-110 transition-transform duration-200"
                   aria-label="TikTok"
                 >
-                  <TikTokIcon />
+                  <img
+                    src={tiktokIcon}
+                    alt="TikTok"
+                    className="w-6 h-6 object-contain"
+                  />
                 </a>
               </div>
             </div>
