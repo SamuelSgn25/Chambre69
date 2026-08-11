@@ -13,9 +13,23 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleNavigate = (page: string, data?: any) => {
+  interface AppNavigationData {
+    slug?: string;
+    brand?: string;
+    categorySlug?: string;
+    search?: string;
+  }
+
+  const handleNavigate = (page: string, data?: AppNavigationData) => {
     if (page === 'product') {
-      navigate(`/product/${data.slug}`);
+      navigate(`/product/${data?.slug}`);
+    } else if (page === 'shop') {
+      const params = new URLSearchParams();
+      if (data?.brand) params.set('brand', data.brand);
+      if (data?.categorySlug) params.set('category', data.categorySlug);
+      if (data?.search) params.set('search', data.search);
+      const query = params.toString();
+      navigate(`/shop${query ? `?${query}` : ''}`);
     } else {
       navigate(`/${page === 'home' ? '' : page}`);
     }
@@ -32,7 +46,7 @@ function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage onNavigate={handleNavigate} />} />
-            <Route path="/shop" element={<ShopPage onNavigate={handleNavigate} />} />
+            <Route path="/shop" element={<ShopPage />} />
             <Route path="/product/:slug" element={<ProductPage onNavigate={handleNavigate} />} />
             <Route path="/cart" element={<CartPage onNavigate={handleNavigate} />} />
             <Route path="/about" element={<AboutPage />} />

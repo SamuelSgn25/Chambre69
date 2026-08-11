@@ -6771,26 +6771,26 @@
       ]
     },
     {
-      "id": "lingerie-traditionnelle-africaine",
-      "name": "Lingerie traditionnelle africaine",
-      "description": "Découvrez notre collection raffinée de Lingerie traditionnelle africaine.",
+      "id": "maternite-et-grossesse",
+      "name": "Maternité et Grossesse",
+      "description": "Découvrez notre collection raffinée de Maternité et Grossesse.",
       "image_url": "/products/dd56470824.jpeg",
       "products": [
         {
-          "id": "lingerie-traditionnelle-africaine-p0",
-          "category_id": "lingerie-traditionnelle-africaine",
-          "name": "Lingerie traditionnelle africaine",
-          "slug": "lingerie-traditionnelle-africaine",
-          "description": "Découvrez notre collection raffinée de Lingerie traditionnelle africaine.",
+          "id": "maternite-et-grossesse-p0",
+          "category_id": "maternite-et-grossesse",
+          "name": "Maternité et Grossesse",
+          "slug": "maternite-et-grossesse",
+          "description": "Découvrez notre collection raffinée de Maternité et Grossesse.",
           "image_url": "/products/dd56470824.jpeg",
-          "subcategory": "Lingerie traditionnelle",
-          "collection": "Nuisette traditionnelle",
+          "subcategory": "Maternité",
+          "collection": "Nuisette maternité",
           "is_featured": true,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
             {
-              "id": "v-lingerie-traditionnelle-africaine-p0",
-              "product_id": "lingerie-traditionnelle-africaine-p0",
+              "id": "v-maternite-et-grossesse-p0",
+              "product_id": "maternite-et-grossesse-p0",
               "color": "Standard",
               "sizes": [
                 "S",
@@ -6803,20 +6803,20 @@
           ]
         },
         {
-          "id": "lingerie-traditionnelle-africaine-p1",
-          "category_id": "lingerie-traditionnelle-africaine",
-          "name": "Lingerie traditionnelle africaine",
-          "slug": "lingerie-traditionnelle-africaine",
-          "description": "Découvrez notre collection raffinée de Lingerie traditionnelle africaine.",
+          "id": "maternite-et-grossesse-p1",
+          "category_id": "maternite-et-grossesse",
+          "name": "Maternité et Grossesse",
+          "slug": "maternite-et-grossesse",
+          "description": "Découvrez notre collection raffinée de Maternité et Grossesse.",
           "image_url": "/products/f189dba83c.jpeg",
-          "subcategory": "Lingerie traditionnelle",
-          "collection": "Nuisette traditionnelle",
+          "subcategory": "Maternité",
+          "collection": "Nuisette maternité",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
             {
-              "id": "v-lingerie-traditionnelle-africaine-p1",
-              "product_id": "lingerie-traditionnelle-africaine-p1",
+              "id": "v-maternite-et-grossesse-p1",
+              "product_id": "maternite-et-grossesse-p1",
               "color": "Standard",
               "sizes": [
                 "S",
@@ -6829,20 +6829,20 @@
           ]
         },
         {
-          "id": "lingerie-traditionnelle-africaine-p2",
-          "category_id": "lingerie-traditionnelle-africaine",
-          "name": "Lingerie traditionnelle africaine",
-          "slug": "lingerie-traditionnelle-africaine",
-          "description": "Découvrez notre collection raffinée de Lingerie traditionnelle africaine.",
+          "id": "maternite-et-grossesse-p2",
+          "category_id": "maternite-et-grossesse",
+          "name": "Maternité et Grossesse",
+          "slug": "maternite-et-grossesse",
+          "description": "Découvrez notre collection raffinée de Maternité et Grossesse.",
           "image_url": "/products/a29f740ddf.jpeg",
-          "subcategory": "Lingerie traditionnelle",
-          "collection": "Nuisette traditionnelle",
+          "subcategory": "Maternité",
+          "collection": "Nuisette maternité",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
             {
-              "id": "v-lingerie-traditionnelle-africaine-p2",
-              "product_id": "lingerie-traditionnelle-africaine-p2",
+              "id": "v-maternite-et-grossesse-p2",
+              "product_id": "maternite-et-grossesse-p2",
               "color": "Standard",
               "sizes": [
                 "S",
@@ -6855,20 +6855,20 @@
           ]
         },
         {
-          "id": "lingerie-traditionnelle-africaine-p3",
-          "category_id": "lingerie-traditionnelle-africaine",
-          "name": "Lingerie traditionnelle africaine",
-          "slug": "lingerie-traditionnelle-africaine",
-          "description": "Découvrez notre collection raffinée de Lingerie traditionnelle africaine.",
+          "id": "maternite-et-grossesse-p3",
+          "category_id": "maternite-et-grossesse",
+          "name": "Maternité et Grossesse",
+          "slug": "maternite-et-grossesse",
+          "description": "Découvrez notre collection raffinée de Maternité et Grossesse.",
           "image_url": "/products/590d880994.jpeg",
-          "subcategory": "Lingerie traditionnelle",
-          "collection": "Nuisette traditionnelle",
+          "subcategory": "Maternité",
+          "collection": "Nuisette maternité",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
             {
-              "id": "v-lingerie-traditionnelle-africaine-p3",
-              "product_id": "lingerie-traditionnelle-africaine-p3",
+              "id": "v-maternite-et-grossesse-p3",
+              "product_id": "maternite-et-grossesse-p3",
               "color": "Standard",
               "sizes": [
                 "S",

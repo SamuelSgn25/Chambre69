@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
 import { API_URL } from '../config';
@@ -34,10 +35,6 @@ interface Brand {
   description: string;
   image_url: string;
   products: (Product & { variants: ProductVariant[] })[];
-}
-
-interface ShopPageProps {
-  onNavigate: (page: string, data?: any) => void;
 }
 
 const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { variants: ProductVariant[] }, onClose: () => void, onAddToCart: (p: Product, v: ProductVariant) => void }) => {
@@ -124,7 +121,8 @@ const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { 
   );
 };
 
-export const ShopPage = ({}: ShopPageProps) => {
+export const ShopPage = () => {
+  const location = useLocation();
   const [brands, setBrands] = useState<Brand[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedSubcategories, setSelectedSubcategories] = useState<Record<string, string>>({});
@@ -136,21 +134,57 @@ export const ShopPage = ({}: ShopPageProps) => {
   const scrollContainerRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [activeProductIndexes, setActiveProductIndexes] = useState<Record<string, number>>({});
 
+  const searchParams = useMemo(() => new URLSearchParams(location.search), [location.search]);
+  const searchQuery = searchParams.get('search')?.trim().toLowerCase() || '';
+  const brandFilter = searchParams.get('brand')?.trim().toLowerCase() || '';
+  const categoryFilter = searchParams.get('category')?.trim().toLowerCase() || '';
+
+  const filteredBrands = useMemo(() => {
+    const normalize = (value?: string) => value?.toLowerCase().trim() || '';
+
+    return brands
+      .map((brand) => {
+        const brandMatches = !brandFilter || normalize(brand.name).includes(brandFilter) || normalize(brand.id) === brandFilter;
+        const products = brand.products.filter((product) => {
+          const normalizedName = normalize(product.name);
+          const normalizedDescription = normalize(product.description);
+          const normalizedCollection = normalize(product.collection);
+          const normalizedSubcategory = normalize(product.subcategory);
+          const normalizedCategoryId = normalize(product.category_id);
+
+          const matchesSearch = !searchQuery || [normalizedName, normalizedDescription, normalizedCollection, normalizedSubcategory, normalizedCategoryId].some((field) => field.includes(searchQuery));
+          const matchesCategory = !categoryFilter || [normalizedSubcategory, normalizedCollection, normalizedCategoryId, normalize(product.category_id)].some((field) => field.includes(categoryFilter));
+
+          return matchesSearch && matchesCategory;
+        });
+
+        if (!brandMatches && products.length === 0) {
+          return null;
+        }
+
+        return {
+          ...brand,
+          products: brandMatches && !searchQuery && !categoryFilter ? brand.products : products,
+        };
+      })
+      .filter((brand): brand is Brand => brand !== null);
+  }, [brands, brandFilter, categoryFilter, searchQuery]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         // Try primary API then filesystem fallback
         const candidates = [`${API_URL}/shop-data`, `${API_URL.replace(/:\d+/, ':5001')}/shop-data-fs`, `${API_URL}/shop-data-fs`];
-        let data: any = null;
+        let data: { brands?: Brand[] } | null = null;
         
         for (const url of candidates) {
           try {
             const res = await fetch(url);
             if (!res.ok) continue;
-            data = await res.json();
+            data = (await res.json()) as { brands?: Brand[] };
             if (data && data.brands && data.brands.length > 0) break;
-          } catch (err) {
+          } catch {
             continue;
           }
         }
@@ -229,6 +263,13 @@ export const ShopPage = ({}: ShopPageProps) => {
     }
   };
 
+  useEffect(() => {
+    if (!loading && brandFilter && filteredBrands.length > 0) {
+      const firstBrand = filteredBrands[0];
+      setTimeout(() => scrollToBrand(firstBrand.id), 100);
+    }
+  }, [loading, brandFilter, filteredBrands]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
@@ -264,19 +305,19 @@ export const ShopPage = ({}: ShopPageProps) => {
           {/* Grille des Marques (Bulles Or & Noir) */}
           <RevealOnScroll delay={0.1}>
             <div className="mb-48 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10">
-              {brands.map((brand) => (
+              {filteredBrands.map((brand) => (
                 <div
                   key={brand.id}
                   onClick={() => scrollToBrand(brand.id)}
                   className="group cursor-pointer flex flex-col items-center gap-8"
                 >
-                    <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
-                      <img
-                        src={brand.name && brand.name.toLowerCase() === 'curvy kate' ? `${import.meta.env.BASE_URL}products/curvy_ck_enclose.webp` : (brand.image_url || 'https://via.placeholder.com/150')}
-                        alt={brand.name}
-                        className="w-full h-full object-cover transition-all duration-1000"
-                      />
-                    </div>
+                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
+                    <img
+                      src={brand.name && brand.name.toLowerCase() === 'curvy kate' ? `${import.meta.env.BASE_URL}products/curvy_ck_enclose.webp` : (brand.image_url || 'https://via.placeholder.com/150')}
+                      alt={brand.name}
+                      className="w-full h-full object-cover transition-all duration-1000"
+                    />
+                  </div>
                   <h3 className="text-[11px] font-black text-black text-center uppercase tracking-[0.4em] group-hover:text-[#C9A96E] transition-all">
                     {brand.name}
                   </h3>
@@ -286,7 +327,11 @@ export const ShopPage = ({}: ShopPageProps) => {
           </RevealOnScroll>
 
           {/* Sections par Marque */}
-          {brands.map((brand, bIdx) => {
+          {filteredBrands.length === 0 ? (
+            <div className="text-center py-20">
+              <p className="text-gray-500 italic font-serif text-2xl">Aucun produit ne correspond à votre recherche. Essayez un autre mot-clé ou catégorie.</p>
+            </div>
+          ) : filteredBrands.map((brand, bIdx) => {
             const subcategories = Array.from(new Set(brand.products.map(p => p.subcategory).filter(Boolean))) as string[];
             const selectedSub = selectedSubcategories[brand.id] || (subcategories.length > 0 ? subcategories[0] : null);
             

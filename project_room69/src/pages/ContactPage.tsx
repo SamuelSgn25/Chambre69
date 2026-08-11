@@ -1,6 +1,5 @@
 import { MessageCircle, Instagram, Mail, Clock, MapPin, Facebook } from 'lucide-react';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
-import tiktokIcon from '../assets/tiktok-icon.png';
 
 export const ContactPage = () => {
   return (

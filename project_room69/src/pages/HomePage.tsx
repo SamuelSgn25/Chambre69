@@ -40,7 +40,7 @@ const brands: Brand[] = [
     name: "Ysabel Mora",
     shortDescription: "Comfort haut de gamme accessible",
     fullDescription: "Marque espagnole reconnue pour son approche accessible du confort haut de gamme, Ysabel Mora propose une lingerie pensée pour accompagner le quotidien avec douceur et simplicité élégante.",
-    imageUrl: `${import.meta.env.BASE_URL}products/YSABEL_IMG.WEBP`,
+    imageUrl: `${import.meta.env.BASE_URL}products/ysabel_img.webp`,
     productImages: [
       "https://fr.ysabelmora.com/cdn/shop/files/19697-4-braga-alta-adapt-invisible-mujer-ysabel-mora-negro.jpg?v=1721213702&width=2048",
       "https://fr.ysabelmora.com/cdn/shop/files/8331385BUNICO.jpg?v=1773406501&width=740",
@@ -227,8 +227,15 @@ const brands: Brand[] = [
   }
 ];
 
+interface NavigationData {
+  slug?: string;
+  brand?: string;
+  categorySlug?: string;
+  search?: string;
+}
+
 interface HomePageProps {
-  onNavigate: (page: string, data?: any) => void;
+  onNavigate: (page: string, data?: NavigationData) => void;
 }
 
 export const HomePage = ({ onNavigate }: HomePageProps) => {
@@ -236,13 +243,14 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
   const { addToCart } = useCart();
 
   useEffect(() => {
+    type ApiProduct = Product & { variants?: ProductVariant[] } & Record<string, unknown>;
     const fetchFeatured = async () => {
       try {
         const response = await fetch(`${API_URL}/products?featured=true`);
-        const data = await response.json();
-        setFeaturedProducts(data.map((p: any) => ({
+        const data = (await response.json()) as ApiProduct[];
+        setFeaturedProducts(data.map((p) => ({
           ...p,
-          variant: p.variants[0]
+          variant: p.variants?.[0] || { id: 'default', product_id: p.id, color: 'Standard', sizes: ['S', 'M', 'L'], created_at: new Date().toISOString() }
         })));
       } catch (error) {
         console.error('Error fetching featured products:', error);
@@ -323,7 +331,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
       updateBrandActiveIndex();
       return () => container.removeEventListener('scroll', updateBrandActiveIndex);
     }
-  }, [brands]);
+  }, []);
 
   return (
     <div className="min-h-screen">

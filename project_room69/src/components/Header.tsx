@@ -1,15 +1,24 @@
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Search, ShoppingBag, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import logo from '../assets/logo-chambre69.png';
 
 interface HeaderProps {
-  onNavigate: (page: string) => void;
+  onNavigate: (page: string, data?: { brand?: string; categorySlug?: string; search?: string }) => void;
   currentPage: string;
 }
 
 export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
   const { getTotalItems } = useCart();
   const totalItems = getTotalItems();
+  const location = useLocation();
+  const [searchValue, setSearchValue] = useState('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setSearchValue(params.get('search') || '');
+  }, [location.search]);
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/221787040505', '_blank');
@@ -17,7 +26,7 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    onNavigate('shop');
+    onNavigate('shop', { search: searchValue.trim() });
   };
 
   return (
@@ -44,6 +53,8 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
               <input
                 type="text"
                 name="search"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Rechercher..."
                 className="w-full border-b border-[#C9A96E]/30 py-2 pr-8 text-white placeholder-gray-500 bg-transparent focus:outline-none focus:border-[#C9A96E] transition-colors text-sm"
               />
