@@ -178,7 +178,7 @@
           "description": "Apportez un style sexy au quotidien avec le slip taille haute Enclose de Curvy Kate.",
           "image_url": "/products/89bd4606d3.webp",
           "subcategory": "Soutien",
-          "collection": "Enclose high waist brief",
+          "collection": "Enclose high waist",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
@@ -204,7 +204,7 @@
           "description": "Apportez un style sexy au quotidien avec le slip taille haute Enclose de Curvy Kate.",
           "image_url": "/products/88193ae5dc.webp",
           "subcategory": "Soutien",
-          "collection": "Enclose high waist brief",
+          "collection": "Enclose high waist",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
@@ -230,7 +230,7 @@
           "description": "Apportez un style sexy au quotidien avec le slip taille haute Enclose de Curvy Kate.",
           "image_url": "/products/462efa2359.webp",
           "subcategory": "Soutien",
-          "collection": "Enclose high waist brief",
+          "collection": "Enclose high waist",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
@@ -1702,7 +1702,7 @@
           "description": "Découvrez notre collection raffinée de Elomi.",
           "image_url": "/products/a91478c1b9.jpg",
           "subcategory": "soutien gorge",
-          "collection": "Soutien gorge  cate brief",
+          "collection": "Soutien gorge cate",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
@@ -1728,7 +1728,7 @@
           "description": "Découvrez notre collection raffinée de Elomi.",
           "image_url": "/products/cfe8bed451.jpg",
           "subcategory": "soutien gorge",
-          "collection": "Soutien gorge  cate brief",
+          "collection": "Soutien gorge cate",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
@@ -8521,10 +8521,10 @@
           "category_id": "wacoal",
           "name": "Wacoal",
           "slug": "wacoal",
-          "description": "Soutien-gorge à Armatures Izumi Caractéristiques : - Dentelle Stretch - Modèle Emboitant - Armatures - Bretelles réglables - Dos en tulle - Finition en vague Composition : - Doublure bonnet : 100% Polyamide - Dentelle : 77% Polyamide et 23% Elasthanne - Lavage à la main conseillé Description : La sensualité de la ligne Izumi de Wacoal vous fera fondre !",
+          "description": "Soutien-gorge Sensu Lace : dentelle stretch, armatures confortables et finitions raffinées, pour un maintien léger et sophistiqué.",
           "image_url": "/products/8f380a5b68.webp",
           "subcategory": "soutien",
-          "collection": "Soutien  izumi",
+          "collection": "Soutien  sensu lace",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
@@ -8547,10 +8547,10 @@
           "category_id": "wacoal",
           "name": "Wacoal",
           "slug": "wacoal",
-          "description": "Soutien-gorge à Armatures Izumi Caractéristiques : - Dentelle Stretch - Modèle Emboitant - Armatures - Bretelles réglables - Dos en tulle - Finition en vague Composition : - Doublure bonnet : 100% Polyamide - Dentelle : 77% Polyamide et 23% Elasthanne - Lavage à la main conseillé Description : La sensualité de la ligne Izumi de Wacoal vous fera fondre !",
+          "description": "Soutien-gorge Sensu Lace : dentelle stretch, armatures confortables et finitions raffinées, pour un maintien léger et sophistiqué.",
           "image_url": "/products/2e7aad992c.webp",
           "subcategory": "soutien",
-          "collection": "Soutien  izumi",
+          "collection": "Soutien  sensu lace",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
@@ -8573,16 +8573,172 @@
           "category_id": "wacoal",
           "name": "Wacoal",
           "slug": "wacoal",
-          "description": "Soutien-gorge à Armatures Izumi Caractéristiques : - Dentelle Stretch - Modèle Emboitant - Armatures - Bretelles réglables - Dos en tulle - Finition en vague Composition : - Doublure bonnet : 100% Polyamide - Dentelle : 77% Polyamide et 23% Elasthanne - Lavage à la main conseillé Description : La sensualité de la ligne Izumi de Wacoal vous fera fondre !",
+          "description": "Soutien-gorge Sensu Lace : dentelle stretch, armatures confortables et finitions raffinées, pour un maintien léger et sophistiqué.",
           "image_url": "/products/72d0a9d584.webp",
           "subcategory": "soutien",
-          "collection": "Soutien  izumi",
+          "collection": "Soutien  sensu lace",
           "is_featured": false,
           "created_at": "2026-07-05T00:00:00Z",
           "variants": [
             {
               "id": "v-wacoal-p17",
               "product_id": "wacoal-p17",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p18a",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal",
+          "description": "Wacoal vous présente la collection Lace Perfection, un soutien-gorge délicat et sensuel en dentelle raffinée.",
+          "image_url": "/products/97b06c3304.jpg",
+          "subcategory": "soutien",
+          "collection": "Soutien  lace perfection",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p18a",
+              "product_id": "wacoal-p18a",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p18b",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal",
+          "description": "Wacoal vous présente la collection Lace Perfection, un soutien-gorge délicat et sensuel en dentelle raffinée.",
+          "image_url": "/products/a5319e7cc7.jpg",
+          "subcategory": "soutien",
+          "collection": "Soutien  lace perfection",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p18b",
+              "product_id": "wacoal-p18b",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p18c",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal",
+          "description": "Wacoal vous présente la collection Lace Perfection, un soutien-gorge délicat et sensuel en dentelle raffinée.",
+          "image_url": "/products/91c01b7797.webp",
+          "subcategory": "soutien",
+          "collection": "Soutien  lace perfection",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p18c",
+              "product_id": "wacoal-p18c",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p18d",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal",
+          "description": "Wacoal vous présente la collection Lace Perfection, un tanga délicat et sensuel en dentelle raffinée.",
+          "image_url": "/products/93f7331ce8.jpg",
+          "subcategory": "slip",
+          "collection": "Slip  lace perfection",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p18d",
+              "product_id": "wacoal-p18d",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p18e",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal",
+          "description": "Wacoal vous présente la collection Lace Perfection, un tanga délicat et sensuel en dentelle raffinée.",
+          "image_url": "/products/93ed71cc24.jpg",
+          "subcategory": "slip",
+          "collection": "Slip  lace perfection",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p18e",
+              "product_id": "wacoal-p18e",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p18f",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal",
+          "description": "Wacoal vous présente la collection Lace Perfection, un tanga délicat et sensuel en dentelle raffinée.",
+          "image_url": "/products/8ec3ed011f.jpg",
+          "subcategory": "slip",
+          "collection": "Slip  lace perfection",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p18f",
+              "product_id": "wacoal-p18f",
               "color": "Standard",
               "sizes": [
                 "S",

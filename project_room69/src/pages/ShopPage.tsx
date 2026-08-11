@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef, useMemo, FormEvent } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
 import { API_URL } from '../config';
-import { X, MessageCircle, Info, Ruler, Sparkles } from 'lucide-react';
+import { X, MessageCircle, Info, Ruler, Sparkles, Search } from 'lucide-react';
 import shopData from '../data/shop-data.json';
 
 interface Product {
@@ -133,11 +133,29 @@ export const ShopPage = () => {
   const brandSectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const scrollContainerRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [activeProductIndexes, setActiveProductIndexes] = useState<Record<string, number>>({});
+  const navigate = useNavigate();
+  const [searchInput, setSearchInput] = useState('');
 
   const searchParams = useMemo(() => new URLSearchParams(location.search), [location.search]);
   const searchQuery = searchParams.get('search')?.trim().toLowerCase() || '';
   const brandFilter = searchParams.get('brand')?.trim().toLowerCase() || '';
   const categoryFilter = searchParams.get('category')?.trim().toLowerCase() || '';
+
+  useEffect(() => {
+    setSearchInput(searchQuery);
+  }, [searchQuery]);
+
+  const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const params = new URLSearchParams(location.search);
+    if (searchInput.trim()) {
+      params.set('search', searchInput.trim());
+    } else {
+      params.delete('search');
+    }
+    navigate(`/shop${params.toString() ? `?${params.toString()}` : ''}`);
+  };
+
 
   const filteredBrands = useMemo(() => {
     const normalize = (value?: string) => value?.toLowerCase().trim() || '';
@@ -167,7 +185,12 @@ export const ShopPage = () => {
           products: brandMatches && !searchQuery && !categoryFilter ? brand.products : products,
         };
       })
-      .filter((brand): brand is Brand => brand !== null);
+      .filter((brand): brand is Brand => brand !== null)
+      .sort((a, b) =>
+        a.name === 'Ysabel Mora' ? -1 :
+        b.name === 'Ysabel Mora' ? 1 :
+        a.name.localeCompare(b.name)
+      );
   }, [brands, brandFilter, categoryFilter, searchQuery]);
 
   useEffect(() => {
@@ -291,15 +314,37 @@ export const ShopPage = () => {
 
         <div className="max-w-7xl mx-auto">
           {/* Titre principal */}
-          <div className="text-center mb-32 group">
+          <div className="text-center mb-16 group">
             <p className="text-[10px] font-black text-[#C9A96E] uppercase tracking-[0.6em] mb-6 animate-in fade-in slide-in-from-bottom-2">Maison de Lingerie</p>
-            <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold font-serif text-gray-900 mb-10 tracking-tighter leading-none transition-colors duration-1000 hover:text-[#C9A96E] cursor-default">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-serif text-gray-900 mb-4 tracking-tighter leading-none transition-colors duration-1000 hover:text-[#C9A96E] cursor-default">
               CHAMBRE 69
             </h1>
-            <div className="w-32 h-1 bg-black mx-auto mb-10 transition-all duration-700 group-hover:w-64 group-hover:bg-[#C9A96E] rounded-full"></div>
-            <p className="text-gray-400 text-lg md:text-2xl font-light max-w-2xl mx-auto italic tracking-wide transition-colors duration-1000 hover:text-black">
-              "L'élégance à fleur de peau, servie avec passion."
+            <p className="text-gray-500 text-base md:text-lg font-light max-w-3xl mx-auto italic tracking-wide">
+              Recherchez vite vos marques et collections préférées dans notre boutique.
             </p>
+          </div>
+
+          <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-2">Recherche directe</p>
+              <p className="text-sm text-gray-500">Filtrez par marque, collection, catégorie ou mot-clé.</p>
+            </div>
+            <form onSubmit={handleSearchSubmit} className="flex w-full max-w-xl gap-2 sm:w-auto">
+              <input
+                type="text"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                placeholder="Rechercher une marque ou un produit..."
+                className="w-full rounded-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20 transition"
+              />
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center rounded-full bg-[#C9A96E] px-5 py-3 text-sm font-black uppercase tracking-[0.18em] text-white hover:bg-black transition"
+              >
+                <Search className="w-4 h-4 mr-2" />
+                Rechercher
+              </button>
+            </form>
           </div>
 
           {/* Grille des Marques (Bulles Or & Noir) */}
@@ -355,18 +400,14 @@ export const ShopPage = () => {
               <RevealOnScroll key={brand.id} delay={0.15}>
                 <div
                   ref={(el) => { brandSectionRefs.current[brand.id] = el; }}
-                  className={`mb-64 scroll-mt-32 p-12 md:p-24 rounded-[4rem] transition-all duration-1000 ${
-                    isEven ? 'bg-white shadow-xl border border-gray-100' : 'bg-gray-900 text-white shadow-2xl'
-                  }`}
+                  className="mb-64 scroll-mt-32 p-12 md:p-24 rounded-[4rem] transition-all duration-1000 bg-white shadow-xl border border-gray-100"
                 >
                   {/* Header de Marque */}
                   <div className="text-center mb-24 px-4">
-                    <h2 className={`text-6xl md:text-8xl font-serif font-bold mb-8 tracking-tighter transition-colors duration-1000 ${
-                      isEven ? 'text-gray-900 hover:text-[#C9A96E]' : 'text-white hover:text-[#C9A96E]'
-                    }`}>
+                    <h2 className="text-6xl md:text-8xl font-serif font-bold mb-8 tracking-tighter transition-colors duration-1000 text-gray-900 hover:text-[#C9A96E]">
                       {brand.name}
                     </h2>
-                    <div className={`max-w-4xl mx-auto mb-12 ${isEven ? 'text-gray-600' : 'text-gray-300'}`}>
+                    <div className="max-w-4xl mx-auto mb-12 text-gray-600">
                       <p className="text-base sm:text-lg leading-relaxed">
                         {brand.description || 'Découvrez une collection raffinée de pièces qui célèbrent la féminité, le confort et l’élégance à chaque silhouette.'}
                       </p>
@@ -391,7 +432,7 @@ export const ShopPage = () => {
                             className={`text-[11px] font-black uppercase tracking-[0.4em] transition-all duration-300 relative pb-2 ${
                               selectedSub === sub
                                 ? 'text-[#C9A96E]'
-                                : isEven ? 'text-gray-300 hover:text-black' : 'text-gray-500 hover:text-white'
+                                : 'text-gray-500 hover:text-gray-900'
                             }`}
                           >
                             {sub}
@@ -413,7 +454,7 @@ export const ShopPage = () => {
                             className={`px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-500 ${
                               selectedCol === col
                                 ? 'bg-[#C9A96E] text-white shadow-xl scale-110'
-                                : isEven ? 'bg-gray-50 text-gray-400 hover:bg-black hover:text-white' : 'bg-white/5 text-gray-500 hover:bg-white hover:text-black'
+                                : 'bg-gray-50 text-gray-500 hover:bg-black hover:text-white'
                             }`}
                           >
                             {col}
