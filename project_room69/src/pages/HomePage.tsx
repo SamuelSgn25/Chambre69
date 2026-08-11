@@ -40,7 +40,7 @@ const brands: Brand[] = [
     name: "Ysabel Mora",
     shortDescription: "Comfort haut de gamme accessible",
     fullDescription: "Marque espagnole reconnue pour son approche accessible du confort haut de gamme, Ysabel Mora propose une lingerie pensée pour accompagner le quotidien avec douceur et simplicité élégante.",
-    imageUrl: `${import.meta.env.BASE_URL}products/ysabel_img.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}products/YSABEL_IMG.webp`,
     productImages: [
       "https://fr.ysabelmora.com/cdn/shop/files/19697-4-braga-alta-adapt-invisible-mujer-ysabel-mora-negro.jpg?v=1721213702&width=2048",
       "https://fr.ysabelmora.com/cdn/shop/files/8331385BUNICO.jpg?v=1773406501&width=740",
