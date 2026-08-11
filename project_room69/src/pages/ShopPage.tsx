@@ -270,13 +270,13 @@ export const ShopPage = ({}: ShopPageProps) => {
                   onClick={() => scrollToBrand(brand.id)}
                   className="group cursor-pointer flex flex-col items-center gap-8"
                 >
-                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
-                    <img
-                      src={brand.image_url || 'https://via.placeholder.com/150'}
-                      alt={brand.name}
-                      className="w-full h-full object-cover transition-all duration-1000"
-                    />
-                  </div>
+                    <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
+                      <img
+                        src={brand.name && brand.name.toLowerCase() === 'curvy kate' ? `${import.meta.env.BASE_URL}products/curvy_ck_enclose.webp` : (brand.image_url || 'https://via.placeholder.com/150')}
+                        alt={brand.name}
+                        className="w-full h-full object-cover transition-all duration-1000"
+                      />
+                    </div>
                   <h3 className="text-[11px] font-black text-black text-center uppercase tracking-[0.4em] group-hover:text-[#C9A96E] transition-all">
                     {brand.name}
                   </h3>
