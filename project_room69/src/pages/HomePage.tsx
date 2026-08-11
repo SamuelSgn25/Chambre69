@@ -38,9 +38,9 @@ const brands: Brand[] = [
   {
     id: 1,
     name: "Ysabel Mora",
-    shortDescription: "Confort haut de gamme accessible",
+    shortDescription: "Comfort haut de gamme accessible",
     fullDescription: "Marque espagnole reconnue pour son approche accessible du confort haut de gamme, Ysabel Mora propose une lingerie pensée pour accompagner le quotidien avec douceur et simplicité élégante.",
-    imageUrl: "https://fr.ysabelmora.com/cdn/shop/files/10138-1-tanga-encaje-mujer-ysabel-mora-cava.jpg?v=1721119782&width=1533",
+    imageUrl: `${import.meta.env.BASE_URL}products/ysabel_img.webp`,
     productImages: [
       "https://fr.ysabelmora.com/cdn/shop/files/19697-4-braga-alta-adapt-invisible-mujer-ysabel-mora-negro.jpg?v=1721213702&width=2048",
       "https://fr.ysabelmora.com/cdn/shop/files/8331385BUNICO.jpg?v=1773406501&width=740",
@@ -258,6 +258,11 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
   const [activeBrandIndex, setActiveBrandIndex] = useState(0);
   const [selectedBrand, setSelectedBrand] = useState<Brand | null>(null);
 
+  // Afficher Ysabel Mora en premier et conserver les autres
+  const displayBrands = brands
+    .slice()
+    .sort((a, b) => (a.name === 'Ysabel Mora' ? -1 : b.name === 'Ysabel Mora' ? 1 : a.name.localeCompare(b.name)));
+
   const handleAddToCart = (product: Product, variant: ProductVariant) => {
     addToCart(product, variant, variant.sizes[0]);
   };
@@ -455,24 +460,29 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
               className="flex overflow-x-auto gap-6 pb-8 px-4"
               style={{ scrollbarWidth: 'thin', msOverflowStyle: 'auto' }}
             >
-              {brands.map((brand, idx) => {
+              {displayBrands.map((brand, idx) => {
                 const isActive = idx === activeBrandIndex;
+                const slug = brand.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                const goToBrand = () => onNavigate('shop', { brand: slug });
                 return (
                   <div
                     key={brand.id}
                     className={`flex-shrink-0 transition-all duration-500 ${isActive ? 'scale-105 z-10' : 'scale-95 opacity-70'}`}
                     style={{ width: '260px' }}
                   >
-                    <div className="relative bg-gray-100 overflow-hidden rounded-lg group cursor-pointer">
-                      <img src={brand.imageUrl} alt={brand.name} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" onClick={() => setSelectedBrand(brand)} />
+                    <div className="relative bg-gray-100 overflow-hidden rounded-lg group cursor-pointer" onClick={goToBrand}>
+                      <img src={brand.imageUrl} alt={brand.name} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-4 text-center">
-                      <h3 className={`text-base font-medium mb-2 transition-colors ${isActive ? 'text-[#C9A96E]' : 'text-gray-900 group-hover:text-[#C9A96E]'}`}>
+                      <h3
+                        className={`text-base font-medium mb-2 transition-colors ${isActive ? 'text-[#C9A96E]' : 'text-gray-900 group-hover:text-[#C9A96E]'}`}
+                        onClick={goToBrand}
+                      >
                         {brand.name}
                       </h3>
                       <p className="text-xs text-gray-600 mb-3">{brand.shortDescription}</p>
-                      <button onClick={() => setSelectedBrand(brand)} className="bg-black text-white px-4 py-1.5 text-xs rounded-full hover:bg-[#C9A96E] transition-colors">
-                        Découvrir la marque
+                      <button onClick={goToBrand} className="bg-black text-white px-4 py-1.5 text-xs rounded-full hover:bg-[#C9A96E] transition-colors">
+                        {brand.name === 'Ysabel Mora' ? 'découvrir la gamme' : 'Découvrir la marque'}
                       </button>
                     </div>
                   </div>
