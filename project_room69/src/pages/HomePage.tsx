@@ -40,7 +40,7 @@ const brands: Brand[] = [
     name: "Ysabel Mora",
     shortDescription: "Comfort haut de gamme accessible",
     fullDescription: "Marque espagnole reconnue pour son approche accessible du confort haut de gamme, Ysabel Mora propose une lingerie pensée pour accompagner le quotidien avec douceur et simplicité élégante.",
-    imageUrl: `${import.meta.env.BASE_URL}products/YSABEL_IMG.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}products/YSABEL_IMG.WEBP`,
     productImages: [
       "https://fr.ysabelmora.com/cdn/shop/files/19697-4-braga-alta-adapt-invisible-mujer-ysabel-mora-negro.jpg?v=1721213702&width=2048",
       "https://fr.ysabelmora.com/cdn/shop/files/8331385BUNICO.jpg?v=1773406501&width=740",
@@ -97,7 +97,7 @@ const brands: Brand[] = [
     name: "Wacoal",
     shortDescription: "Innovation et élégance",
     fullDescription: "Référence mondiale, Wacoal se distingue par son expertise technique et son innovation constante au service du confort féminin.",
-    imageUrl: "https://media.wacoallingerie.com/medias/Wacoal-HP-3BoxTeaser-Timelessollections-HaloLace-Black-MouldedBra-Brief-MB.jpg?context=bWFzdGVyfGltYWdlc3w0MTE0MnxpbWFnZS9qcGVnfGFEYzBMMmhqTnk4eE1ESXdNamMxT0RZME16YzBNaTlYWVdOdllXd3RTRkF0TTBKdmVGUmxZWE5sY2kxVWFXMWxiR1Z6YzI5c2JHVmpkR2x2Ym5NdFNHRnNiMHhoWTJVdFFteGhZMnN0VFc5MWJHUmxaRUp5WVMxQ2NtbGxaaTFOUWk1cWNHY3xjMTI0YmExYjQ5N2UyNjM3YzExNTA3OGRmOTJmMGZhNGE4ZWVjYTQ1ODI1OGI0MTdmZGI1NzIzNGE1OTA1MjYx",
+    imageUrl: `${import.meta.env.BASE_URL}products/wacoal_img.avif`,
     productImages: [
       "https://media.wacoallingerie.com/medias/Wacoal-UK-Homepage-Shapewear-3box-ShapeRevelation-Black-MB.jpg?context=bWFzdGVyfGltYWdlc3wzNTQ3OHxpbWFnZS9qcGVnfGFETXlMMmcxTkM4eE1EazVNRE16TURrek56TTNOQzlYWVdOdllXd3RWVXN0U0c5dFpYQmhaMlV0VTJoaGNHVjNaV0Z5TFROaWIzZ3RVMmhoY0dWU1pYWmxiR0YwYVc5dUxVSnNZV05yTFUxQ0xtcHdad3wxMzg3YjFhZmYxMjIxYjU5Y2Q2YTIwOTIyMmQ1MGE4NDFjNzRkNmQzMDE2Zjc2YzEwNzc0NmJiZTgzMGM0NDA3",
       "https://media.wacoallingerie.com/medias/Wacoal-UK-Editorial-WOWLandingPg-Instagram-4Box-SensuLace-Salsa-MB.jpg?context=bWFzdGVyfGltYWdlc3wzNzk4OXxpbWFnZS9qcGVnfGFHRXdMMmd5Wmk4eE1EazFNRE01T1RNMk1UQTFOQzlYWVdOdllXd3RWVXN0UldScGRHOXlhV0ZzTFZkUFYweGhibVJwYm1kUVp5MUpibk4wWVdkeVlXMHRORUp2ZUMxVFpXNXpkVXhoWTJVdFUyRnNjMkV0VFVJdWFuQm58NmYwYzg5MDg0YzNlYjc2ZTJkMzFiODlkMzc0ZmJmMzQyMThmZGM3ZGQwYjgwYTU0YjliYjI2MTAyYmU0Mjk3Mg",
@@ -116,7 +116,7 @@ const brands: Brand[] = [
     name: "Elomi",
     shortDescription: "Pour les courbes",
     fullDescription: "Pensée pour les courbes, Elomi offre une lingerie performante et élégante qui valorise chaque silhouette avec assurance.",
-    imageUrl: "https://media.elomilingerie.com/medias/Elomi-UK-Homepage-3BoxComponent-Lingerie-October-25-MB.jpg?context=bWFzdGVyfGltYWdlc3w2OTcyNXxpbWFnZS9qcGVnfGFETTVMMmhpTUM4eE1EZ3dOamt4TWpJMU16azRNaTlGYkc5dGFTMVZTeTFJYjIxbGNHRm5aUzB6UW05NFEyOXRjRzl1Wlc1MExVeHBibWRsY21sbExVOWpkRzlpWlhJdE1qVXRUVUl1YW5CbnxiNTRiM2JlY2RmMjM0OTNkMTQ1NjhiZTZhYzIzNWZkMzAxYjlmYjEyODNkZjgxMDA3ZjczOTRkYjY1ZjgwZjMx",
+    imageUrl: `${import.meta.env.BASE_URL}products/elomi_img.jpg`,
     productImages: [
       "https://lookagain.scene7.com/is/image/OttoUK/600w/Matilda-Underwired-Plunge-Bra-by-Elomi~96E625FRSP.jpg",
       "https://media.elomilingerie.com/medias/Elomi-UK-NewSeason-AW25-Swim-Montage-2Box-MB.jpg?context=bWFzdGVyfGltYWdlc3w0MTE1MnxpbWFnZS9qcGVnfGFEaGxMMmd3WWk4eE1EYzROelUzTURnME16WTNPQzlGYkc5dGFTMVZTeTFPWlhkVFpXRnpiMjR0UVZjeU5TMVRkMmx0TFUxdmJuUmhaMlV0TWtKdmVDMU5RaTVxY0djfDg2Yzk5NmI5YzEwMjU4MzM5ZTE0ZDdmYjFmNWU1N2FhYTY4MmVjOTUzMGQ0YmUxMDM2ZWJlMDFkODI5MzEzOTE",
