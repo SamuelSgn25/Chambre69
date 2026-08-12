@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Search, ShoppingBag, MessageCircle } from 'lucide-react';
+import React from 'react';
+import { ShoppingBag, MessageCircle } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import logo from '../assets/logo-chambre69.png';
 
@@ -12,13 +11,6 @@ interface HeaderProps {
 export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
   const { getTotalItems } = useCart();
   const totalItems = getTotalItems();
-  const location = useLocation();
-  const [searchValue, setSearchValue] = useState('');
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    setSearchValue(params.get('search') || '');
-  }, [location.search]);
 
   const handleWhatsApp = () => {
     window.open('https://wa.me/221787040505', '_blank');
@@ -35,26 +27,8 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
         {/* Première ligne : [search|accueil] | logo | icônes */}
         <div className="flex items-center h-20 sm:h-24 gap-2">
 
-          {/* Colonne gauche : barre de recherche sur tous les écrans */}
-          <div className="flex items-center min-w-0 flex-shrink-0 md:flex-1 flex-1">
-            <form onSubmit={handleSearch} className="relative w-full max-w-[140px] sm:max-w-xs md:max-w-sm">
-              <input
-                type="text"
-                name="search"
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-                placeholder="Rechercher..."
-                className="w-full border-b border-[#C9A96E]/30 py-2 pr-8 text-white placeholder-gray-500 bg-transparent focus:outline-none focus:border-[#C9A96E] transition-colors text-sm"
-              />
-              <button
-                type="submit"
-                className="absolute right-0 top-1/2 -translate-y-1/2 text-[#C9A96E] hover:text-white transition-colors"
-                aria-label="Rechercher"
-              >
-                <Search className="h-4 w-4" />
-              </button>
-            </form>
-          </div>
+          {/* Colonne gauche : espace réservé (barre de recherche retirée) */}
+          <div className="flex items-center min-w-0 flex-shrink-0 md:flex-1 flex-1" />
 
           {/* Logo centré */}
           <div className="flex-1 flex justify-center">
