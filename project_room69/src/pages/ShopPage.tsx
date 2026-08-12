@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef, useMemo, FormEvent } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FadeInOnLoad, RevealOnScroll } from '../components/Animations';
 import { API_URL } from '../config';
-import { X, MessageCircle, Info, Ruler, Sparkles, Search } from 'lucide-react';
+import { X, MessageCircle, Info, Ruler, Sparkles } from 'lucide-react';
 import shopData from '../data/shop-data.json';
 
 interface Product {
@@ -133,28 +133,11 @@ export const ShopPage = () => {
   const brandSectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const scrollContainerRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [activeProductIndexes, setActiveProductIndexes] = useState<Record<string, number>>({});
-  const navigate = useNavigate();
-  const [searchInput, setSearchInput] = useState('');
 
   const searchParams = useMemo(() => new URLSearchParams(location.search), [location.search]);
   const searchQuery = searchParams.get('search')?.trim().toLowerCase() || '';
   const brandFilter = searchParams.get('brand')?.trim().toLowerCase() || '';
   const categoryFilter = searchParams.get('category')?.trim().toLowerCase() || '';
-
-  useEffect(() => {
-    setSearchInput(searchQuery);
-  }, [searchQuery]);
-
-  const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const params = new URLSearchParams(location.search);
-    if (searchInput.trim()) {
-      params.set('search', searchInput.trim());
-    } else {
-      params.delete('search');
-    }
-    navigate(`/shop${params.toString() ? `?${params.toString()}` : ''}`);
-  };
 
 
   const filteredBrands = useMemo(() => {
@@ -320,31 +303,8 @@ export const ShopPage = () => {
               CHAMBRE 69
             </h1>
             <p className="text-gray-500 text-base md:text-lg font-light max-w-3xl mx-auto italic tracking-wide">
-              Recherchez vite vos marques et collections préférées dans notre boutique.
+              Utilisez la barre de recherche en haut pour filtrer vos marques et collections préférées.
             </p>
-          </div>
-
-          <div className="mb-14 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-2">Recherche directe</p>
-              <p className="text-sm text-gray-500">Filtrez par marque, collection, catégorie ou mot-clé.</p>
-            </div>
-            <form onSubmit={handleSearchSubmit} className="flex w-full max-w-xl gap-2 sm:w-auto">
-              <input
-                type="text"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                placeholder="Rechercher une marque ou un produit..."
-                className="w-full rounded-full border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20 transition"
-              />
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center rounded-full bg-[#C9A96E] px-5 py-3 text-sm font-black uppercase tracking-[0.18em] text-white hover:bg-black transition"
-              >
-                <Search className="w-4 h-4 mr-2" />
-                Rechercher
-              </button>
-            </form>
           </div>
 
           {/* Grille des Marques (Bulles Or & Noir) */}
