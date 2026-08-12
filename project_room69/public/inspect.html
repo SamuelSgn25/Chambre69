@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Inspector</title>
+  <style>
+    body { font-family: sans-serif; background: #222; color: #fff; margin: 20px; }
+    h2 { border-bottom: 1px solid #C9A96E; padding-bottom: 5px; color: #C9A96E; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+    .card { background: #333; padding: 10px; border-radius: 8px; text-align: center; }
+    img { max-width: 100%; height: 180px; object-fit: contain; background: #111; border-radius: 4px; }
+    .path { font-size: 10px; word-break: break-all; margin-top: 8px; color: #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Chambre 69 Image Inspector</h1>
+  <div id="content"></div>
+
+  <script>
+    const data = [
+      // Wacoal
+      { category: "Wacoal / Collection Embrace lace", paths: ["/Wacoal/Collection Embrace lace/IMG_6041.JPG", "/Wacoal/Collection Embrace lace/IMG_6023.WEBP", "/Wacoal/Collection Embrace lace/IMG_6022.WEBP"] },
+      { category: "Wacoal / Collection Florilège", paths: ["/Wacoal/Collection Florilège/IMG_0441.JPG", "/Wacoal/Collection Florilège/IMG_0440.JPG", "/Wacoal/Collection Florilège/IMG_0442.JPG"] },
+      { category: "Wacoal / Collection sensu lace", paths: ["/Wacoal/Collection sensu lace/IMG_5111.JPG", "/Wacoal/Collection sensu lace/IMG_5108.JPG", "/Wacoal/Collection sensu lace/IMG_5112.JPG"] },
+      { category: "Wacoal / Collection lace perfection", paths: ["/Wacoal/Collection lace perfection/IMG_0451.JPG", "/Wacoal/Collection lace perfection/IMG_0452.JPG", "/Wacoal/Collection lace perfection/IMG_0453.JPG", "/Wacoal/Collection lace perfection/IMG_0454.JPG", "/Wacoal/Collection lace perfection/IMG_0455.JPG", "/Wacoal/Collection lace perfection/IMG_0457.JPG", "/Wacoal/Collection lace perfection/IMG_0458.JPG", "/Wacoal/Collection lace perfection/IMG_0459.JPG"] },
+      
+      // Elomi
+      { category: "Elomi / Cate", paths: ["/Elomi/Collection Cate/IMG_0396.JPG", "/Elomi/Collection Cate/IMG_0397.JPG", "/Elomi/Collection Cate/IMG_0398.JPG", "/Elomi/Collection Cate/IMG_0399.JPG", "/Elomi/Collection Cate/IMG_0400.JPG", "/Elomi/Collection Cate/IMG_0401.JPG"] },
+      { category: "Elomi / Cate Allure", paths: ["/Elomi/Cate Allure/IMG_0392.JPG", "/Elomi/Cate Allure/IMG_0393.JPG", "/Elomi/Cate Allure/IMG_0394.JPG", "/Elomi/Cate Allure/IMG_0395.JPG"] },
+      { category: "Elomi / Teagan", paths: ["/Elomi/Collection Teagan/IMG_0380.JPG", "/Elomi/Collection Teagan/IMG_0381.JPG", "/Elomi/Collection Teagan/IMG_0382.JPG", "/Elomi/Collection Teagan/IMG_0383.JPG"] },
+      { category: "Elomi / Kintai", paths: ["/Elomi/Collection Kintai/IMG_0411.JPG", "/Elomi/Collection Kintai/IMG_0412.JPG", "/Elomi/Collection Kintai/IMG_0413.JPG", "/Elomi/Collection Kintai/IMG_0414.JPG"] },
+      { category: "Elomi / Matilda", paths: ["/Elomi/Collection Matilda/IMG_0428.JPG", "/Elomi/Collection Matilda/IMG_0429.JPG", "/Elomi/Collection Matilda/IMG_0430.JPG", "/Elomi/Collection Matilda/IMG_0431.JPG"] },
+      { category: "Elomi / Morgan", paths: ["/Elomi/Collection Morgan/IMG_0419.JPG", "/Elomi/Collection Morgan/IMG_0420.JPG", "/Elomi/Collection Morgan/IMG_0421.JPG", "/Elomi/Collection Morgan/IMG_0422.JPG", "/Elomi/Collection Morgan/IMG_0423.JPG", "/Elomi/Collection Morgan/IMG_0424.JPG"] },
+      { category: "Elomi / Nerina", paths: ["/Elomi/Collection Nerina/IMG_0425.JPG", "/Elomi/Collection Nerina/IMG_0426.JPG", "/Elomi/Collection Nerina/IMG_0427.JPG"] },
+      { category: "Elomi / Zarla", paths: ["/Elomi/Collection Zarla/IMG_0384.JPG", "/Elomi/Collection Zarla/IMG_0385.JPG", "/Elomi/Collection Zarla/IMG_0386.JPG", "/Elomi/Collection Zarla/IMG_0387.JPG", "/Elomi/Collection Zarla/IMG_0388.JPG", "/Elomi/Collection Zarla/IMG_0389.JPG", "/Elomi/Collection Zarla/IMG_0390.JPG", "/Elomi/Collection Zarla/IMG_0391.JPG"] },
+      { category: "Elomi / Goddess & Verity", paths: ["/Elomi/Elomi Goddes/IMG_0402.JPG", "/Elomi/Elomi Goddes/IMG_0403.JPG", "/Elomi/Elomi Goddes/IMG_0404.JPG", "/Elomi/Elomi Goddes/IMG_0405.JPG", "/Elomi/Elomi Goddes/IMG_0406.JPG", "/Elomi/Elomi Goddes/IMG_0407.JPG", "/Elomi/Elomi Goddes/IMG_0408.JPG", "/Elomi/Elomi Goddes/IMG_0409.JPG", "/Elomi/Elomi Goddes/IMG_0410.JPG", "/Elomi/Verity/IMG_0415.JPG", "/Elomi/Verity/IMG_0416.JPG", "/Elomi/Verity/IMG_0417.JPG", "/Elomi/Verity/IMG_0418.JPG"] },
+      { category: "Elomi / Briana", paths: ["/Elomi/Collection Briana/IMG_0432.JPG", "/Elomi/Collection Briana/IMG_0433.JPG", "/Elomi/Collection Briana/IMG_0434.JPG", "/Elomi/Collection Briana/IMG_0435.JPG", "/Elomi/Collection Briana/IMG_0436.JPG", "/Elomi/Collection Briana/IMG_0437.JPG", "/Elomi/Collection Briana/IMG_0438.JPG", "/Elomi/Collection Briana/IMG_0439.JPG"] }
+    ];
+
+    const content = document.getElementById('content');
+    data.forEach(item => {
+      const h2 = document.createElement('h2');
+      h2.textContent = item.category;
+      content.appendChild(h2);
+
+      const grid = document.createElement('div');
+      grid.className = 'grid';
+      item.paths.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        const img = document.createElement('img');
+        // Serve through Vite's public folder if we copy them, or let's use the local file system (wait, browser cannot load files outside workspace easily unless served)
+        // Wait, let's copy them to public inspect_images so they can be viewed
+        img.src = '/inspect_images' + p;
+        const pathDiv = document.createElement('div');
+        pathDiv.className = 'path';
+        pathDiv.textContent = p.split('/').pop();
+        card.appendChild(img);
+        card.appendChild(pathDiv);
+        grid.appendChild(card);
+      });
+      content.appendChild(grid);
+    });
+  </script>
+</body>
+</html>
