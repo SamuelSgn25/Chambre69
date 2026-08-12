@@ -35,21 +35,9 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
         {/* Première ligne : [search|accueil] | logo | icônes */}
         <div className="flex items-center h-20 sm:h-24 gap-2">
 
-          {/* Colonne gauche : bouton Accueil (mobile) ou barre de recherche (desktop) */}
-          <div className="flex items-center min-w-0 flex-shrink-0 md:flex-1">
-            {/* Accueil visible uniquement sur mobile */}
-            <button
-              onClick={() => onNavigate('home')}
-              className="md:hidden flex flex-col items-center text-[#C9A96E] hover:text-white transition-colors"
-              aria-label="Accueil"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
-              </svg>
-              <span className="text-[8px] font-bold uppercase tracking-widest mt-1">Accueil</span>
-            </button>
-            {/* Recherche visible uniquement sur desktop */}
-            <form onSubmit={handleSearch} className="relative max-w-xs hidden md:block w-full">
+          {/* Colonne gauche : barre de recherche sur tous les écrans */}
+          <div className="flex items-center min-w-0 flex-shrink-0 md:flex-1 flex-1">
+            <form onSubmit={handleSearch} className="relative w-full max-w-[140px] sm:max-w-xs md:max-w-sm">
               <input
                 type="text"
                 name="search"
