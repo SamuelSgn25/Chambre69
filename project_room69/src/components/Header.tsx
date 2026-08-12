@@ -16,10 +16,6 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
     window.open('https://wa.me/221787040505', '_blank');
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    onNavigate('shop', { search: searchValue.trim() });
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-black shadow-2xl z-50 border-b border-[#C9A96E]/20">
