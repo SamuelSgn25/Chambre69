@@ -303,7 +303,7 @@ export const ShopPage = () => {
               CHAMBRE 69
             </h1>
             <p className="text-gray-500 text-base md:text-lg font-light max-w-3xl mx-auto italic tracking-wide">
-              Utilisez la barre de recherche en haut pour filtrer vos marques et collections préférées.
+              Découvrez nos marques et collections.
             </p>
           </div>
 
