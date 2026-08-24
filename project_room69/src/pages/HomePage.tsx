@@ -291,7 +291,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
             >
               {displayBrands.map((brand, idx) => {
                 const isActive = idx === activeBrandIndex;
-                const slug = brand.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                const slug = brand.id || brand.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
                 const goToBrand = () => onNavigate('shop', { brand: slug });
                 return (
                   <div
@@ -311,7 +311,7 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
                       </h3>
                       <p className="text-xs text-gray-600 mb-3">{brand.shortDescription}</p>
                       <button onClick={goToBrand} className="bg-black text-white px-4 py-1.5 text-xs rounded-full hover:bg-[#C9A96E] transition-colors">
-                        {brand.name === 'Ysabel Mora' ? 'découvrir la gamme' : 'Découvrir la marque'}
+                        Découvrir la marque
                       </button>
                     </div>
                   </div>
