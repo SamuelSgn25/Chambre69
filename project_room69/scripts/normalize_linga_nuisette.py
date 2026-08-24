@@ -11,13 +11,13 @@ for b in data.get('brands', []):
         for p in b.get('products', []):
             sub = p.get('subcategory') or ''
             if 'nui' in sub.lower():
-                if p['subcategory'] != 'Nuisettes':
-                    p['subcategory'] = 'Nuisettes'
+                if p['subcategory'] != 'Nuisette':
+                    p['subcategory'] = 'Nuisette'
                     modified = True
             coll = p.get('collection') or ''
             if 'nui' in coll.lower():
-                if p['collection'] != 'Nuisettes':
-                    p['collection'] = 'Nuisettes'
+                if p['collection'] != 'Nuisette':
+                    p['collection'] = 'Nuisette'
                     modified = True
 if modified:
     bak = DATA + '.bak.' + datetime.datetime.now().strftime('%Y%m%d%H%M%S')
