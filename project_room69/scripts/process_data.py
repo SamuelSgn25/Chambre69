@@ -96,10 +96,13 @@ def scan_and_collect_products(dir_path, limit_path, brand_id, subcategory=None, 
                 new_collection = f"{collection} - {item}" if collection else item
                 prods.extend(scan_and_collect_products(full_path, limit_path, brand_id, subcategory, new_collection))
         elif os.path.isfile(full_path) and item.lower().endswith((".jpg", ".jpeg", ".png", ".webp")):
+            # Skip back-view / dos images by filename hints
+            if re.search(r"\b(dos|back|rear|arriere|arrière|vue[_ -]?de[_ -]?dos|backview|back_view)\b", item, flags=re.IGNORECASE):
+                continue
             prods.append((full_path, subcategory, collection))
     return prods
 
-CATEGORIES = [
+USER_PROVIDED_CATEGORIES = [
     "Chaines de taille",
     "curvy kate",
     "Dita von teese",
@@ -109,18 +112,39 @@ CATEGORIES = [
     "Freya",
     "Jouets pour adultes",
     "Kimonos",
+    "Krizalid",
     "Linga dore",
     "Lingerie Sexy",
-    "Lingerie traditionnelle africaine",
+    "Lingerie Traditionnelle Africaine",
     "Louisa bracq",
+    "Miracle Suit",
     "Senteurs, Encens et Huiles",
     "Wacoal",
     "Ysabel Mora"
 ]
 
+
+# Build exact categories from existing folders at repo root — respect repository structure
+def discover_categories(repo_root, allowed_list):
+    found = []
+    allowed_norm = {a.lower(): a for a in allowed_list}
+    for entry in sorted(os.listdir(repo_root)):
+        full = os.path.join(repo_root, entry)
+        if os.path.isdir(full):
+            key = entry.lower()
+            if key in allowed_norm:
+                # preserve exact folder name on disk
+                found.append(entry)
+    return found
+
+# CATEGORIES will be discovered after REPO_ROOT is defined below
+
 REPO_ROOT = "/home/samuel25/Chambre69"
 FRONTEND_PUBLIC = os.path.join(REPO_ROOT, "project_room69/public/products")
 DATA_FILE = os.path.join(REPO_ROOT, "project_room69/src/data/shop-data.json")
+
+# Discover categories from repo root based on the provided list
+CATEGORIES = discover_categories(REPO_ROOT, USER_PROVIDED_CATEGORIES)
 
 if not os.path.exists(FRONTEND_PUBLIC):
     os.makedirs(FRONTEND_PUBLIC)
@@ -178,16 +202,37 @@ for category in CATEGORIES:
         clean_col = col.strip() if col else None
         if clean_col:
             clean_col = re.sub(r'collection', '', clean_col, flags=re.IGNORECASE).strip()
+            # Remove forbidden tokens and digits from collection names
+            clean_col = re.sub(r'(?i)\b(brief|item)\b', '', clean_col).strip()
+            clean_col = re.sub(r'\d+', '', clean_col).strip()
             clean_col = re.sub(r'-+', '-', clean_col).strip('-').strip()
             clean_col = clean_col.capitalize() if clean_col else None
         if not clean_col:
             clean_col = "Général"
-            
+
+        # Build a friendly product name from the filename, remove forbidden tokens and digits
+        filename = os.path.splitext(os.path.basename(file_path))[0]
+        name_clean = filename.replace('_', ' ').replace('-', ' ').strip()
+        name_clean = re.sub(r'(?i)\b(brief|item)\b', '', name_clean).strip()
+        name_clean = re.sub(r'\d+', '', name_clean).strip()
+        # If name becomes empty, fallback to category + collection/subcategory
+        if not name_clean:
+            if clean_sub:
+                name_clean = f"{category} {clean_sub}"
+            elif clean_col and clean_col != 'Général':
+                name_clean = f"{category} {clean_col}"
+            else:
+                name_clean = category
+
+        # Generate slug without numbers and forbidden tokens
+        slug_base = re.sub(r'[^a-z0-9]+', '-', f"{brand_id}-{name_clean.lower()}")
+        slug_base = re.sub(r'-+', '-', slug_base).strip('-')
+
         products.append({
             "id": prod_id,
             "category_id": brand_id,
-            "name": f"{category} Item {i+1}",
-            "slug": f"{brand_id}-item-{i+1}",
+            "name": name_clean,
+            "slug": slug_base,
             "description": prod_desc,
             "image_url": img_url,
             "subcategory": clean_sub,
