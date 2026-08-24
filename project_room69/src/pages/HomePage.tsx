@@ -36,7 +36,9 @@ interface Brand {
 // Derive brands from local shop-data.json to ensure images and descriptions match repository data
 const brands: Brand[] = (shopData.brands || []).map((b: any) => {
   const desc = (b.description || '').replace(/\d+%?/g, '').replace(/\s+/g, ' ').trim();
-  const short = desc.split(/[\.\!\?]/)[0] || `Découvrez notre collection de ${b.name}`;
+  const firstSentence = desc.split(/[\.\!\?]/)[0] || `Découvrez notre collection de ${b.name}`;
+  // Very short shortDescription (first 4 words)
+  const short = firstSentence.split(/\s+/).slice(0, 4).join(' ');
   return {
     id: b.id,
     name: b.name,
