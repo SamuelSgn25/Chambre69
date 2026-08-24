@@ -307,6 +307,21 @@ export const ShopPage = () => {
             <p className="text-gray-500 text-base md:text-lg font-light max-w-3xl mx-auto italic tracking-wide">
               Découvrez nos marques et collections.
             </p>
+
+            {/* Aperçu spécifique Curvy Kate juste sous le texte d'intro */}
+            {(() => {
+              const ck = (shopData.brands || []).find((bb: any) => (bb.name || '').toLowerCase().includes('curvy kate') || bb.id === 'curvy-kate');
+              if (ck && ck.image_url) {
+                return (
+                  <div className="mt-8 flex justify-center">
+                    <div className="w-40 h-40 rounded-lg overflow-hidden border-2 border-gray-100 shadow-lg">
+                      <img src={ck.image_url} alt={ck.name} className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                );
+              }
+              return null;
+            })()}
           </div>
 
           {/* Grille des Marques (Bulles Or & Noir) */}
