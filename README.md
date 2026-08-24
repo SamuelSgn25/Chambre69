@@ -1,6 +1,6 @@
 # 🌹 Chambre 69 — Boutique de Lingerie de Luxe
 
-**Chambre 69** est une boutique en ligne de lingerie et d'accessoires haut de gamme. Ce dépôt contient le code source complet du site, incluant le frontend React/Vite et le backend NestJS/Prisma.
+**Chambre 69** est une boutique en ligne de lingerie et d'accessoires haut de gamme. Ce dépôt contient le code source du frontend React/Vite et les images sources du catalogue. Le backend a été retiré du dépôt — le site utilise désormais des données statiques (`shop-data.json`) servies par le frontend.
 
 ---
 
@@ -18,9 +18,7 @@ Chambre69/
 │       │   └── shop-data.json   # Catalogue produits (données statiques)
 │       └── components/      # Composants réutilisables
 │
-├── backend/                 # Backend (NestJS + Prisma + PostgreSQL)
-│   ├── prisma/              # Schéma et migrations de la base de données
-│   └── src/                 # Code source du serveur
+<!-- Backend removed from repository -->
 │
 ├── Dita von teese/          # Images source — Marque Dita Von Teese
 ├── Elomi/                   # Images source — Marque Elomi
@@ -65,14 +63,7 @@ Le site sera accessible sur `http://localhost:5173`.
 
 ### Backend
 
-```bash
-cd backend
-npm install
-npx prisma migrate deploy
-npm run start:dev
-```
-
-Le backend sera accessible sur `http://localhost:3001`.
+Le backend a été retiré du dépôt. Le frontend sert désormais un catalogue statique à partir de `project_room69/src/data/shop-data.json`.
 
 ---
 
@@ -93,7 +84,13 @@ project_room69/src/data/shop-data.json
 1. **Format des URLs** : Les `image_url` dans `shop-data.json` doivent utiliser le format `/products/<nom_fichier>` (ex : `/products/abc123.jpeg`).
 2. **Fichiers acceptés** : `.jpg`, `.JPG`, `.jpeg`, `.webp`, `.avif`, `.png`
 3. **Taille minimale** : Tout fichier image inférieur à 500 octets est considéré corrompu/vide et ne s'affichera pas.
-4. **Ajout de nouvelles images** : Copier le fichier dans `public/products/`, puis mettre à jour `shop-data.json`.
+4. **Ajout de nouvelles images** : Copier le fichier dans `project_room69/public/products/`, puis relancer le script de génération de catalogue.
+
+Pour régénérer automatiquement `shop-data.json` à partir des dossiers racine (respecte l'architecture présente à la racine du dépôt) :
+
+```bash
+python3 project_room69/scripts/process_data.py
+```
 
 ### Vérification de l'intégrité des images
 
@@ -153,12 +150,7 @@ for i in issues: print(i)
 
 ## 🌐 Déploiement
 
-Le projet est configuré pour être déployé sur **Vercel** :
-
-- **Frontend** : déployé automatiquement depuis `project_room69/`
-- **Backend** : hébergeable sur Railway, Render ou tout serveur Node.js
-
-Voir [`DEPLOYMENT.md`](./project_room69/DEPLOYMENT.md) pour les instructions complètes.
+Le projet est configuré pour être déployé sur **Vercel**. Le déploiement sert uniquement le `frontend` (`project_room69`) et les API du backend ne sont plus présentes dans le dépôt. Le fichier `vercel.json` a été mis à jour pour supprimer le service backend.
 
 ---
 
