@@ -128,10 +128,13 @@ for b in data['brands']:
         if any(r in name_col for r in removals):
             removed_products.append((b['id'], p['id']))
             continue
-        # Remove 'brief' word from products classified as 'soutien'
-        if 'soutien' in (p.get('subcategory') or '').lower():
-            p['name'] = re.sub(r'\bbrief\b', '', p.get('name', ''), flags=re.IGNORECASE).strip()
-            p['collection'] = re.sub(r'\bbrief\b', '', p.get('collection', ''), flags=re.IGNORECASE).strip()
+        # Remove 'brief' word everywhere it's present (name, collection, subcategory, description)
+        for field in ['name', 'collection', 'subcategory', 'description']:
+            if field in p and isinstance(p[field], str):
+                newval = re.sub(r'\bbrief\b', '', p[field], flags=re.IGNORECASE).strip()
+                # normalize double spaces that may result
+                newval = re.sub(r'\s{2,}', ' ', newval)
+                p[field] = newval
         newprods.append(p)
     b['products'] = newprods
 

@@ -23,11 +23,11 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
         {/* Première ligne : [search|accueil] | logo | icônes */}
         <div className="flex items-center h-20 sm:h-24 gap-2">
 
-          {/* Colonne gauche : espace réservé (barre de recherche retirée) */}
-          <div className="flex items-center min-w-0 flex-shrink-0 md:flex-1 flex-1" />
+          {/* Colonne gauche : espace réservé (barre de recherche retirée) - masquée sur mobile pour centrer le logo */}
+          <div className="hidden md:flex items-center min-w-0 md:flex-1" />
 
           {/* Logo centré */}
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 flex justify-center relative">
             <button
               onClick={() => onNavigate('home')}
               className="focus:outline-none cursor-pointer group"
@@ -36,7 +36,7 @@ export const Header = ({ onNavigate, currentPage }: HeaderProps) => {
               <img
                 src={logo}
                 alt="Chambre 69"
-                className="w-[130px] sm:w-[180px] md:w-[220px] h-auto transition-transform duration-500 group-hover:scale-105"
+                className="w-[130px] sm:w-[180px] md:w-[220px] h-auto transition-transform duration-500 group-hover:scale-105 absolute left-1/2 transform -translate-x-1/2 sm:static sm:left-auto sm:translate-x-0"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;

@@ -425,13 +425,13 @@ export const HomePage = ({ onNavigate }: HomePageProps) => {
             <div className="w-full md:w-1/2 p-6 md:p-8">
               <div className="flex flex-row gap-4 justify-center items-stretch">
                 <div className="flex-1 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <img src="https://image.made-in-china.com/202f0j00ApFkgamEEcob/Ensemble-De-Lingerie-Deux-Pieces-Sexy-Pour-Femme.webp" alt="Pièce sensuelle 1" className="w-full h-64 object-cover filter blur-sm" />
+                  <img src="https://image.made-in-china.com/202f0j00ApFkgamEEcob/Ensemble-De-Lingerie-Deux-Pieces-Sexy-Pour-Femme.webp" alt="Pièce sensuelle 1" className="w-full h-64 object-cover" />
                 </div>
                 <div className="flex-1 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <img src="https://cdn.shopify.com/s/files/1/0870/4150/7665/files/BLOG_1.png?v=1763115011" alt="Pièce sensuelle 2" className="w-full h-64 object-cover filter blur-sm" />
+                  <img src="https://cdn.shopify.com/s/files/1/0870/4150/7665/files/BLOG_1.png?v=1763115011" alt="Pièce sensuelle 2" className="w-full h-64 object-cover" />
                 </div>
                 <div className="flex-1 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <img src="https://iris-lingerie.com/cdn/shop/files/fanny_ok2-min.jpg?v=1742942692" alt="Pièce sensuelle 3" className="w-full h-64 object-cover filter blur-sm" />
+                  <img src="https://iris-lingerie.com/cdn/shop/files/fanny_ok2-min.jpg?v=1742942692" alt="Pièce sensuelle 3" className="w-full h-64 object-cover" />
                 </div>
               </div>
             </div>
