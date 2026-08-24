@@ -297,6 +297,26 @@ export const ShopPage = () => {
 
         <div className="max-w-7xl mx-auto">
           {/* Titre principal */}
+          {/* Hero circle image chosen from Krizalid / Miracle Suit / Maternité */}
+          <div className="flex justify-center mb-12">
+            <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-black shadow-2xl">
+              <img
+                src={(() => {
+                  const preferred = ['krizalid', 'miracle-suit', 'maternit-et-grossesse', 'miraclesuit'];
+                  for (const id of preferred) {
+                    const b = (shopData.brands || []).find(bb => bb.id === id || bb.id === id.toLowerCase());
+                    if (b) {
+                      if (b.image_url) return b.image_url;
+                      if (b.products && b.products.length > 0) return b.products[0].image_url;
+                    }
+                  }
+                  return 'https://via.placeholder.com/150';
+                })()}
+                alt="Featured"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
           <div className="text-center mb-16 group">
             <p className="text-[10px] font-black text-[#C9A96E] uppercase tracking-[0.6em] mb-6 animate-in fade-in slide-in-from-bottom-2">Maison de Lingerie</p>
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-serif text-gray-900 mb-4 tracking-tighter leading-none transition-colors duration-1000 hover:text-[#C9A96E] cursor-default">
