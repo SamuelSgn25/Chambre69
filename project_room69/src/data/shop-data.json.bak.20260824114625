@@ -1,0 +1,4186 @@
+{
+  "brands": [
+    {
+      "id": "chaines-de-taille",
+      "name": "Chaines de taille",
+      "description": "Découvrez notre collection raffinée de Chaines de taille.",
+      "image_url": "/products/c8c46936f1.jpeg",
+      "products": []
+    },
+    {
+      "id": "curvy-kate",
+      "name": "curvy kate",
+      "description": "« Hey Girls » vient d'entrer dans le groupe de discussion !",
+      "image_url": "/products/03dfc18988.webp",
+      "products": [
+        {
+          "id": "curvy-kate-auto-1",
+          "category_id": "curvy-kate",
+          "name": "curvy kate 1",
+          "slug": "curvy-kate-auto-1",
+          "description": "Produit importé: Soutien/collection hey Girls Superplunge Strapless",
+          "image_url": "/products/27ac4f_ck-hey-girls-latte-ss25-bra-f_x90.progressive.webp",
+          "subcategory": "collection hey Girls Superplunge Strapless",
+          "collection": "collection hey Girls Superplunge Strapless",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-curvy-kate-auto-1",
+              "product_id": "curvy-kate-auto-1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "curvy-kate-auto-2",
+          "category_id": "curvy-kate",
+          "name": "curvy kate 2",
+          "slug": "curvy-kate-auto-2",
+          "description": "Produit importé: Soutien/collection hey Girls Superplunge Strapless",
+          "image_url": "/products/5618ad_ck-hey-girls-latte-ss25-bra-halter-f_x90.progressive.webp",
+          "subcategory": "collection hey Girls Superplunge Strapless",
+          "collection": "collection hey Girls Superplunge Strapless",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-curvy-kate-auto-2",
+              "product_id": "curvy-kate-auto-2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "curvy-kate-auto-3",
+          "category_id": "curvy-kate",
+          "name": "curvy kate 3",
+          "slug": "curvy-kate-auto-3",
+          "description": "Produit importé: Soutien/Collection Enclose High Waist",
+          "image_url": "/products/853704_ck-enclose-oxblood-bra-d_800x_progressive_jpg.webp",
+          "subcategory": "Collection Enclose High Waist",
+          "collection": "Collection Enclose High Waist",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-curvy-kate-auto-3",
+              "product_id": "curvy-kate-auto-3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "curvy-kate-auto-4",
+          "category_id": "curvy-kate",
+          "name": "curvy kate 4",
+          "slug": "curvy-kate-auto-4",
+          "description": "Produit importé: Soutien/Collection Enclose High Waist",
+          "image_url": "/products/49c24a_ck-enclose-oxblood-ls1_76be5255-f7ed-4701-bef9-c51627485331.webp",
+          "subcategory": "Collection Enclose High Waist",
+          "collection": "Collection Enclose High Waist",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-curvy-kate-auto-4",
+              "product_id": "curvy-kate-auto-4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "curvy-kate-auto-5",
+          "category_id": "curvy-kate",
+          "name": "curvy kate 5",
+          "slug": "curvy-kate-auto-5",
+          "description": "Produit importé: Slip/Collection Enclose High waist Brief",
+          "image_url": "/products/e8c0d1_ck-enclose-oxblood-brief-cream.webp",
+          "subcategory": "Collection Enclose High waist Brief",
+          "collection": "Collection Enclose High waist Brief",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-curvy-kate-auto-5",
+              "product_id": "curvy-kate-auto-5",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "curvy-kate-auto-6",
+          "category_id": "curvy-kate",
+          "name": "curvy kate 6",
+          "slug": "curvy-kate-auto-6",
+          "description": "Produit importé: Slip/Collection Enclose High waist Brief",
+          "image_url": "/products/855211_ck-enclose-oxblood-ls1_76be5255-f7ed-4701-bef9-c51627485331.webp",
+          "subcategory": "Collection Enclose High waist Brief",
+          "collection": "Collection Enclose High waist Brief",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-curvy-kate-auto-6",
+              "product_id": "curvy-kate-auto-6",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dita-von-teese",
+      "name": "Dita von teese",
+      "description": "String DITA VON TEESE Victresse Semi-transparent Coupe : très échancrée Tour de taille : extensible Finitions : festonnées, coutures plates Fond doublé : 100% coton Dita Von Teese dévoile à travers cette ligne glamour son savoir-faire et son amour de la broderie riche et travaillée.",
+      "image_url": "/products/a7f6e4e9bb.webp",
+      "products": [
+        {
+          "id": "dita-von-teese-p4",
+          "category_id": "dita-von-teese",
+          "name": "Dita von teese",
+          "slug": "dita-von-teese-p4",
+          "description": "Porte-jarretelles DITA VON TEESE Zsa Zsa 6 jarretelles : extensibles, réglables Résille extensible au dos Nœud et bijou à la taille Petits nœuds en départs de jarretelles Détails dorés Sous l'aura envoutante de la dentelle, chaque pièce de Zsa Zsa capture l'essence enchanteresse de votre féminité dans un ballet de coupes sensuelles et de détails luxueux pour une silhouette remarquable.",
+          "image_url": "/products/38b2fb_IMG_0302.WEBP",
+          "subcategory": "Porte jaretelle",
+          "collection": "Zsa zsa",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-dita-von-teese-p4",
+              "product_id": "dita-von-teese-p4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "dita-von-teese-p5",
+          "category_id": "dita-von-teese",
+          "name": "Dita von teese",
+          "slug": "dita-von-teese-p5",
+          "description": "Porte-jarretelles DITA VON TEESE Zsa Zsa 6 jarretelles : extensibles, réglables Résille extensible au dos Nœud et bijou à la taille Petits nœuds en départs de jarretelles Détails dorés Sous l'aura envoutante de la dentelle, chaque pièce de Zsa Zsa capture l'essence enchanteresse de votre féminité dans un ballet de coupes sensuelles et de détails luxueux pour une silhouette remarquable.",
+          "image_url": "/products/38b2fb_IMG_0303.WEBP",
+          "subcategory": "Porte jaretelle",
+          "collection": "Zsa zsa",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-dita-von-teese-p5",
+              "product_id": "dita-von-teese-p5",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "dita-von-teese-p6",
+          "category_id": "dita-von-teese",
+          "name": "Dita von teese",
+          "slug": "dita-von-teese-p6",
+          "description": "Porte-jarretelles DITA VON TEESE Zsa Zsa 6 jarretelles : extensibles, réglables Résille extensible au dos Nœud et bijou à la taille Petits nœuds en départs de jarretelles Détails dorés Sous l'aura envoutante de la dentelle, chaque pièce de Zsa Zsa capture l'essence enchanteresse de votre féminité dans un ballet de coupes sensuelles et de détails luxueux pour une silhouette remarquable.",
+          "image_url": "/products/38b2fb_IMG_0310.JPG",
+          "subcategory": "Porte jaretelle",
+          "collection": "Zsa zsa",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-dita-von-teese-p6",
+              "product_id": "dita-von-teese-p6",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "dita-von-teese-p7",
+          "category_id": "dita-von-teese",
+          "name": "Dita von teese",
+          "slug": "dita-von-teese-p7",
+          "description": "String DITA VON TEESE Victresse Semi-transparent Coupe : très échancrée Tour de taille : extensible Finitions : festonnées, coutures plates Fond doublé : 100% coton Dita Von Teese dévoile à travers cette ligne glamour son savoir-faire et son amour de la broderie riche et travaillée.",
+          "image_url": "/products/65d731_IMG_0304.WEBP",
+          "subcategory": "slip",
+          "collection": "Dita von teese",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-dita-von-teese-p7",
+              "product_id": "dita-von-teese-p7",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "dita-von-teese-p8",
+          "category_id": "dita-von-teese",
+          "name": "Dita von teese",
+          "slug": "dita-von-teese-p8",
+          "description": "String DITA VON TEESE Victresse Semi-transparent Coupe : très échancrée Tour de taille : extensible Finitions : festonnées, coutures plates Fond doublé : 100% coton Dita Von Teese dévoile à travers cette ligne glamour son savoir-faire et son amour de la broderie riche et travaillée.",
+          "image_url": "/products/65d731_IMG_0305.WEBP",
+          "subcategory": "slip",
+          "collection": "Dita von teese",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-dita-von-teese-p8",
+              "product_id": "dita-von-teese-p8",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "dita-von-teese-p9",
+          "category_id": "dita-von-teese",
+          "name": "Dita von teese",
+          "slug": "dita-von-teese-p9",
+          "description": "Soutien-gorge corbeille DITA VON TEESE Victresse Semi-transparent Armatures Demi-coques Finitions : festonnées Fermeture : agrafes Bretelles : extensibles, réglables Nœuds satinés Dita Von Teese dévoile à travers cette ligne glamour son savoir-faire et son amour de la broderie riche et travaillée.",
+          "image_url": "/products/24fe2d_IMG_0311.JPG",
+          "subcategory": "soutien gorge",
+          "collection": "Soutien victresse",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-dita-von-teese-p9",
+              "product_id": "dita-von-teese-p9",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "dita-von-teese-p10",
+          "category_id": "dita-von-teese",
+          "name": "Dita von teese",
+          "slug": "dita-von-teese-p10",
+          "description": "Soutien-gorge corbeille DITA VON TEESE Victresse Semi-transparent Armatures Demi-coques Finitions : festonnées Fermeture : agrafes Bretelles : extensibles, réglables Nœuds satinés Dita Von Teese dévoile à travers cette ligne glamour son savoir-faire et son amour de la broderie riche et travaillée.",
+          "image_url": "/products/24fe2d_IMG_0312.JPG",
+          "subcategory": "soutien gorge",
+          "collection": "Soutien victresse",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-dita-von-teese-p10",
+              "product_id": "dita-von-teese-p10",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elomi",
+      "name": "Elomi",
+      "description": "Tombez sous le charme du Slip côtés hauts Zarla d'Elomil.",
+      "image_url": "/products/b872ccf9d7.JPG",
+      "products": [
+        {
+          "id": "elomi-p0",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p0",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0400.JPG",
+          "subcategory": "Collection Cate",
+          "collection": "Général",
+          "is_featured": true,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p0",
+              "product_id": "elomi-p0",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p1",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p1",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0403.JPG",
+          "subcategory": "Collection Cate",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p1",
+              "product_id": "elomi-p1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p2",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p2",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0409.JPG",
+          "subcategory": "Collection Cate",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p2",
+              "product_id": "elomi-p2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p3",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p3",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0410.JPG",
+          "subcategory": "Collection Cate",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p3",
+              "product_id": "elomi-p3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p7",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p7",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/fc2919_IMG_6058.JPG",
+          "subcategory": "Collection Kintai",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p7",
+              "product_id": "elomi-p7",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p8",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p8",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/fc2919_IMG_6059.JPG",
+          "subcategory": "Collection Kintai",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p8",
+              "product_id": "elomi-p8",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p9",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p9",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/fc2919_IMG_6060.JPG",
+          "subcategory": "Collection Kintai",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p9",
+              "product_id": "elomi-p9",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p10",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p10",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_0375.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p10",
+              "product_id": "elomi-p10",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p11",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p11",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_0383.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p11",
+              "product_id": "elomi-p11",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p12",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p12",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_0384.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p12",
+              "product_id": "elomi-p12",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p13",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p13",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_0385.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p13",
+              "product_id": "elomi-p13",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p14",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p14",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_0388.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p14",
+              "product_id": "elomi-p14",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p15",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p15",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_0390.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p15",
+              "product_id": "elomi-p15",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p16",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p16",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_5013.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p16",
+              "product_id": "elomi-p16",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p17",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p17",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_5031.WEBP",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p17",
+              "product_id": "elomi-p17",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p18",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p18",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_5032.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p18",
+              "product_id": "elomi-p18",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p19",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p19",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_5034.WEBP",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p19",
+              "product_id": "elomi-p19",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p20",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p20",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_6029.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p20",
+              "product_id": "elomi-p20",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p21",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p21",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/6ab999_IMG_6030.JPG",
+          "subcategory": "Collection Matilda",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p21",
+              "product_id": "elomi-p21",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p22",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p22",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/3ae7e8_58b4a8d8-5f7d-418c-a4d5-d74c28829edd.jpg",
+          "subcategory": "Collection Morgan",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p22",
+              "product_id": "elomi-p22",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p23",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p23",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/3ae7e8_8a84ae9e-0dc2-423d-84a1-41fd1a6c10bc.jpg",
+          "subcategory": "Collection Morgan",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p23",
+              "product_id": "elomi-p23",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p24",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p24",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/3ae7e8_e1a569c5-e25d-47fc-893a-12a4ae18930d.jpg",
+          "subcategory": "Collection Morgan",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p24",
+              "product_id": "elomi-p24",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p25",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p25",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/fbdc60_4519b23b-be06-4bd5-ac4a-7e5b4189a09b.jpg",
+          "subcategory": "Collection Nerina",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p25",
+              "product_id": "elomi-p25",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p26",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p26",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/fbdc60_54da573d-03fd-4405-b11e-171519e3e987.jpg",
+          "subcategory": "Collection Nerina",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p26",
+              "product_id": "elomi-p26",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p28",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p28",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/ebbc93_IMG_5090.JPG",
+          "subcategory": "Collection Zarla",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p28",
+              "product_id": "elomi-p28",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p29",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p29",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/ebbc93_IMG_5091.JPG",
+          "subcategory": "Collection Zarla",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p29",
+              "product_id": "elomi-p29",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p30",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p30",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/ebbc93_IMG_5093.JPG",
+          "subcategory": "Collection Zarla",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p30",
+              "product_id": "elomi-p30",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p31",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p31",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/ebbc93_IMG_5097.JPG",
+          "subcategory": "Collection Zarla",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p31",
+              "product_id": "elomi-p31",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p32",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p32",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/ebbc93_IMG_6032.JPG",
+          "subcategory": "Collection Zarla",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p32",
+              "product_id": "elomi-p32",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p33",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p33",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/ebbc93_IMG_6033.JPG",
+          "subcategory": "Collection Zarla",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p33",
+              "product_id": "elomi-p33",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p34",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p34",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0400.JPG",
+          "subcategory": "Collection cate allure",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p34",
+              "product_id": "elomi-p34",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p35",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p35",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0403.JPG",
+          "subcategory": "Collection cate allure",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p35",
+              "product_id": "elomi-p35",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p36",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p36",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0409.JPG",
+          "subcategory": "Collection cate allure",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p36",
+              "product_id": "elomi-p36",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "elomi-p37",
+          "category_id": "elomi",
+          "name": "Elomi",
+          "slug": "elomi-p37",
+          "description": "Découvrez notre collection raffinée de Elomi.",
+          "image_url": "/products/cf018f_IMG_0410.JPG",
+          "subcategory": "Collection cate allure",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-elomi-p37",
+              "product_id": "elomi-p37",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empreinte",
+      "name": "Empreinte",
+      "description": "Informations produits Soutien-gorge avec armatures, sans coques Bonnets moulés, sans coutures pour un effet seconde peau Décolleté rassurant, galbe naturel et silhouette redessinée Bretelles ajustables et largeur adaptée selon la taille Dos en maille nerveuse pour un maintien optimisé et reste en place toute la journée Agrafage aux finitions douces avec hauteur adaptée en fonction de la taille Disponible jusqu’au bonnet H, pensé pour les poitrines généreuses Broderie suisse Dentelle française Best-seller iconique, Cassiopée incarne l’expertise du sans couture.",
+      "image_url": "/products/926f948473.jpg",
+      "products": []
+    },
+    {
+      "id": "fantasie",
+      "name": "Fantasie",
+      "description": "Notre Soutien-Gorge Entier Renfort Latéral, est la promesse d'une poitrine joliment rehaussée et projetée vers l'avant.",
+      "image_url": "/products/3d110fd41b.jpg",
+      "products": []
+    },
+    {
+      "id": "freya",
+      "name": "Freya",
+      "description": "Le look intemporel du Soutien-Gorge Plunge Temptress de Freya Black possède un style parfait grâce à son décolleté échancré.",
+      "image_url": "/products/d6cbfc3fd1.jpg",
+      "products": []
+    },
+    {
+      "id": "jouets-pour-adultes",
+      "name": "Jouets pour adultes",
+      "description": "Découvrez notre collection raffinée de Jouets pour adultes.",
+      "image_url": "/products/48b3cca498.jpeg",
+      "products": []
+    },
+    {
+      "id": "kimonos",
+      "name": "Kimonos",
+      "description": "Découvrez notre collection raffinée de Kimonos.",
+      "image_url": "/products/b693119ab7.jpeg",
+      "products": []
+    },
+    {
+      "id": "linga-dore",
+      "name": "Linga dore",
+      "description": "Découvrez notre collection raffinée de Linga dore.",
+      "image_url": "/products/1e7d70ffb1.jpg",
+      "products": [
+        {
+          "id": "linga-dore-auto-1",
+          "category_id": "linga-dore",
+          "name": "Linga dore 1",
+          "slug": "linga-dore-auto-1",
+          "description": "Produit importé: Lingadore/Chemise de nuit femme",
+          "image_url": "/products/aac191_M6001B_02_01-600x600.jpg",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-1",
+              "product_id": "linga-dore-auto-1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-2",
+          "category_id": "linga-dore",
+          "name": "Linga dore 2",
+          "slug": "linga-dore-auto-2",
+          "description": "Produit importé: Lingadore/Slip/High waist brief",
+          "image_url": "/products/d199e0_8003B-1_223_02-600x600.jpg",
+          "subcategory": "High waist brief",
+          "collection": "High waist brief",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-2",
+              "product_id": "linga-dore-auto-2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-3",
+          "category_id": "linga-dore",
+          "name": "Linga dore 3",
+          "slug": "linga-dore-auto-3",
+          "description": "Produit importé: Lingadore/Slip/High waist brief",
+          "image_url": "/products/d1e51a_8003B-1_223_06-600x600.jpg",
+          "subcategory": "High waist brief",
+          "collection": "High waist brief",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-3",
+              "product_id": "linga-dore-auto-3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-4",
+          "category_id": "linga-dore",
+          "name": "Linga dore 4",
+          "slug": "linga-dore-auto-4",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/380bab_1400CH-1_359_02-1-600x600.jpg",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-4",
+              "product_id": "linga-dore-auto-4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-5",
+          "category_id": "linga-dore",
+          "name": "Linga dore 5",
+          "slug": "linga-dore-auto-5",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/0e993d_IMG_0561.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-5",
+              "product_id": "linga-dore-auto-5",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-6",
+          "category_id": "linga-dore",
+          "name": "Linga dore 6",
+          "slug": "linga-dore-auto-6",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/8eadb7_IMG_0562.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-6",
+              "product_id": "linga-dore-auto-6",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-7",
+          "category_id": "linga-dore",
+          "name": "Linga dore 7",
+          "slug": "linga-dore-auto-7",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/bf1277_IMG_0620.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-7",
+              "product_id": "linga-dore-auto-7",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-8",
+          "category_id": "linga-dore",
+          "name": "Linga dore 8",
+          "slug": "linga-dore-auto-8",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/020d9a_IMG_0621.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-8",
+              "product_id": "linga-dore-auto-8",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-9",
+          "category_id": "linga-dore",
+          "name": "Linga dore 9",
+          "slug": "linga-dore-auto-9",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/66a6cb_IMG_0622.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-9",
+              "product_id": "linga-dore-auto-9",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-10",
+          "category_id": "linga-dore",
+          "name": "Linga dore 10",
+          "slug": "linga-dore-auto-10",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/eb6f07_IMG_0623.WEBP",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-10",
+              "product_id": "linga-dore-auto-10",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-11",
+          "category_id": "linga-dore",
+          "name": "Linga dore 11",
+          "slug": "linga-dore-auto-11",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/2ecbbf_IMG_0624.WEBP",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-11",
+              "product_id": "linga-dore-auto-11",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-12",
+          "category_id": "linga-dore",
+          "name": "Linga dore 12",
+          "slug": "linga-dore-auto-12",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/5c46cb_IMG_0625.WEBP",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-12",
+              "product_id": "linga-dore-auto-12",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-13",
+          "category_id": "linga-dore",
+          "name": "Linga dore 13",
+          "slug": "linga-dore-auto-13",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/c20fc2_IMG_0626.WEBP",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-13",
+              "product_id": "linga-dore-auto-13",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-14",
+          "category_id": "linga-dore",
+          "name": "Linga dore 14",
+          "slug": "linga-dore-auto-14",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/364b88_IMG_0627.WEBP",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-14",
+              "product_id": "linga-dore-auto-14",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-15",
+          "category_id": "linga-dore",
+          "name": "Linga dore 15",
+          "slug": "linga-dore-auto-15",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/247907_IMG_0640.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-15",
+              "product_id": "linga-dore-auto-15",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-16",
+          "category_id": "linga-dore",
+          "name": "Linga dore 16",
+          "slug": "linga-dore-auto-16",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/a24b6b_IMG_0641.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-16",
+              "product_id": "linga-dore-auto-16",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-17",
+          "category_id": "linga-dore",
+          "name": "Linga dore 17",
+          "slug": "linga-dore-auto-17",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/15ce3e_IMG_0642.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-17",
+              "product_id": "linga-dore-auto-17",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-18",
+          "category_id": "linga-dore",
+          "name": "Linga dore 18",
+          "slug": "linga-dore-auto-18",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/5d83d5_IMG_0643.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-18",
+              "product_id": "linga-dore-auto-18",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-19",
+          "category_id": "linga-dore",
+          "name": "Linga dore 19",
+          "slug": "linga-dore-auto-19",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/5d4283_IMG_0644.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-19",
+              "product_id": "linga-dore-auto-19",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-20",
+          "category_id": "linga-dore",
+          "name": "Linga dore 20",
+          "slug": "linga-dore-auto-20",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/d67742_IMG_0645.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-20",
+              "product_id": "linga-dore-auto-20",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-21",
+          "category_id": "linga-dore",
+          "name": "Linga dore 21",
+          "slug": "linga-dore-auto-21",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/c37509_IMG_0646.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-21",
+              "product_id": "linga-dore-auto-21",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-22",
+          "category_id": "linga-dore",
+          "name": "Linga dore 22",
+          "slug": "linga-dore-auto-22",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/86da3e_IMG_0647.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-22",
+              "product_id": "linga-dore-auto-22",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-23",
+          "category_id": "linga-dore",
+          "name": "Linga dore 23",
+          "slug": "linga-dore-auto-23",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/739884_IMG_0648.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-23",
+              "product_id": "linga-dore-auto-23",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-24",
+          "category_id": "linga-dore",
+          "name": "Linga dore 24",
+          "slug": "linga-dore-auto-24",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/8c2ebd_IMG_0649.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-24",
+              "product_id": "linga-dore-auto-24",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-25",
+          "category_id": "linga-dore",
+          "name": "Linga dore 25",
+          "slug": "linga-dore-auto-25",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/867ce8_IMG_0650.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-25",
+              "product_id": "linga-dore-auto-25",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-26",
+          "category_id": "linga-dore",
+          "name": "Linga dore 26",
+          "slug": "linga-dore-auto-26",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/f5784c_IMG_0651.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-26",
+              "product_id": "linga-dore-auto-26",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-27",
+          "category_id": "linga-dore",
+          "name": "Linga dore 27",
+          "slug": "linga-dore-auto-27",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/f6ea69_IMG_0652.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-27",
+              "product_id": "linga-dore-auto-27",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-28",
+          "category_id": "linga-dore",
+          "name": "Linga dore 28",
+          "slug": "linga-dore-auto-28",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/f2fed3_IMG_0653.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-28",
+              "product_id": "linga-dore-auto-28",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-29",
+          "category_id": "linga-dore",
+          "name": "Linga dore 29",
+          "slug": "linga-dore-auto-29",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/0f18f8_IMG_1140.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-29",
+              "product_id": "linga-dore-auto-29",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-30",
+          "category_id": "linga-dore",
+          "name": "Linga dore 30",
+          "slug": "linga-dore-auto-30",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/00b43a_IMG_1141.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-30",
+              "product_id": "linga-dore-auto-30",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-31",
+          "category_id": "linga-dore",
+          "name": "Linga dore 31",
+          "slug": "linga-dore-auto-31",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/db3f1f_IMG_1142.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-31",
+              "product_id": "linga-dore-auto-31",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-32",
+          "category_id": "linga-dore",
+          "name": "Linga dore 32",
+          "slug": "linga-dore-auto-32",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/b32259_IMG_1143.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-32",
+              "product_id": "linga-dore-auto-32",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-33",
+          "category_id": "linga-dore",
+          "name": "Linga dore 33",
+          "slug": "linga-dore-auto-33",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/9970e7_IMG_1144.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-33",
+              "product_id": "linga-dore-auto-33",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-34",
+          "category_id": "linga-dore",
+          "name": "Linga dore 34",
+          "slug": "linga-dore-auto-34",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/4b0969_IMG_1145.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-34",
+              "product_id": "linga-dore-auto-34",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-35",
+          "category_id": "linga-dore",
+          "name": "Linga dore 35",
+          "slug": "linga-dore-auto-35",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/dd0d76_IMG_1146.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-35",
+              "product_id": "linga-dore-auto-35",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-36",
+          "category_id": "linga-dore",
+          "name": "Linga dore 36",
+          "slug": "linga-dore-auto-36",
+          "description": "Produit importé: Lingadore/Nuisettes",
+          "image_url": "/products/b87ea6_IMG_1147.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-36",
+              "product_id": "linga-dore-auto-36",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-37",
+          "category_id": "linga-dore",
+          "name": "Linga dore 37",
+          "slug": "linga-dore-auto-37",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/216457_IMG_0628.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-37",
+              "product_id": "linga-dore-auto-37",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-38",
+          "category_id": "linga-dore",
+          "name": "Linga dore 38",
+          "slug": "linga-dore-auto-38",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/c07eb2_IMG_0629.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-38",
+              "product_id": "linga-dore-auto-38",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-39",
+          "category_id": "linga-dore",
+          "name": "Linga dore 39",
+          "slug": "linga-dore-auto-39",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/455d76_IMG_0630.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-39",
+              "product_id": "linga-dore-auto-39",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-40",
+          "category_id": "linga-dore",
+          "name": "Linga dore 40",
+          "slug": "linga-dore-auto-40",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/577f94_IMG_0631.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-40",
+              "product_id": "linga-dore-auto-40",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-41",
+          "category_id": "linga-dore",
+          "name": "Linga dore 41",
+          "slug": "linga-dore-auto-41",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/ee6cad_IMG_0632.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-41",
+              "product_id": "linga-dore-auto-41",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-42",
+          "category_id": "linga-dore",
+          "name": "Linga dore 42",
+          "slug": "linga-dore-auto-42",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/ac1480_IMG_1125.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-42",
+              "product_id": "linga-dore-auto-42",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-43",
+          "category_id": "linga-dore",
+          "name": "Linga dore 43",
+          "slug": "linga-dore-auto-43",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/bb0486_IMG_1126.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-43",
+              "product_id": "linga-dore-auto-43",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-44",
+          "category_id": "linga-dore",
+          "name": "Linga dore 44",
+          "slug": "linga-dore-auto-44",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/ca699b_IMG_1127.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-44",
+              "product_id": "linga-dore-auto-44",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-45",
+          "category_id": "linga-dore",
+          "name": "Linga dore 45",
+          "slug": "linga-dore-auto-45",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/a73598_IMG_1128.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-45",
+              "product_id": "linga-dore-auto-45",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-46",
+          "category_id": "linga-dore",
+          "name": "Linga dore 46",
+          "slug": "linga-dore-auto-46",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/e66e2c_IMG_1129.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-46",
+              "product_id": "linga-dore-auto-46",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-47",
+          "category_id": "linga-dore",
+          "name": "Linga dore 47",
+          "slug": "linga-dore-auto-47",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/cb5b5b_IMG_1130.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-47",
+              "product_id": "linga-dore-auto-47",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-48",
+          "category_id": "linga-dore",
+          "name": "Linga dore 48",
+          "slug": "linga-dore-auto-48",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/8ccf71_IMG_1131.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-48",
+              "product_id": "linga-dore-auto-48",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-49",
+          "category_id": "linga-dore",
+          "name": "Linga dore 49",
+          "slug": "linga-dore-auto-49",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/3149bf_IMG_1132.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-49",
+              "product_id": "linga-dore-auto-49",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-50",
+          "category_id": "linga-dore",
+          "name": "Linga dore 50",
+          "slug": "linga-dore-auto-50",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/869344_IMG_1133.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-50",
+              "product_id": "linga-dore-auto-50",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-51",
+          "category_id": "linga-dore",
+          "name": "Linga dore 51",
+          "slug": "linga-dore-auto-51",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/35b830_IMG_1135.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-51",
+              "product_id": "linga-dore-auto-51",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-52",
+          "category_id": "linga-dore",
+          "name": "Linga dore 52",
+          "slug": "linga-dore-auto-52",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/758dd7_IMG_1136.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-52",
+              "product_id": "linga-dore-auto-52",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-53",
+          "category_id": "linga-dore",
+          "name": "Linga dore 53",
+          "slug": "linga-dore-auto-53",
+          "description": "Produit importé: Lingadore/Pyjamas et chemises de nuit",
+          "image_url": "/products/3caa8b_IMG_1138.JPG",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-53",
+              "product_id": "linga-dore-auto-53",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-54",
+          "category_id": "linga-dore",
+          "name": "Linga dore 54",
+          "slug": "linga-dore-auto-54",
+          "description": "Produit importé: Lingadore/Ensemble Pyjama",
+          "image_url": "/products/232a25_8403SET_252_02-600x600.jpg",
+          "subcategory": "Ensemble Pyjama",
+          "collection": "Ensemble Pyjama",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-54",
+              "product_id": "linga-dore-auto-54",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-55",
+          "category_id": "linga-dore",
+          "name": "Linga dore 55",
+          "slug": "linga-dore-auto-55",
+          "description": "Produit importé: Lingadore/Ensemble Pyjama",
+          "image_url": "/products/f25edf_8403SET_252_03-100x100.jpg",
+          "subcategory": "Ensemble Pyjama",
+          "collection": "Ensemble Pyjama",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-55",
+              "product_id": "linga-dore-auto-55",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-56",
+          "category_id": "linga-dore",
+          "name": "Linga dore 56",
+          "slug": "linga-dore-auto-56",
+          "description": "Produit importé: Lingadore/Ensemble Pyjama",
+          "image_url": "/products/44e47c_8403SET_252_04-600x600.jpg",
+          "subcategory": "Ensemble Pyjama",
+          "collection": "Ensemble Pyjama",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-56",
+              "product_id": "linga-dore-auto-56",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "linga-dore-auto-57",
+          "category_id": "linga-dore",
+          "name": "Linga dore 57",
+          "slug": "linga-dore-auto-57",
+          "description": "Produit importé: Lingadore/Nuisette",
+          "image_url": "/products/982ded_1400CH-1_359_02-1-600x600.jpg",
+          "subcategory": "Nuisette",
+          "collection": "Nuisette",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-linga-dore-auto-57",
+              "product_id": "linga-dore-auto-57",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lingerie-sexy",
+      "name": "Lingerie Sexy",
+      "description": "Découvrez notre collection raffinée de Lingerie Sexy.",
+      "image_url": "/products/408c816f8f.JPG",
+      "products": []
+    },
+    {
+      "id": "louisa-bracq",
+      "name": "Louisa bracq",
+      "description": "Julia sublime les courbes féminines grâce à une broderie aux lignes verticales flamboyantes et une transparence délicatement atténuée par un motif « nid d’abeilles ».",
+      "image_url": "/products/ba0d77d130.JPG",
+      "products": []
+    },
+    {
+      "id": "senteurs,-encens-et-huiles",
+      "name": "Senteurs, Encens et Huiles",
+      "description": "Découvrez notre collection raffinée de Senteurs, Encens et Huiles.",
+      "image_url": "/products/93ed71cc5e.jpeg",
+      "products": []
+    },
+    {
+      "id": "wacoal",
+      "name": "Wacoal",
+      "description": "L'élégance intemporelle au quotidien Découvrez l'icône de la maison Wacoal avec le tanga de la collection Embrace Lace.",
+      "image_url": "/products/bbf5f8427f.WEBP",
+      "products": [
+        {
+          "id": "wacoal-p0",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p0",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/779670_IMG_6022.WEBP",
+          "subcategory": "Collection Embrace lace",
+          "collection": "Général",
+          "is_featured": true,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p0",
+              "product_id": "wacoal-p0",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p1",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p1",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/779670_IMG_6023.WEBP",
+          "subcategory": "Collection Embrace lace",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p1",
+              "product_id": "wacoal-p1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p2",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p2",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/779670_IMG_6041.JPG",
+          "subcategory": "Collection Embrace lace",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p2",
+              "product_id": "wacoal-p2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p3",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p3",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/c7c3c5_IMG_0440.JPG",
+          "subcategory": "Collection Florilège",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p3",
+              "product_id": "wacoal-p3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p4",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p4",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/c7c3c5_IMG_0441.JPG",
+          "subcategory": "Collection Florilège",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p4",
+              "product_id": "wacoal-p4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p5",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p5",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/c7c3c5_IMG_0442.JPG",
+          "subcategory": "Collection Florilège",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p5",
+              "product_id": "wacoal-p5",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p6",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p6",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0451.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p6",
+              "product_id": "wacoal-p6",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p7",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p7",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0452.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p7",
+              "product_id": "wacoal-p7",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p8",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p8",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0453.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p8",
+              "product_id": "wacoal-p8",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p9",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p9",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0454.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p9",
+              "product_id": "wacoal-p9",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p10",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p10",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0455.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p10",
+              "product_id": "wacoal-p10",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p11",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p11",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0457.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p11",
+              "product_id": "wacoal-p11",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p12",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p12",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0458.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p12",
+              "product_id": "wacoal-p12",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p13",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p13",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/79b8da_IMG_0459.JPG",
+          "subcategory": "Collection lace perfection",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p13",
+              "product_id": "wacoal-p13",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p14",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p14",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/ec7be2_IMG_5108.JPG",
+          "subcategory": "Collection sensu lace",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p14",
+              "product_id": "wacoal-p14",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p15",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p15",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/ec7be2_IMG_5111.JPG",
+          "subcategory": "Collection sensu lace",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p15",
+              "product_id": "wacoal-p15",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "wacoal-p16",
+          "category_id": "wacoal",
+          "name": "Wacoal",
+          "slug": "wacoal-p16",
+          "description": "Découvrez notre collection raffinée de Wacoal.",
+          "image_url": "/products/ec7be2_IMG_5112.JPG",
+          "subcategory": "Collection sensu lace",
+          "collection": "Général",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-wacoal-p16",
+              "product_id": "wacoal-p16",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ysabel-mora",
+      "name": "Ysabel Mora",
+      "description": "Découvrez notre collection raffinée de Ysabel Mora.",
+      "image_url": "/products/996fdd9db9.webp",
+      "products": []
+    },
+    {
+      "id": "miraclesuit",
+      "name": "Miraclesuit",
+      "description": "Spécialiste du gainant et maillots sculptants.",
+      "image_url": "",
+      "products": []
+    },
+    {
+      "id": "krizalid",
+      "name": "Krizalid",
+      "description": "Krizalid — collection et visuels.",
+      "image_url": "/products/19c4d0_1fbc2fff-59d2-45f4-a021-750eba00d6f3.jpg",
+      "products": [
+        {
+          "id": "krizalid-auto-1",
+          "category_id": "krizalid",
+          "name": "Krizalid 1",
+          "slug": "krizalid-auto-1",
+          "description": "Produit importé: default",
+          "image_url": "/products/19c4d0_1fbc2fff-59d2-45f4-a021-750eba00d6f3.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-1",
+              "product_id": "krizalid-auto-1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-2",
+          "category_id": "krizalid",
+          "name": "Krizalid 2",
+          "slug": "krizalid-auto-2",
+          "description": "Produit importé: default",
+          "image_url": "/products/f90ebc_2a3669de-63f3-44e5-ac9d-27d648395319.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-2",
+              "product_id": "krizalid-auto-2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-3",
+          "category_id": "krizalid",
+          "name": "Krizalid 3",
+          "slug": "krizalid-auto-3",
+          "description": "Produit importé: default",
+          "image_url": "/products/e19c42_3e4d104a-94c4-460a-8f91-b7aa5727c941.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-3",
+              "product_id": "krizalid-auto-3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-4",
+          "category_id": "krizalid",
+          "name": "Krizalid 4",
+          "slug": "krizalid-auto-4",
+          "description": "Produit importé: default",
+          "image_url": "/products/95b367_43174824-f4a6-4a1a-b4f5-45cdf5b2e6a9.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-4",
+              "product_id": "krizalid-auto-4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-5",
+          "category_id": "krizalid",
+          "name": "Krizalid 5",
+          "slug": "krizalid-auto-5",
+          "description": "Produit importé: default",
+          "image_url": "/products/8ff3c8_482b1ace-e5cd-467f-9ade-8447b6268a84.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-5",
+              "product_id": "krizalid-auto-5",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-6",
+          "category_id": "krizalid",
+          "name": "Krizalid 6",
+          "slug": "krizalid-auto-6",
+          "description": "Produit importé: default",
+          "image_url": "/products/c2a67c_4874754c-383b-40a2-9afa-59918cf42833.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-6",
+              "product_id": "krizalid-auto-6",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-7",
+          "category_id": "krizalid",
+          "name": "Krizalid 7",
+          "slug": "krizalid-auto-7",
+          "description": "Produit importé: default",
+          "image_url": "/products/3d1007_50b75aef-095c-4e9f-a6eb-176070f33f76.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-7",
+              "product_id": "krizalid-auto-7",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-8",
+          "category_id": "krizalid",
+          "name": "Krizalid 8",
+          "slug": "krizalid-auto-8",
+          "description": "Produit importé: default",
+          "image_url": "/products/caf9ec_5f31928f-5c7d-4147-bd30-eb647428e046.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-8",
+              "product_id": "krizalid-auto-8",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-9",
+          "category_id": "krizalid",
+          "name": "Krizalid 9",
+          "slug": "krizalid-auto-9",
+          "description": "Produit importé: default",
+          "image_url": "/products/b9103e_642ce402-71a4-4938-b950-97f1b2c8890f.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-9",
+              "product_id": "krizalid-auto-9",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-10",
+          "category_id": "krizalid",
+          "name": "Krizalid 10",
+          "slug": "krizalid-auto-10",
+          "description": "Produit importé: default",
+          "image_url": "/products/e0d3cc_7c757dcb-8178-4ff3-84a7-e48fddafda41.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-10",
+              "product_id": "krizalid-auto-10",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-11",
+          "category_id": "krizalid",
+          "name": "Krizalid 11",
+          "slug": "krizalid-auto-11",
+          "description": "Produit importé: default",
+          "image_url": "/products/5d3831_8a6b452b-289b-4d73-9480-b6386f32d2b7.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-11",
+              "product_id": "krizalid-auto-11",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-12",
+          "category_id": "krizalid",
+          "name": "Krizalid 12",
+          "slug": "krizalid-auto-12",
+          "description": "Produit importé: default",
+          "image_url": "/products/7dfc4c_9d54fd3d-b35a-4cff-b47e-c4dc27a9c19d.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-12",
+              "product_id": "krizalid-auto-12",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-13",
+          "category_id": "krizalid",
+          "name": "Krizalid 13",
+          "slug": "krizalid-auto-13",
+          "description": "Produit importé: default",
+          "image_url": "/products/997b7f_a4ff2158-b64b-4a47-a134-48671a768b45.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-13",
+              "product_id": "krizalid-auto-13",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-14",
+          "category_id": "krizalid",
+          "name": "Krizalid 14",
+          "slug": "krizalid-auto-14",
+          "description": "Produit importé: default",
+          "image_url": "/products/01e6e6_aee64fff-f391-48df-b7f1-9fed48239607.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-14",
+              "product_id": "krizalid-auto-14",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-15",
+          "category_id": "krizalid",
+          "name": "Krizalid 15",
+          "slug": "krizalid-auto-15",
+          "description": "Produit importé: default",
+          "image_url": "/products/2ac266_bd769677-87e0-49a6-949d-158be63cfe5a(1).jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-15",
+              "product_id": "krizalid-auto-15",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-16",
+          "category_id": "krizalid",
+          "name": "Krizalid 16",
+          "slug": "krizalid-auto-16",
+          "description": "Produit importé: default",
+          "image_url": "/products/bbfd35_bd769677-87e0-49a6-949d-158be63cfe5a(2).jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-16",
+              "product_id": "krizalid-auto-16",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-17",
+          "category_id": "krizalid",
+          "name": "Krizalid 17",
+          "slug": "krizalid-auto-17",
+          "description": "Produit importé: default",
+          "image_url": "/products/4ddc80_bd769677-87e0-49a6-949d-158be63cfe5a.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-17",
+              "product_id": "krizalid-auto-17",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-18",
+          "category_id": "krizalid",
+          "name": "Krizalid 18",
+          "slug": "krizalid-auto-18",
+          "description": "Produit importé: default",
+          "image_url": "/products/f2db17_c541dad9-aa35-4d82-a714-2b982a990ceb.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-18",
+              "product_id": "krizalid-auto-18",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-19",
+          "category_id": "krizalid",
+          "name": "Krizalid 19",
+          "slug": "krizalid-auto-19",
+          "description": "Produit importé: default",
+          "image_url": "/products/6a19aa_d0647c73-1823-41e0-9014-e38eda492c6f.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-19",
+              "product_id": "krizalid-auto-19",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-20",
+          "category_id": "krizalid",
+          "name": "Krizalid 20",
+          "slug": "krizalid-auto-20",
+          "description": "Produit importé: default",
+          "image_url": "/products/a8685d_d318ad01-63f3-4db9-b5dd-f64e92877033.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-20",
+              "product_id": "krizalid-auto-20",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-21",
+          "category_id": "krizalid",
+          "name": "Krizalid 21",
+          "slug": "krizalid-auto-21",
+          "description": "Produit importé: default",
+          "image_url": "/products/875b63_d8e5017e-b058-4363-8c4a-7ac88d4e5f17.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-21",
+              "product_id": "krizalid-auto-21",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-22",
+          "category_id": "krizalid",
+          "name": "Krizalid 22",
+          "slug": "krizalid-auto-22",
+          "description": "Produit importé: default",
+          "image_url": "/products/1a4210_e7b9941a-868c-44e1-b04a-918f1cad5ef9.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-22",
+              "product_id": "krizalid-auto-22",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "krizalid-auto-23",
+          "category_id": "krizalid",
+          "name": "Krizalid 23",
+          "slug": "krizalid-auto-23",
+          "description": "Produit importé: default",
+          "image_url": "/products/551f2a_fc409099-f6b7-4107-b188-89fde6df2e7e.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-krizalid-auto-23",
+              "product_id": "krizalid-auto-23",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maternit-et-grossesse",
+      "name": "Maternité et Grossesse",
+      "description": "Découvrez notre collection raffinée de Maternité et Grossesse.",
+      "image_url": "/products/d32afb_WhatsApp_Image_2026-06-22_at_16.59.50.jpeg",
+      "products": [
+        {
+          "id": "maternit-et-grossesse-auto-1",
+          "category_id": "maternit-et-grossesse",
+          "name": "Maternité et Grossesse 1",
+          "slug": "maternit-et-grossesse-auto-1",
+          "description": "Produit importé: Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/d32afb_WhatsApp_Image_2026-06-22_at_16.59.50.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-maternit-et-grossesse-auto-1",
+              "product_id": "maternit-et-grossesse-auto-1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "maternit-et-grossesse-auto-2",
+          "category_id": "maternit-et-grossesse",
+          "name": "Maternité et Grossesse 2",
+          "slug": "maternit-et-grossesse-auto-2",
+          "description": "Produit importé: Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/8fb0f4_WhatsApp_Image_2026-06-22_at_16.59.57.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-maternit-et-grossesse-auto-2",
+              "product_id": "maternit-et-grossesse-auto-2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "maternit-et-grossesse-auto-3",
+          "category_id": "maternit-et-grossesse",
+          "name": "Maternité et Grossesse 3",
+          "slug": "maternit-et-grossesse-auto-3",
+          "description": "Produit importé: Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/61c0f8_WhatsApp_Image_2026-06-22_at_17.00.00.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-maternit-et-grossesse-auto-3",
+              "product_id": "maternit-et-grossesse-auto-3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "maternit-et-grossesse-auto-4",
+          "category_id": "maternit-et-grossesse",
+          "name": "Maternité et Grossesse 4",
+          "slug": "maternit-et-grossesse-auto-4",
+          "description": "Produit importé: Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/b5bf62_WhatsApp_Image_2026-06-22_at_17.00.32.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-maternit-et-grossesse-auto-4",
+              "product_id": "maternit-et-grossesse-auto-4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "miracle-suit",
+      "name": "Miracle Suit",
+      "description": "Découvrez notre collection raffinée de Miracle Suit.",
+      "image_url": "/products/af381e_IMG_0537.JPG",
+      "products": [
+        {
+          "id": "miracle-suit-auto-1",
+          "category_id": "miracle-suit",
+          "name": "Miracle Suit 1",
+          "slug": "miracle-suit-auto-1",
+          "description": "Produit importé: default",
+          "image_url": "/products/af381e_IMG_0537.JPG",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-miracle-suit-auto-1",
+              "product_id": "miracle-suit-auto-1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "miracle-suit-auto-2",
+          "category_id": "miracle-suit",
+          "name": "Miracle Suit 2",
+          "slug": "miracle-suit-auto-2",
+          "description": "Produit importé: default",
+          "image_url": "/products/9ac75c_IMG_3105.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-miracle-suit-auto-2",
+              "product_id": "miracle-suit-auto-2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "miracle-suit-auto-3",
+          "category_id": "miracle-suit",
+          "name": "Miracle Suit 3",
+          "slug": "miracle-suit-auto-3",
+          "description": "Produit importé: default",
+          "image_url": "/products/d6f060_IMG_3106.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-miracle-suit-auto-3",
+              "product_id": "miracle-suit-auto-3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "miracle-suit-auto-4",
+          "category_id": "miracle-suit",
+          "name": "Miracle Suit 4",
+          "slug": "miracle-suit-auto-4",
+          "description": "Produit importé: default",
+          "image_url": "/products/2c192a_IMG_3107.jpg",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-miracle-suit-auto-4",
+              "product_id": "miracle-suit-auto-4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "miracle-suit-auto-5",
+          "category_id": "miracle-suit",
+          "name": "Miracle Suit 5",
+          "slug": "miracle-suit-auto-5",
+          "description": "Produit importé: default",
+          "image_url": "/products/ad7fd4_IMG_4321.JPG",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-miracle-suit-auto-5",
+              "product_id": "miracle-suit-auto-5",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "miracle-suit-auto-6",
+          "category_id": "miracle-suit",
+          "name": "Miracle Suit 6",
+          "slug": "miracle-suit-auto-6",
+          "description": "Produit importé: default",
+          "image_url": "/products/51cf45_IMG_4499.JPG",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-miracle-suit-auto-6",
+              "product_id": "miracle-suit-auto-6",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "miracle-suit-auto-7",
+          "category_id": "miracle-suit",
+          "name": "Miracle Suit 7",
+          "slug": "miracle-suit-auto-7",
+          "description": "Produit importé: default",
+          "image_url": "/products/0d3054_IMG_4500.JPG",
+          "subcategory": "default",
+          "collection": "default",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-miracle-suit-auto-7",
+              "product_id": "miracle-suit-auto-7",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lingerie-traditionnelle-africaine",
+      "name": "Lingerie Traditionnelle Africaine",
+      "description": "Découvrez notre collection raffinée de Lingerie Traditionnelle Africaine.",
+      "image_url": "/products/594646_WhatsApp_Image_2026-06-22_at_16.59.50.jpeg",
+      "products": [
+        {
+          "id": "lingerie-traditionnelle-africaine-auto-1",
+          "category_id": "lingerie-traditionnelle-africaine",
+          "name": "Lingerie Traditionnelle Africaine 1",
+          "slug": "lingerie-traditionnelle-africaine-auto-1",
+          "description": "Produit importé: Maternité et Grossesse/Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/594646_WhatsApp_Image_2026-06-22_at_16.59.50.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-lingerie-traditionnelle-africaine-auto-1",
+              "product_id": "lingerie-traditionnelle-africaine-auto-1",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "lingerie-traditionnelle-africaine-auto-2",
+          "category_id": "lingerie-traditionnelle-africaine",
+          "name": "Lingerie Traditionnelle Africaine 2",
+          "slug": "lingerie-traditionnelle-africaine-auto-2",
+          "description": "Produit importé: Maternité et Grossesse/Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/72b001_WhatsApp_Image_2026-06-22_at_16.59.57.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-lingerie-traditionnelle-africaine-auto-2",
+              "product_id": "lingerie-traditionnelle-africaine-auto-2",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "lingerie-traditionnelle-africaine-auto-3",
+          "category_id": "lingerie-traditionnelle-africaine",
+          "name": "Lingerie Traditionnelle Africaine 3",
+          "slug": "lingerie-traditionnelle-africaine-auto-3",
+          "description": "Produit importé: Maternité et Grossesse/Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/d1d950_WhatsApp_Image_2026-06-22_at_17.00.00.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-lingerie-traditionnelle-africaine-auto-3",
+              "product_id": "lingerie-traditionnelle-africaine-auto-3",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        },
+        {
+          "id": "lingerie-traditionnelle-africaine-auto-4",
+          "category_id": "lingerie-traditionnelle-africaine",
+          "name": "Lingerie Traditionnelle Africaine 4",
+          "slug": "lingerie-traditionnelle-africaine-auto-4",
+          "description": "Produit importé: Maternité et Grossesse/Lingerie traditionnelle/Nuisette traditionnelle",
+          "image_url": "/products/d65aed_WhatsApp_Image_2026-06-22_at_17.00.32.jpeg",
+          "subcategory": "Nuisette traditionnelle",
+          "collection": "Nuisette traditionnelle",
+          "is_featured": false,
+          "created_at": "2026-07-05T00:00:00Z",
+          "variants": [
+            {
+              "id": "v-lingerie-traditionnelle-africaine-auto-4",
+              "product_id": "lingerie-traditionnelle-africaine-auto-4",
+              "color": "Standard",
+              "sizes": [
+                "S",
+                "M",
+                "L"
+              ],
+              "created_at": "2026-07-05T00:00:00Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
