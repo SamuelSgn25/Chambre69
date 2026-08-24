@@ -37,6 +37,28 @@ interface Brand {
   products: (Product & { variants: ProductVariant[] })[];
 }
 
+const getShortBrandDescription = (description?: string) => {
+  const cleaned = (description || '')
+    .replace(/Informations produits?/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!cleaned) return 'Collection raffinée et élégante.';
+
+  const sentence = cleaned
+    .split(/(?<=[.!?])\s+/)
+    .find((part) => part.length > 25 && !/^découvrez|^Découvrez/i.test(part));
+
+  const base = sentence || cleaned;
+  return base.length > 120 ? `${base.slice(0, 117).trim()}...` : base;
+};
+
+const getImageFallback = (brand: Brand, product?: Product) => {
+  if (product?.image_url) return product.image_url;
+  if (brand.image_url) return brand.image_url;
+  return brand.products?.[0]?.image_url || 'https://via.placeholder.com/800x1000?text=Chambre69';
+};
+
 const ProductModal = ({ product, onClose, onAddToCart }: { product: Product & { variants: ProductVariant[] }, onClose: () => void, onAddToCart: (p: Product, v: ProductVariant) => void }) => {
   const variant = product.variants[0] || { color: 'Standard', sizes: ['S', 'M', 'L'] };
   
@@ -390,7 +412,7 @@ export const ShopPage = () => {
                     </h2>
                     <div className="max-w-4xl mx-auto mb-12 text-gray-600">
                       <p className="text-base sm:text-lg leading-relaxed">
-                        {brand.description || 'Découvrez une collection raffinée de pièces qui célèbrent la féminité, le confort et l’élégance à chaque silhouette.'}
+                        {getShortBrandDescription(brand.description)}
                       </p>
                     </div>
                     
@@ -460,6 +482,7 @@ export const ShopPage = () => {
                         {finalProducts.map((item, idx) => {
                           const isActive = idx === activeIndex;
                           const variant = item.variants[0];
+                          const fallbackImage = getImageFallback(brand, item);
                           return (
                             <div
                               key={item.id}
@@ -471,9 +494,18 @@ export const ShopPage = () => {
                                 className={`relative overflow-hidden rounded-[3rem] group cursor-pointer shadow-2xl ${isEven ? 'bg-gray-50' : 'bg-white/5'} h-[420px] sm:h-[480px] md:h-[520px]`}
                               >
                                 <img
-                                  src={item.image_url}
-                                  alt={item.name}
+                                  src={fallbackImage}
+                                  alt={item.name || brand.name}
                                   loading="lazy"
+                                  onError={(event) => {
+                                    const target = event.currentTarget;
+                                    const fallback = brand.image_url || brand.products?.[0]?.image_url || 'https://via.placeholder.com/800x1000?text=Chambre69';
+                                    if (target.src !== new URL(fallback, window.location.origin).toString()) {
+                                      target.src = fallback;
+                                      return;
+                                    }
+                                    target.style.display = 'none';
+                                  }}
                                   className="w-full h-full object-cover transition-all duration-[2s] group-hover:scale-110"
                                 />
                                 
