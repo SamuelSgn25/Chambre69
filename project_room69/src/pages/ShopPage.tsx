@@ -307,21 +307,6 @@ export const ShopPage = () => {
             <p className="text-gray-500 text-base md:text-lg font-light max-w-3xl mx-auto italic tracking-wide">
               Découvrez nos marques et collections.
             </p>
-
-            {/* Aperçu spécifique Curvy Kate juste sous le texte d'intro */}
-            {(() => {
-              const ck = (shopData.brands || []).find((bb: any) => (bb.name || '').toLowerCase().includes('curvy kate') || bb.id === 'curvy-kate');
-              if (ck && ck.image_url) {
-                return (
-                  <div className="mt-8 flex justify-center">
-                    <div className="w-40 h-40 rounded-lg overflow-hidden border-2 border-gray-100 shadow-lg">
-                      <img src={ck.image_url} alt={ck.name} className="w-full h-full object-cover" />
-                    </div>
-                  </div>
-                );
-              }
-              return null;
-            })()}
           </div>
 
           {/* Grille des Marques (Bulles Or & Noir) */}
@@ -335,9 +320,13 @@ export const ShopPage = () => {
                 >
                   <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative flex items-center justify-center bg-white">
                             {brand.name && brand.name.toLowerCase() === 'curvy kate' ? (
-                              <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                                {/* Intentionally no image for Curvy Kate as requested */}
-                              </div>
+                              (() => {
+                                const ck = (shopData.brands || []).find((bb: any) => ((bb.name || '').toLowerCase().includes('curvy kate')) || bb.id === 'curvy-kate');
+                                if (ck && ck.image_url) {
+                                  return <img src={ck.image_url} alt={ck.name} className="w-full h-full object-cover transition-all duration-1000" />;
+                                }
+                                return <div className="w-full h-full flex items-center justify-center bg-gray-100" />;
+                              })()
                             ) : (
                               <img
                                 src={brand.image_url || 'https://via.placeholder.com/150'}
