@@ -104,6 +104,7 @@ def scan_and_collect_products(dir_path, limit_path, brand_id, subcategory=None, 
 
 USER_PROVIDED_CATEGORIES = [
     "Chaines de taille",
+    "Chaines de tailles",
     "curvy kate",
     "Dita von teese",
     "Elomi",
@@ -166,6 +167,9 @@ for category in CATEGORIES:
     brand_doc = find_first_docx_recursively(cat_path)
     brand_raw_desc = extract_text_from_docx(brand_doc) if brand_doc else ""
     brand_desc = clean_to_single_sentence(brand_raw_desc, category)
+    # Remove digits and percentage signs from brand description to avoid numbers on visit page
+    brand_desc = re.sub(r"\d+%?", "", brand_desc).strip()
+    brand_desc = re.sub(r"\s+", " ", brand_desc)
     
     # 2. Collect products using folder-based subcategories and collections
     collected_items = scan_and_collect_products(cat_path, cat_path, brand_id)
@@ -215,6 +219,9 @@ for category in CATEGORIES:
         name_clean = filename.replace('_', ' ').replace('-', ' ').strip()
         name_clean = re.sub(r'(?i)\b(brief|item)\b', '', name_clean).strip()
         name_clean = re.sub(r'\d+', '', name_clean).strip()
+        # Treat generic camera filenames as empty so fallback naming is used
+        if re.match(r'(?i)^(img|image|photo|whatsapp image|dsc|img_?\d*)$', name_clean) or name_clean.lower().startswith('whatsapp image'):
+            name_clean = ''
         # If name becomes empty, fallback to category + collection/subcategory
         if not name_clean:
             if clean_sub:
