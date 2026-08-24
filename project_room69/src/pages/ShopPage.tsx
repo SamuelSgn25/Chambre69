@@ -142,10 +142,14 @@ export const ShopPage = () => {
 
   const filteredBrands = useMemo(() => {
     const normalize = (value?: string) => value?.toLowerCase().trim() || '';
+    // If a brand filter is present, restrict the base list to matching brands only
+    let baseBrands = brands;
+    if (brandFilter) {
+      baseBrands = brands.filter((b) => normalize(b.id) === brandFilter || normalize(b.name).includes(brandFilter));
+    }
 
-    return brands
+    return baseBrands
       .map((brand) => {
-        const brandMatches = !brandFilter || normalize(brand.name).includes(brandFilter) || normalize(brand.id) === brandFilter;
         const products = brand.products.filter((product) => {
           const normalizedName = normalize(product.name);
           const normalizedDescription = normalize(product.description);
@@ -159,13 +163,13 @@ export const ShopPage = () => {
           return matchesSearch && matchesCategory;
         });
 
-        if (!brandMatches && products.length === 0) {
+        if (products.length === 0) {
           return null;
         }
 
         return {
           ...brand,
-          products: brandMatches && !searchQuery && !categoryFilter ? brand.products : products,
+          products,
         };
       })
       .filter((brand): brand is Brand => brand !== null)
