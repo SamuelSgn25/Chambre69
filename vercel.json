@@ -3,18 +3,9 @@
     "frontend": {
       "root": "project_room69",
       "framework": "vite"
-    },
-  }
+    }
   },
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": {
-        "type": "service",
-        "service": "frontend",
-        "path": "/api/$1"
-      }
-    },
     {
       "source": "/(.*)",
       "destination": {
