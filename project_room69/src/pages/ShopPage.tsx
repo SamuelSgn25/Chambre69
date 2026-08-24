@@ -298,25 +298,7 @@ export const ShopPage = () => {
         <div className="max-w-7xl mx-auto">
           {/* Titre principal */}
           {/* Hero circle image chosen from Krizalid / Miracle Suit / Maternité */}
-          <div className="flex justify-center mb-12">
-            <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-black shadow-2xl">
-              <img
-                src={(() => {
-                  const preferred = ['krizalid', 'miracle-suit', 'maternit-et-grossesse', 'miraclesuit'];
-                  for (const id of preferred) {
-                    const b = (shopData.brands || []).find(bb => bb.id === id || bb.id === id.toLowerCase());
-                    if (b) {
-                      if (b.image_url) return b.image_url;
-                      if (b.products && b.products.length > 0) return b.products[0].image_url;
-                    }
-                  }
-                  return 'https://via.placeholder.com/150';
-                })()}
-                alt="Featured"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+          {/* Removed the hero circle image as requested */}
           <div className="text-center mb-16 group">
             <p className="text-[10px] font-black text-[#C9A96E] uppercase tracking-[0.6em] mb-6 animate-in fade-in slide-in-from-bottom-2">Maison de Lingerie</p>
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold font-serif text-gray-900 mb-4 tracking-tighter leading-none transition-colors duration-1000 hover:text-[#C9A96E] cursor-default">
@@ -336,13 +318,19 @@ export const ShopPage = () => {
                   onClick={() => scrollToBrand(brand.id)}
                   className="group cursor-pointer flex flex-col items-center gap-8"
                 >
-                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative">
-                    <img
-                      src={brand.name && brand.name.toLowerCase() === 'curvy kate' ? `${import.meta.env.BASE_URL}products/curvy_ck_enclose.webp` : (brand.image_url || 'https://via.placeholder.com/150')}
-                      alt={brand.name}
-                      className="w-full h-full object-cover transition-all duration-1000"
-                    />
-                  </div>
+                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-black group-hover:border-[#C9A96E] group-hover:scale-110 transition-all duration-700 shadow-2xl relative flex items-center justify-center bg-white">
+                            {brand.name && brand.name.toLowerCase() === 'curvy kate' ? (
+                              <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                                {/* Intentionally no image for Curvy Kate as requested */}
+                              </div>
+                            ) : (
+                              <img
+                                src={brand.image_url || 'https://via.placeholder.com/150'}
+                                alt={brand.name}
+                                className="w-full h-full object-cover transition-all duration-1000"
+                              />
+                            )}
+                          </div>
                   <h3 className="text-[11px] font-black text-black text-center uppercase tracking-[0.4em] group-hover:text-[#C9A96E] transition-all">
                     {brand.name}
                   </h3>
@@ -367,9 +355,14 @@ export const ShopPage = () => {
             const collections = Array.from(new Set(filteredBySub.map(p => p.collection).filter(Boolean))) as string[];
             const selectedCol = selectedCollections[`${brand.id}-${selectedSub}`] || (collections.length > 0 ? collections[0] : null);
 
-            const finalProducts = selectedCol
+            let finalProducts = selectedCol
               ? filteredBySub.filter(p => p.collection === selectedCol)
               : filteredBySub;
+
+            // Reorder Lingerie Sexy to start from the 43rd image (index 42)
+            if ((brand.id || '').toLowerCase() === 'lingerie-sexy' && finalProducts.length > 42) {
+              finalProducts = finalProducts.slice(42).concat(finalProducts.slice(0, 42));
+            }
 
             const scrollKey = `${brand.id}-${selectedSub}-${selectedCol}`;
             const activeIndex = activeProductIndexes[scrollKey] || 0;
@@ -492,7 +485,7 @@ export const ShopPage = () => {
                                 </div>
                               </div>
                               <div className={`mt-8 sm:mt-12 text-center transition-all duration-1000 ${isActive ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}>
-                                <h5 className={`text-2xl sm:text-3xl font-serif font-bold mb-4 ${isEven ? 'text-gray-900' : 'text-white'}`}>{item.name}</h5>
+                                <h5 className={`text-2xl sm:text-3xl font-serif font-bold mb-4 ${isEven ? 'text-gray-900' : 'text-white'}`}>{item.subcategory || item.collection || brand.name}</h5>
                                 <p className="text-[10px] text-[#C9A96E] font-black uppercase tracking-[0.5em]">{selectedCol || 'Collection Exclusive'}</p>
                               </div>
                             </div>
